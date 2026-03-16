@@ -18,7 +18,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative bg-primary text-white py-20 lg:py-28">
+      <section className="relative bg-primary text-white py-10 md:py-20 lg:py-28">
         {images[0] && (
           <div className="absolute inset-0 z-0">
             <img src={images[0]} alt="" className="w-full h-full object-cover" />
@@ -26,7 +26,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
           </div>
         )}
         <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
               <div className="inline-block px-3 py-1.5 bg-accent text-accent-foreground text-xs font-display font-bold tracking-wider mb-4 rounded">
                 {COMPANY.yearsInBusiness} YEARS OF EXPERIENCE
@@ -36,13 +36,13 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 w-full sm:w-auto">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto">
                     <Phone className="mr-2 w-5 h-5" />
                     {PHONE_NUMBERS.MAIN.display}
                   </Button>
                 </PhoneLink>
                 <a href="#quote">
-                  <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto">
                     GET FREE ESTIMATE
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
@@ -78,9 +78,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       </section>
 
       {/* Features */}
-      <section className="bg-card py-16">
+      <section className="bg-card py-10 md:py-16">
         <div className="container">
-          <h2 className="text-display text-3xl md:text-4xl text-center mb-10">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">
             WHAT'S INCLUDED
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -96,9 +96,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
 
       {/* Portfolio Gallery */}
       {images.length > 1 && (
-        <section className="py-16">
+        <section className="py-10 md:py-16">
           <div className="container">
-            <h2 className="text-display text-3xl md:text-4xl text-center mb-10">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">
               OUR {service.shortTitle.toUpperCase()} PROJECTS
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -128,11 +128,11 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       )}
 
       {/* Why Choose Us */}
-      <section className="section-divider bg-muted py-16">
+      <section className="section-divider bg-muted py-10 md:py-16">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="text-display text-3xl md:text-4xl mb-6">
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-6">
                 WHY CHOOSE {COMPANY.shortName.toUpperCase()} FOR {service.shortTitle.toUpperCase()}
               </h2>
               <div className="space-y-3">
@@ -182,9 +182,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       </section>
 
       {/* Process */}
-      <section className="bg-card py-16">
+      <section className="bg-card py-10 md:py-16">
         <div className="container">
-          <h2 className="text-display text-3xl md:text-4xl text-center mb-10">OUR PROCESS</h2>
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">OUR PROCESS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {service.process.map((step, i) => (
               <div key={i} className="text-center">
@@ -200,9 +200,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       </section>
 
       {/* FAQs */}
-      <section className="section-divider bg-muted py-16">
+      <section className="section-divider bg-muted py-10 md:py-16">
         <div className="container">
-          <h2 className="text-display text-3xl md:text-4xl text-center mb-10">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">
             FREQUENTLY ASKED QUESTIONS
           </h2>
           <div className="max-w-3xl mx-auto space-y-4">
@@ -217,10 +217,10 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       </section>
 
       {/* Final CTA */}
-      <section id="quote" className="bg-accent text-accent-foreground py-16">
+      <section id="quote" className="bg-accent text-accent-foreground py-10 md:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-display text-3xl md:text-5xl mb-4">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">
               GET YOUR FREE {service.shortTitle.toUpperCase()} ESTIMATE
             </h2>
             <p className="text-lg mb-8 opacity-90">
@@ -233,7 +233,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
 
             <p className="text-sm opacity-80 mb-3">Prefer to call? We pick up.</p>
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-xl px-8 py-6">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-xl px-6 sm:px-8 py-4 sm:py-6">
                 <Phone className="mr-2 w-6 h-6" />
                 {PHONE_NUMBERS.MAIN.display}
               </Button>

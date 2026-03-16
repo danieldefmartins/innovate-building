@@ -28,12 +28,12 @@ export default function Contact() {
       </section>
 
       {/* Contact Info + Form Section */}
-      <section className="section-divider bg-card py-20">
+      <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             {/* Left — Contact Info */}
             <div>
-              <h2 className="text-display text-3xl md:text-4xl mb-8">GET IN TOUCH</h2>
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-8">GET IN TOUCH</h2>
 
               <div className="space-y-6">
                 {/* Main Phone */}
@@ -139,7 +139,7 @@ export default function Contact() {
 
             {/* Right — Contact Form */}
             <div>
-              <h2 className="text-display text-3xl md:text-4xl mb-8">REQUEST A FREE ESTIMATE</h2>
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-8">REQUEST A FREE ESTIMATE</h2>
               <GHLFormPlaceholder />
             </div>
           </div>
@@ -147,10 +147,10 @@ export default function Contact() {
       </section>
 
       {/* Service Areas Section */}
-      <section className="section-divider bg-muted py-20">
+      <section className="section-divider bg-muted py-10 md:py-20">
         <div className="container">
-          <div className="text-center mb-14">
-            <h2 className="text-display text-3xl md:text-5xl mb-4">AREAS WE SERVE</h2>
+          <div className="text-center mb-8 md:mb-14">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">AREAS WE SERVE</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Proudly serving communities across Greater Boston and Southern New Hampshire
             </p>
@@ -210,10 +210,10 @@ export default function Contact() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="section-divider bg-card py-20">
+      <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <div className="text-center mb-10">
-            <h2 className="text-display text-3xl md:text-5xl mb-4">FIND US</h2>
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">FIND US</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Based in Greater Boston, serving all of Eastern Massachusetts and Southern New Hampshire
             </p>
@@ -229,10 +229,10 @@ export default function Contact() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-accent text-accent-foreground py-20">
+      <section className="bg-accent text-accent-foreground py-10 md:py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-display text-3xl md:text-5xl mb-6">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-6">
               CALL US TODAY — FREE ESTIMATES
             </h2>
             <p className="text-xl mb-8 opacity-90">
@@ -244,7 +244,7 @@ export default function Contact() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
                   <Phone className="mr-2 w-5 h-5" />
                   {PHONE_NUMBERS.MAIN.display}
@@ -254,7 +254,7 @@ export default function Contact() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
                   <Phone className="mr-2 w-5 h-5" />
                   {PHONE_NUMBERS.SECONDARY.display}

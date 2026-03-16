@@ -7,8 +7,8 @@ import { SERVICES } from "@/data/services";
 export default function Footer() {
   return (
     <footer className="bg-sidebar text-sidebar-foreground border-t-2 border-sidebar-border">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container py-8 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -115,7 +115,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-sidebar-foreground/20">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-sidebar-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sidebar-foreground/50">
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
             <p>Licensed General Contractor | MA & NH</p>

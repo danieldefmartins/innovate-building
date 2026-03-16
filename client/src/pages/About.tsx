@@ -29,16 +29,16 @@ export default function About() {
       </section>
 
       {/* Our Story Section */}
-      <section className="section-divider bg-card py-20">
+      <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Photo placeholder */}
             <div className="w-full h-[400px] bg-muted rounded-lg border border-border flex items-center justify-center">
               <span className="text-muted-foreground text-sm">Photo of {COMPANY.ownerName} & Team Coming Soon</span>
             </div>
 
             <div>
-              <h2 className="text-display text-3xl md:text-4xl mb-6">
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-6">
                 MEET {COMPANY.ownerName.toUpperCase()}
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -82,17 +82,17 @@ export default function About() {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="section-divider bg-muted py-20">
+      <section className="section-divider bg-muted py-10 md:py-20">
         <div className="container">
-          <div className="text-center mb-14">
-            <h2 className="text-display text-3xl md:text-5xl mb-4">WHAT MAKES US DIFFERENT</h2>
+          <div className="text-center mb-8 md:mb-14">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">WHAT MAKES US DIFFERENT</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               There are plenty of contractors out there. Here's why homeowners choose {COMPANY.shortName}.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 border border-border hover:border-accent transition-colors duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <Card className="p-5 md:p-8 border border-border hover:border-accent transition-colors duration-300">
               <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
                 <Users className="w-7 h-7 text-accent" />
               </div>
@@ -118,7 +118,7 @@ export default function About() {
               </ul>
             </Card>
 
-            <Card className="p-8 border border-border hover:border-accent transition-colors duration-300">
+            <Card className="p-5 md:p-8 border border-border hover:border-accent transition-colors duration-300">
               <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
                 <Award className="w-7 h-7 text-accent" />
               </div>
@@ -144,7 +144,7 @@ export default function About() {
               </ul>
             </Card>
 
-            <Card className="p-8 border border-border hover:border-accent transition-colors duration-300">
+            <Card className="p-5 md:p-8 border border-border hover:border-accent transition-colors duration-300">
               <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
                 <Shield className="w-7 h-7 text-accent" />
               </div>
@@ -174,13 +174,13 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-divider bg-primary text-white py-20">
+      <section className="section-divider bg-primary text-white py-10 md:py-20">
         <div className="container">
-          <h2 className="text-display text-3xl md:text-5xl text-center mb-14">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-5xl text-center mb-8 md:mb-14">
             BY THE NUMBERS
           </h2>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-accent" />
@@ -229,10 +229,10 @@ export default function About() {
       </section>
 
       {/* Meet the Team Placeholder */}
-      <section className="section-divider bg-card py-20">
+      <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <div className="text-center mb-14">
-            <h2 className="text-display text-3xl md:text-5xl mb-4">MEET THE TEAM</h2>
+          <div className="text-center mb-8 md:mb-14">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">MEET THE TEAM</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The people behind every project — experienced, dedicated, and proud of what they build
             </p>
@@ -258,10 +258,10 @@ export default function About() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-accent text-accent-foreground py-20">
+      <section className="bg-accent text-accent-foreground py-10 md:py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-display text-3xl md:text-5xl mb-6">
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-6">
               READY TO WORK WITH A CONTRACTOR YOU CAN TRUST?
             </h2>
             <p className="text-xl mb-8 opacity-90">
@@ -272,7 +272,7 @@ export default function About() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
                   REQUEST FREE QUOTE
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -282,7 +282,7 @@ export default function About() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
                   <Phone className="mr-2 w-5 h-5" />
                   {PHONE_NUMBERS.MAIN.display}

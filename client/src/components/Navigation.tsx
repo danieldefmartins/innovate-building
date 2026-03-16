@@ -111,9 +111,9 @@ export default function Navigation() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-              <Button size="sm" className="bg-accent hover:bg-accent/90">
+              <Button size="sm" className="bg-accent hover:bg-accent/90 px-3">
                 <Phone className="w-4 h-4 mr-1" />
                 CALL
               </Button>
@@ -122,7 +122,7 @@ export default function Navigation() {
               size="icon"
               variant="ghost"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-sidebar-foreground"
+              className="text-sidebar-foreground h-10 w-10"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -133,8 +133,8 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 bg-sidebar z-40 pt-16 overflow-y-auto">
-          <div className="container py-8">
-            <div className="flex flex-col gap-2">
+          <div className="container py-4 sm:py-8">
+            <div className="flex flex-col gap-1 sm:gap-2">
               {navItems.map((item) => (
                 <div key={item.path}>
                   <Link href={item.path}>

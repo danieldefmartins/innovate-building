@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-white py-20">
+      <section className="bg-primary text-white py-10 md:py-20">
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-block px-3 py-1.5 bg-accent text-accent-foreground text-xs font-display font-bold tracking-wider mb-4 rounded">
@@ -40,11 +40,11 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-card py-20">
+      <section className="bg-card py-10 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {SERVICES.map((service) => (
-              <Card key={service.slug} className="p-8 border border-border hover:border-accent transition-all group">
+              <Card key={service.slug} className="p-5 md:p-8 border border-border hover:border-accent transition-all group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
                     <service.icon className="w-7 h-7 text-accent" />
@@ -77,22 +77,22 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent text-accent-foreground py-16">
+      <section className="bg-accent text-accent-foreground py-10 md:py-16">
         <div className="container text-center">
-          <h2 className="text-display text-3xl md:text-5xl mb-4">NOT SURE WHAT YOU NEED?</h2>
+          <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">NOT SURE WHAT YOU NEED?</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Call us for a free consultation. We'll visit your home, assess the work, and give you
             a clear, honest estimate — no pressure, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                 <Phone className="mr-2 w-5 h-5" />
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                 REQUEST FREE ESTIMATE
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

@@ -13,12 +13,12 @@ export default function AreasWeServe() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20">
+      <section className="bg-primary text-white py-10 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-white/80">
             Service Areas
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             AREAS WE SERVE
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ export default function AreasWeServe() {
       {/* Map Placeholder */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="bg-muted rounded-xl h-[350px] flex items-center justify-center">
+          <div className="bg-muted rounded-xl h-[250px] md:h-[350px] flex items-center justify-center">
             <div className="text-center text-muted-foreground">
               <MapPin className="h-10 w-10 mx-auto mb-3 opacity-50" />
               <p className="font-semibold text-lg">Service Area Map</p>
@@ -94,9 +94,9 @@ export default function AreasWeServe() {
       )}
 
       {/* CTA Section */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-primary text-white py-10 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Don't See Your City?
           </h2>
           <p className="text-lg text-white/90 max-w-xl mx-auto mb-8">

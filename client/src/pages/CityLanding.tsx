@@ -17,7 +17,7 @@ export default function CityLanding({ city }: CityLandingProps) {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-white py-20 lg:py-28">
+      <section className="bg-primary text-white py-10 md:py-20 lg:py-28">
         <div className="container">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent text-accent-foreground text-xs font-display font-bold tracking-wider mb-4 rounded">
@@ -35,13 +35,13 @@ export default function CityLanding({ city }: CityLandingProps) {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <PhoneLink tel={city.phone.tel}>
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 w-full sm:w-auto">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto">
                   <Phone className="mr-2 w-5 h-5" />
                   CALL {city.phone.display}
                 </Button>
               </PhoneLink>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto">
                   FREE ESTIMATE
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -67,12 +67,12 @@ export default function CityLanding({ city }: CityLandingProps) {
       </section>
 
       {/* Services in this city */}
-      <section className="section-divider bg-card py-20">
+      <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <h2 className="text-display text-3xl md:text-4xl text-center mb-4">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-4">
             OUR {city.name.toUpperCase()} SERVICES
           </h2>
-          <p className="text-lg text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground text-center mb-6 md:mb-10 max-w-3xl mx-auto">
             Full-service general contractor serving {city.name}, {city.stateAbbr} homeowners
           </p>
 
@@ -98,11 +98,11 @@ export default function CityLanding({ city }: CityLandingProps) {
       </section>
 
       {/* Why Choose Us for this city */}
-      <section className="section-divider bg-primary text-white py-20">
+      <section className="section-divider bg-primary text-white py-10 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="text-display text-3xl md:text-4xl mb-6">
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-6">
                 WHY {city.name.toUpperCase()} TRUSTS {COMPANY.shortName.toUpperCase()}
               </h2>
               <p className="text-lg text-white/80 mb-8">
@@ -163,7 +163,7 @@ export default function CityLanding({ city }: CityLandingProps) {
 
       {/* Neighborhoods (if available) */}
       {city.neighborhoods && city.neighborhoods.length > 0 && (
-        <section className="bg-card py-16">
+        <section className="bg-card py-10 md:py-16">
           <div className="container">
             <h2 className="text-display text-2xl md:text-3xl text-center mb-8">
               NEIGHBORHOODS WE SERVE IN {city.name.toUpperCase()}
@@ -180,9 +180,9 @@ export default function CityLanding({ city }: CityLandingProps) {
       )}
 
       {/* CTA */}
-      <section className="bg-accent text-accent-foreground py-16">
+      <section className="bg-accent text-accent-foreground py-10 md:py-16">
         <div className="container text-center">
-          <h2 className="text-display text-3xl md:text-5xl mb-4">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">
             READY TO START YOUR {city.name.toUpperCase()} PROJECT?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
@@ -190,13 +190,13 @@ export default function CityLanding({ city }: CityLandingProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={city.phone.tel}>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-lg px-8 py-6">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                 <Phone className="mr-2 w-5 h-5" />
                 {city.phone.display}
               </Button>
             </PhoneLink>
             <Link href="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                 REQUEST FREE QUOTE
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

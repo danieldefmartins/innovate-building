@@ -19,12 +19,12 @@ export default function Portfolio() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20">
+      <section className="bg-primary text-white py-10 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-white/80">
             Portfolio
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">OUR WORK</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">OUR WORK</h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
             Browse our completed projects across the Greater Boston area. Quality
             craftsmanship you can see and trust.
@@ -51,7 +51,7 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-16">
+      <section className="py-10 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredItems.map((item, index) => (
@@ -62,7 +62,7 @@ export default function Portfolio() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-[280px] object-cover"
+                  className="w-full h-[200px] sm:h-[280px] object-cover"
                   loading={index < 8 ? undefined : "lazy"}
                 />
 
@@ -88,9 +88,9 @@ export default function Portfolio() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-primary text-white py-10 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Ready to Start Your Project?
           </h2>
           <p className="text-lg text-white/90 max-w-xl mx-auto mb-8">

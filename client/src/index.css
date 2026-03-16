@@ -137,7 +137,7 @@
   .section-divider {
     clip-path: none;
     margin-top: 0;
-    padding-top: 4rem;
+    padding-top: 2.5rem;
   }
 
   @media (min-width: 768px) {
