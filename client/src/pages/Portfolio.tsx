@@ -108,7 +108,7 @@ export default function Portfolio() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 border-white text-white hover:bg-white/10"
+                className="gap-2 bg-transparent border-white text-white hover:bg-white/10"
               >
                 Get a Free Estimate
                 <ArrowRight className="h-5 w-5" />

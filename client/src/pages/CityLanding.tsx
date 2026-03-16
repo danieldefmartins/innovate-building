@@ -41,7 +41,7 @@ export default function CityLanding({ city }: CityLandingProps) {
                 </Button>
               </PhoneLink>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 w-full sm:w-auto">
                   FREE ESTIMATE
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

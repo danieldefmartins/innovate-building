@@ -114,7 +114,7 @@ export default function AreasWeServe() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 border-white text-white hover:bg-white/10"
+                className="gap-2 bg-transparent border-white text-white hover:bg-white/10"
               >
                 Contact Us
                 <ArrowRight className="h-5 w-5" />
