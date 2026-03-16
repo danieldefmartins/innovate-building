@@ -113,6 +113,5 @@ export const PHONE_NUMBERS = {
 
 export type PhoneEntry = (typeof PHONE_NUMBERS)[keyof typeof PHONE_NUMBERS];
 
-// GHL Form — update with actual Innovate Building form ID
-export const GHL_FORM_ID = "PLACEHOLDER_FORM_ID";
-export const GHL_CHAT_WIDGET_ID = "PLACEHOLDER_CHAT_ID";
+export const GHL_FORM_ID = "6JKsh0GcgTduSUtFJIaz";
+export const GHL_CHAT_WIDGET_ID = ""; // Add chat widget ID when available

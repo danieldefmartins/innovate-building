@@ -1,35 +1,49 @@
-import { Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { PHONE_NUMBERS } from "@/lib/constants";
+import { useEffect } from "react";
+
+const FORM_ID = "6JKsh0GcgTduSUtFJIaz";
+const SCRIPT_URL = "https://links.360forbusiness.com/js/form_embed.js";
 
 interface GHLFormPlaceholderProps {
   service?: string;
   variant?: "default" | "compact";
 }
 
-/**
- * Placeholder contact form until GHL form ID is configured.
- * Once the GHL form is set up, replace this with the actual iframe embed.
- */
-export default function GHLFormPlaceholder({ service, variant = "default" }: GHLFormPlaceholderProps) {
-  const height = variant === "compact" ? "min-h-[300px]" : "min-h-[400px]";
+export default function GHLFormPlaceholder({ variant = "default" }: GHLFormPlaceholderProps) {
+  useEffect(() => {
+    if (!document.querySelector(`script[src="${SCRIPT_URL}"]`)) {
+      const script = document.createElement("script");
+      script.src = SCRIPT_URL;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const iframeHeight = variant === "compact" ? "500px" : "658px";
 
   return (
-    <div className={`${height} flex flex-col items-center justify-center gap-6 p-8 bg-muted rounded-lg border-2 border-dashed border-border`}>
-      <div className="text-center">
-        <h3 className="text-heading text-xl mb-2">
-          {service ? `Request a Free ${service} Estimate` : "Request a Free Estimate"}
-        </h3>
-        <p className="text-muted-foreground text-sm mb-4">
-          Call us directly or we'll set up the contact form shortly
-        </p>
-      </div>
-      <a href={`tel:${PHONE_NUMBERS.MAIN.tel}`}>
-        <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6">
-          <Phone className="mr-2 w-5 h-5" />
-          {PHONE_NUMBERS.MAIN.display}
-        </Button>
-      </a>
+    <div className="w-full">
+      <iframe
+        src={`https://links.360forbusiness.com/widget/form/${FORM_ID}`}
+        style={{
+          width: "100%",
+          height: iframeHeight,
+          border: "none",
+          borderRadius: "3px",
+        }}
+        id={`inline-${FORM_ID}`}
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Innovate Full"
+        data-height="658"
+        data-layout-iframe-id={`inline-${FORM_ID}`}
+        data-form-id={FORM_ID}
+        title="Innovate Building - Contact Form"
+      />
     </div>
   );
 }
