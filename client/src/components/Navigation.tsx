@@ -16,6 +16,7 @@ export default function Navigation() {
     { path: "/services", label: "SERVICES", hasDropdown: true },
     { path: "/portfolio", label: "PORTFOLIO" },
     { path: "/areas-we-serve", label: "AREAS WE SERVE" },
+    { path: "/blog", label: "BLOG" },
     { path: "/about", label: "ABOUT" },
     { path: "/contact", label: "CONTACT" },
   ];

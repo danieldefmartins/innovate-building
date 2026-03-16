@@ -15,8 +15,12 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import CustomIronworkLanding from "./pages/CustomIronworkLanding";
+import Blog from "./pages/Blog";
+import BlogArticlePage from "./pages/BlogArticle";
 import { getServiceBySlug } from "./data/services";
 import { getCityBySlug } from "./data/cities";
+import { getArticleBySlug } from "./data/blog";
 
 function ServiceRoute({ params }: { params: { slug: string } }) {
   const service = getServiceBySlug(params.slug);
@@ -28,6 +32,12 @@ function CityRoute({ params }: { params: { slug: string } }) {
   const city = getCityBySlug(params.slug);
   if (!city) return <NotFound />;
   return <CityLanding city={city} />;
+}
+
+function BlogArticleRoute({ params }: { params: { slug: string } }) {
+  const article = getArticleBySlug(params.slug);
+  if (!article) return <NotFound />;
+  return <BlogArticlePage article={article} />;
 }
 
 function Router() {
@@ -52,11 +62,14 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/custom-ironwork" component={CustomIronworkLanding} />
       <Route path="/services" component={Services} />
       <Route path="/services/:slug">{(params) => <ServiceRoute params={params} />}</Route>
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/areas-we-serve" component={AreasWeServe} />
       <Route path="/areas/:slug">{(params) => <CityRoute params={params} />}</Route>
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug">{(params) => <BlogArticleRoute params={params} />}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={PrivacyPolicy} />
