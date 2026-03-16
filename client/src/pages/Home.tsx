@@ -15,6 +15,7 @@ import {
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
+import { HERO_IMAGES, HOME_PORTFOLIO_PREVIEW } from "@/data/images";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -22,8 +23,12 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary">
-        {/* Background — will be replaced with actual photo */}
         <div className="absolute inset-0 z-0">
+          <img
+            src={HERO_IMAGES.home}
+            alt="Custom home built by Innovate Building Inc"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
         </div>
 
@@ -196,27 +201,24 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Portfolio grid — placeholder until photos arrive */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {[
-              { label: "Kitchen Renovation", location: "Cambridge, MA" },
-              { label: "Master Bathroom", location: "Newton, MA" },
-              { label: "Home Addition", location: "Somerville, MA" },
-              { label: "Full Home Remodel", location: "Brookline, MA" },
-              { label: "New Construction", location: "Quincy, MA" },
-              { label: "Roof Replacement", location: "Medford, MA" },
-            ].map((project, i) => (
-              <div key={i} className="relative group overflow-hidden rounded-lg">
-                <div className="w-full h-[280px] bg-muted flex items-center justify-center border border-border rounded-lg">
-                  <span className="text-muted-foreground text-sm">Photo Coming Soon</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 rounded-lg">
-                  <div>
-                    <h3 className="text-heading text-lg text-white mb-1">{project.label}</h3>
-                    <p className="text-white/80 text-sm">{project.location}</p>
+            {HOME_PORTFOLIO_PREVIEW.map((project, i) => (
+              <Link key={i} href="/portfolio">
+                <div className="relative group overflow-hidden rounded-lg cursor-pointer">
+                  <img
+                    src={project.src}
+                    alt={project.alt}
+                    className="w-full h-[280px] object-cover rounded-lg"
+                    loading={i < 3 ? undefined : "lazy"}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 rounded-lg">
+                    <div>
+                      <h3 className="text-heading text-lg text-white mb-1">{project.alt}</h3>
+                      <p className="text-white/80 text-sm">{project.category}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

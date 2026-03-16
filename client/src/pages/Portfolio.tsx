@@ -3,32 +3,18 @@ import { Link } from "wouter";
 import { Phone, ArrowRight } from "lucide-react";
 import { PHONE_NUMBERS } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
+import { PORTFOLIO_IMAGES } from "@/data/images";
 import { useState } from "react";
 
-const portfolioItems = [
-  { title: "Modern Kitchen Renovation", category: "Kitchen", location: "Cambridge, MA" },
-  { title: "Luxury Master Bathroom", category: "Bathroom", location: "Newton, MA" },
-  { title: "Second-Story Addition", category: "Addition", location: "Somerville, MA" },
-  { title: "Complete Roof Replacement", category: "Roofing", location: "Medford, MA" },
-  { title: "Custom Home Build", category: "New Build", location: "Quincy, MA" },
-  { title: "Basement Entertainment Room", category: "Basement", location: "Brookline, MA" },
-  { title: "James Hardie Siding", category: "Exterior", location: "Arlington, MA" },
-  { title: "Composite Deck Build", category: "Deck", location: "Wellesley, MA" },
-  { title: "Open Concept Kitchen", category: "Kitchen", location: "Waltham, MA" },
-  { title: "Spa Bathroom Remodel", category: "Bathroom", location: "Needham, MA" },
-  { title: "In-Law Suite Addition", category: "Addition", location: "Malden, MA" },
-  { title: "Full Home Remodel", category: "Remodel", location: "Everett, MA" },
-];
-
-const categories = ["All", ...Array.from(new Set(portfolioItems.map((item) => item.category)))];
+const categories = ["All", ...Array.from(new Set(PORTFOLIO_IMAGES.map((item) => item.category)))];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems =
     activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+      ? PORTFOLIO_IMAGES
+      : PORTFOLIO_IMAGES.filter((item) => item.category === activeCategory);
 
   return (
     <div>
@@ -73,21 +59,20 @@ export default function Portfolio() {
                 key={index}
                 className="group relative rounded-xl overflow-hidden cursor-pointer"
               >
-                {/* Placeholder Image */}
-                <div className="bg-muted h-[280px] flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <p className="font-semibold">{item.category}</p>
-                    <p className="text-sm">{item.location}</p>
-                  </div>
-                </div>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-[280px] object-cover"
+                  loading={index < 8 ? undefined : "lazy"}
+                />
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                   <div className="text-white">
                     <h3 className="text-lg font-bold leading-tight mb-1">
-                      {item.title}
+                      {item.alt}
                     </h3>
-                    <p className="text-sm text-white/80">{item.location}</p>
+                    <p className="text-sm text-white/80">{item.category}</p>
                   </div>
                 </div>
               </div>

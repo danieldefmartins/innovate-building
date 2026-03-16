@@ -6,17 +6,26 @@ import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
 import type { ServiceData } from "@/data/services";
+import { SERVICE_IMAGES } from "@/data/images";
 
 interface ServiceLandingProps {
   service: ServiceData;
 }
 
 export default function ServiceLanding({ service }: ServiceLandingProps) {
+  const images = SERVICE_IMAGES[service.slug] || [];
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-white py-20 lg:py-28">
-        <div className="container">
+      <section className="relative bg-primary text-white py-20 lg:py-28">
+        {images[0] && (
+          <div className="absolute inset-0 z-0">
+            <img src={images[0]} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-primary/90" />
+          </div>
+        )}
+        <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block px-3 py-1.5 bg-accent text-accent-foreground text-xs font-display font-bold tracking-wider mb-4 rounded">
@@ -84,6 +93,39 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Gallery */}
+      {images.length > 1 && (
+        <section className="py-16">
+          <div className="container">
+            <h2 className="text-display text-3xl md:text-4xl text-center mb-10">
+              OUR {service.shortTitle.toUpperCase()} PROJECTS
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              {images.slice(0, 6).map((src, i) => (
+                <Link key={i} href="/portfolio">
+                  <div className="group relative rounded-lg overflow-hidden cursor-pointer">
+                    <img
+                      src={src}
+                      alt={`${service.title} project ${i + 1}`}
+                      className="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link href="/portfolio">
+                <Button variant="outline" className="border-2">
+                  VIEW FULL PORTFOLIO
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Why Choose Us */}
       <section className="section-divider bg-muted py-16">
