@@ -114,4 +114,4 @@ export const PHONE_NUMBERS = {
 export type PhoneEntry = (typeof PHONE_NUMBERS)[keyof typeof PHONE_NUMBERS];
 
 export const GHL_FORM_ID = "6JKsh0GcgTduSUtFJIaz";
-export const GHL_CHAT_WIDGET_ID = ""; // Add chat widget ID when available
+export const GHL_CHAT_WIDGET_ID = "69b7749b666024899e655e27";
