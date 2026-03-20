@@ -33,19 +33,11 @@ export default function Navigation() {
         <div className="container h-full flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center cursor-pointer gap-3">
-              <div className="w-10 h-10 bg-accent rounded-md flex items-center justify-center">
-                <span className="text-accent-foreground font-display font-black text-lg">IB</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sidebar-foreground font-display font-bold text-sm leading-tight">
-                  {COMPANY.shortName}
-                </span>
-                <span className="text-sidebar-foreground/50 text-[10px] font-medium tracking-wider">
-                  GENERAL CONTRACTOR
-                </span>
-              </div>
-            </div>
+            <img
+              src="/images/logo/Logo_Transparent.png"
+              alt={COMPANY.shortName}
+              className="h-12 w-auto cursor-pointer"
+            />
           </Link>
 
           {/* Nav Items */}
@@ -102,14 +94,11 @@ export default function Navigation() {
       <nav className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-sidebar border-b-2 border-sidebar-border z-50">
         <div className="container h-full flex items-center justify-between">
           <Link href="/">
-            <div className="flex items-center cursor-pointer gap-2">
-              <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
-                <span className="text-accent-foreground font-display font-black text-sm">IB</span>
-              </div>
-              <span className="text-sidebar-foreground font-display font-bold text-sm">
-                {COMPANY.shortName}
-              </span>
-            </div>
+            <img
+              src="/images/logo/Logo_Transparent.png"
+              alt={COMPANY.shortName}
+              className="h-9 w-auto cursor-pointer"
+            />
           </Link>
 
           <div className="flex items-center gap-2">

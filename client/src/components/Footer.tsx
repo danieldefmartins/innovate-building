@@ -11,14 +11,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-md flex items-center justify-center">
-                <span className="text-accent-foreground font-display font-black text-lg">IB</span>
-              </div>
-              <div>
-                <div className="font-display font-bold text-sm">{COMPANY.shortName}</div>
-                <div className="text-[10px] text-sidebar-foreground/50 tracking-wider">GENERAL CONTRACTOR</div>
-              </div>
+            <div className="mb-4">
+              <img
+                src="/images/logo/Logo_Transparent.png"
+                alt={COMPANY.shortName}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-sidebar-foreground/70 text-sm leading-relaxed mb-4">
               Greater Boston's trusted general contractor for {COMPANY.yearsInBusiness} years.
