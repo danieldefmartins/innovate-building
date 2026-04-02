@@ -122,62 +122,67 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-sidebar z-40 pt-16 overflow-y-auto">
-          <div className="container py-4 sm:py-8">
-            <div className="flex flex-col gap-1 sm:gap-2">
-              {navItems.map((item) => (
-                <div key={item.path}>
-                  <Link href={item.path}>
-                    <div
-                      onClick={() => {
-                        if (!item.hasDropdown) setMobileMenuOpen(false);
-                        if (item.hasDropdown) setServicesOpen(!servicesOpen);
-                      }}
-                      className={`
-                        py-4 px-6 border-l-4 cursor-pointer transition-all flex items-center justify-between
-                        ${
-                          isActive(item.path)
-                            ? "border-accent bg-sidebar-accent/20 text-sidebar-accent-foreground"
-                            : "border-transparent hover:border-accent/50 hover:bg-sidebar-accent/10 text-sidebar-foreground/70"
-                        }
-                      `}
-                    >
-                      <span className="text-lg font-display font-bold tracking-wider">
-                        {item.label}
-                      </span>
-                      {item.hasDropdown && (
-                        <ChevronDown className={`w-5 h-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-                      )}
-                    </div>
-                  </Link>
+        <div className="lg:hidden fixed inset-0 bg-sidebar z-40 flex flex-col">
+          {/* Spacer for the fixed top bar */}
+          <div className="h-16 shrink-0" />
+          {/* Scrollable menu content */}
+          <div className="flex-1 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
+            <div className="container py-4 sm:py-6 pb-8">
+              <div className="flex flex-col gap-1 sm:gap-2">
+                {navItems.map((item) => (
+                  <div key={item.path}>
+                    <Link href={item.path}>
+                      <div
+                        onClick={() => {
+                          if (!item.hasDropdown) setMobileMenuOpen(false);
+                          if (item.hasDropdown) setServicesOpen(!servicesOpen);
+                        }}
+                        className={`
+                          py-4 px-6 border-l-4 cursor-pointer transition-all flex items-center justify-between
+                          ${
+                            isActive(item.path)
+                              ? "border-accent bg-sidebar-accent/20 text-sidebar-accent-foreground"
+                              : "border-transparent hover:border-accent/50 hover:bg-sidebar-accent/10 text-sidebar-foreground/70"
+                          }
+                        `}
+                      >
+                        <span className="text-lg font-display font-bold tracking-wider">
+                          {item.label}
+                        </span>
+                        {item.hasDropdown && (
+                          <ChevronDown className={`w-5 h-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </Link>
 
-                  {/* Mobile Services Submenu */}
-                  {item.hasDropdown && servicesOpen && (
-                    <div className="ml-6 border-l-2 border-sidebar-border">
-                      {SERVICES.map((service) => (
-                        <Link key={service.slug} href={`/services/${service.slug}`}>
-                          <div
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="py-3 px-6 text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors cursor-pointer"
-                          >
-                            <span className="text-sm font-medium">{service.title}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                    {/* Mobile Services Submenu */}
+                    {item.hasDropdown && servicesOpen && (
+                      <div className="ml-6 border-l-2 border-sidebar-border">
+                        {SERVICES.map((service) => (
+                          <Link key={service.slug} href={`/services/${service.slug}`}>
+                            <div
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="py-3 px-6 text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors cursor-pointer"
+                            >
+                              <span className="text-sm font-medium">{service.title}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-            {/* Mobile Phone */}
-            <div className="mt-8 px-6">
-              <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-                <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6">
-                  <Phone className="mr-2 w-5 h-5" />
-                  {PHONE_NUMBERS.MAIN.display}
-                </Button>
-              </PhoneLink>
+              {/* Mobile Phone */}
+              <div className="mt-8 px-6">
+                <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+                  <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6">
+                    <Phone className="mr-2 w-5 h-5" />
+                    {PHONE_NUMBERS.MAIN.display}
+                  </Button>
+                </PhoneLink>
+              </div>
             </div>
           </div>
         </div>
