@@ -7,6 +7,8 @@ import { PhoneLink } from "@/components/PhoneLink";
 import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
 import type { ServiceData } from "@/data/services";
 import { SERVICE_IMAGES } from "@/data/images";
+import PageMeta from "@/components/PageMeta";
+import { BreadcrumbSchema, FAQSchema } from "@/components/StructuredData";
 
 interface ServiceLandingProps {
   service: ServiceData;
@@ -17,6 +19,17 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`${service.title} in Greater Boston | ${COMPANY.shortName}`}
+        description={`${service.heroSubtitle.slice(0, 155)}...`}
+        image={images[0]}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: service.title, url: `/services/${service.slug}` },
+      ]} />
+      <FAQSchema faqs={service.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       {/* Hero */}
       <section className="relative bg-primary text-white py-10 md:py-20 lg:py-28">
         {images[0] && (

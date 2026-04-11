@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Phone, ArrowRight, Calculator, ChefHat, Bath, Home, PlusCircle, ArrowDown, Hammer, TreePine, DoorOpen } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
+import PageMeta from "@/components/PageMeta";
 
 interface ProjectType {
   id: string;
@@ -137,11 +138,6 @@ export default function CostEstimator() {
   const lowEstimate = finish && sqft ? Math.round(finish.lowPerSqft * sqft) : null;
   const highEstimate = finish && sqft ? Math.round(finish.highPerSqft * sqft) : null;
 
-  useEffect(() => {
-    document.title = `Cost Estimator | ${COMPANY.name}`;
-    return () => { document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`; };
-  }, []);
-
   const reset = () => {
     setSelectedType(null);
     setSelectedSize(null);
@@ -150,6 +146,10 @@ export default function CostEstimator() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Home Renovation Cost Estimator | ${COMPANY.shortName}`}
+        description="Get a free ballpark estimate for your renovation project. Kitchen, bathroom, basement, addition, deck, and roofing costs based on 20+ years of Greater Boston pricing."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">

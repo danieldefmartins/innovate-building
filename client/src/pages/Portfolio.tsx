@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Phone, ArrowRight } from "lucide-react";
-import { PHONE_NUMBERS } from "@/lib/constants";
+import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { PORTFOLIO_IMAGES } from "@/data/images";
 import { useState } from "react";
+import PageMeta from "@/components/PageMeta";
 
 const categories = ["All", ...Array.from(new Set(PORTFOLIO_IMAGES.map((item) => item.category)))];
 
@@ -18,6 +19,10 @@ export default function Portfolio() {
 
   return (
     <div>
+      <PageMeta
+        title={`Portfolio — Our Work | ${COMPANY.shortName}`}
+        description="Browse our portfolio of completed projects across Greater Boston. Kitchens, bathrooms, new construction, additions, decks, and more. 1,000+ projects completed."
+      />
       {/* Hero Section */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container mx-auto px-4 text-center">

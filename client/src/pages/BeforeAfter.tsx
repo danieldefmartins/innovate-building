@@ -5,7 +5,7 @@ import { Link } from "wouter";
 import { Phone, ArrowRight, ArrowLeftRight } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
-import { useEffect } from "react";
+import PageMeta from "@/components/PageMeta";
 
 interface BeforeAfterProject {
   id: string;
@@ -161,13 +161,12 @@ export default function BeforeAfter() {
   const categories = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
   const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
-  useEffect(() => {
-    document.title = `Before & After | ${COMPANY.name}`;
-    return () => { document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`; };
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Before & After Project Gallery | ${COMPANY.shortName}`}
+        description="See stunning before and after transformations by Innovate Building. Kitchen remodels, bathroom renovations, home additions, and more across Greater Boston."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">

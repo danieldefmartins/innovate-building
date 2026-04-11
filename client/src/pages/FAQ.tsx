@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Phone, ArrowRight, ChevronDown, Search } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
+import PageMeta from "@/components/PageMeta";
+import { FAQSchema } from "@/components/StructuredData";
 
 interface FAQItem {
   question: string;
@@ -162,13 +164,13 @@ export default function FAQ() {
     return matchesCategory && matchesSearch;
   });
 
-  useEffect(() => {
-    document.title = `FAQ | ${COMPANY.name}`;
-    return () => { document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`; };
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`FAQ — Frequently Asked Questions | ${COMPANY.shortName}`}
+        description="Answers to common questions about hiring a general contractor in Greater Boston. Costs, timelines, licensing, process, and more from a 20+ year contractor."
+      />
+      <FAQSchema faqs={FAQ_DATA.map((f) => ({ question: f.question, answer: f.answer }))} />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">

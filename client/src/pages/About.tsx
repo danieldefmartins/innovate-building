@@ -4,10 +4,15 @@ import { Link } from "wouter";
 import { Phone, ArrowRight, CheckCircle2, Users, Award, Shield, Hammer } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
+import PageMeta from "@/components/PageMeta";
 
 export default function About() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`About Us — 20+ Years Building Boston | ${COMPANY.shortName}`}
+        description="Learn about Innovate Building Inc — Greater Boston's trusted general contractor since 2001. 100% in-house crews, 1,000+ projects, licensed #CS-119608."
+      />
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />

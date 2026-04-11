@@ -4,10 +4,15 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
+import PageMeta from "@/components/PageMeta";
 
 export default function Contact() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Contact Us — Free Estimate | ${COMPANY.shortName}`}
+        description="Get a free, no-obligation estimate for your renovation project. Call or fill out our form. Licensed general contractor serving Greater Boston and NH for 20+ years."
+      />
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />

@@ -5,6 +5,8 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import type { BlogArticle } from "@/data/blog";
 import { getRelatedArticles } from "@/data/blog";
+import PageMeta from "@/components/PageMeta";
+import { BreadcrumbSchema } from "@/components/StructuredData";
 // Side-effect import: injects article content functions
 import "@/data/blog-content";
 
@@ -24,6 +26,18 @@ export default function BlogArticlePage({ article }: BlogArticlePageProps) {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`${article.title} | ${COMPANY.shortName}`}
+        description={article.metaDescription}
+        image={article.heroImage}
+        type="article"
+        publishDate={article.publishDate}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: article.title, url: `/blog/${article.slug}` },
+      ]} />
       {/* Header */}
       <section className="bg-primary text-white py-10 md:py-16">
         <div className="container max-w-3xl">

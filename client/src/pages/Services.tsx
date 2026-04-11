@@ -5,10 +5,15 @@ import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
+import PageMeta from "@/components/PageMeta";
 
 export default function Services() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Our Services — Full-Service General Contractor | ${COMPANY.shortName}`}
+        description="Kitchen remodeling, bathroom renovation, roofing, new construction, additions, basements, decks, siding, and windows. All done by our in-house crews across Greater Boston."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container">

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PhoneLink } from "@/components/PhoneLink";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { BLOG_ARTICLES, BLOG_CATEGORIES, type BlogCategory } from "@/data/blog";
+import PageMeta from "@/components/PageMeta";
 // Side-effect import: injects article content functions
 import "@/data/blog-content";
 
@@ -18,6 +19,10 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Home Improvement Blog | ${COMPANY.shortName}`}
+        description="Expert home renovation advice from a 20+ year Greater Boston contractor. Cost guides, how-tos, seasonal tips, and local insights for Massachusetts and NH homeowners."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-16">
         <div className="container text-center">

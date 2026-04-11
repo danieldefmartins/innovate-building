@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -120,15 +120,14 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Reviews() {
-  useEffect(() => {
-    document.title = `Reviews & Testimonials | ${COMPANY.name}`;
-    return () => { document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`; };
-  }, []);
-
   const avgRating = (REVIEWS.reduce((sum, r) => sum + r.rating, 0) / REVIEWS.length).toFixed(1);
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Reviews & Testimonials | ${COMPANY.shortName}`}
+        description="Read real reviews from Greater Boston homeowners. 5-star rated general contractor with 20+ years experience, 100% in-house crews. See what our clients say."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">

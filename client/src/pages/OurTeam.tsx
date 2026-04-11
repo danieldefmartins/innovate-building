@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Phone, ArrowRight, Users, Shield, Award, Clock, Hammer, CheckCircle2, HardHat } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
-import { useEffect } from "react";
+import PageMeta from "@/components/PageMeta";
 
 const TEAM_MEMBERS = [
   {
@@ -59,13 +59,12 @@ const STATS = [
 ];
 
 export default function OurTeam() {
-  useEffect(() => {
-    document.title = `Our Team | ${COMPANY.name}`;
-    return () => { document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`; };
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`Our Team — 100% In-House Crews | ${COMPANY.shortName}`}
+        description="Meet the Innovate Building crew. 100% in-house teams — no subcontractors. 20+ years building across Greater Boston and New Hampshire. Licensed #CS-119608."
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container">

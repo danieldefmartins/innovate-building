@@ -6,27 +6,27 @@ import { COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 import type { CityData } from "@/data/cities";
-import { useEffect } from "react";
+import PageMeta from "@/components/PageMeta";
+import { BreadcrumbSchema } from "@/components/StructuredData";
 
 interface CityLandingProps {
   city: CityData;
 }
 
 export default function CityLanding({ city }: CityLandingProps) {
-  useEffect(() => {
-    document.title = `General Contractor in ${city.name}, ${city.stateAbbr} | ${COMPANY.shortName}`;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", city.description);
-    }
-    return () => {
-      document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`;
-    };
-  }, [city]);
   const topServices = SERVICES.slice(0, 6);
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title={`General Contractor in ${city.name}, ${city.stateAbbr} | ${COMPANY.shortName}`}
+        description={city.description}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Areas We Serve", url: "/areas-we-serve" },
+        { name: `${city.name}, ${city.stateAbbr}`, url: `/areas/${city.slug}` },
+      ]} />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20 lg:py-28">
         <div className="container">
