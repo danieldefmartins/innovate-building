@@ -38,24 +38,6 @@ function findNearestCity(lat: number, lon: number): CityData | null {
   return minDist <= 30 ? nearest : null;
 }
 
-function matchCityByName(city: string, regionCode: string): CityData | null {
-  if (!city) return null;
-  const cityLower = city.toLowerCase();
-
-  const exact = CITIES.find((c) => {
-    if (c.name.toLowerCase() !== cityLower) return false;
-    if (c.stateAbbr === "NH" && regionCode !== "NH") return false;
-    if (c.stateAbbr === "MA" && regionCode === "NH") return false;
-    return true;
-  });
-  if (exact) return exact;
-
-  // State-level fallback
-  if (regionCode === "NH") return CITIES.find((c) => c.slug === "manchester-nh") ?? null;
-  if (regionCode === "MA") return CITIES.find((c) => c.slug === "boston") ?? null;
-  return null;
-}
-
 export function useGeoLocation(): GeoState {
   const [state, setState] = useState<GeoState>({
     detectedCity: null,
@@ -78,54 +60,44 @@ export function useGeoLocation(): GeoState {
       }
     }
 
-    let resolved = false;
+    // IP-based geolocation — silent, no permission needed
+    // Uses lat/lon from IP API + nearest-city distance matching
+    fetch("/api/geo")
+      .then((r) => r.json())
+      .then((data) => {
+        let city: CityData | null = null;
 
-    // Strategy 1: Browser Geolocation API (most accurate — GPS on mobile, WiFi on desktop)
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          if (resolved) return;
-          resolved = true;
-          const city = findNearestCity(pos.coords.latitude, pos.coords.longitude);
-          sessionStorage.setItem(SESSION_KEY, JSON.stringify({ slug: city?.slug ?? null }));
-          setState({ detectedCity: city, isLoading: false });
-        },
-        () => {
-          // Permission denied or error — fall through to IP-based
-          if (resolved) return;
-          resolved = true;
-          ipFallback();
-        },
-        { timeout: 5000, maximumAge: 300000 } // 5s timeout, cache for 5 min
-      );
-    } else {
-      ipFallback();
-    }
+        // Match by lat/lon distance (most accurate)
+        if (data.lat && data.lon) {
+          city = findNearestCity(data.lat, data.lon);
+        }
 
-    // Strategy 2: IP-based geolocation (fallback — less accurate)
-    function ipFallback() {
-      fetch("/api/geo")
-        .then((r) => r.json())
-        .then((data) => {
-          let city: CityData | null = null;
+        // Fallback: exact city name match
+        if (!city && data.city) {
+          const cityLower = data.city.toLowerCase();
+          city =
+            CITIES.find((c) => {
+              if (c.name.toLowerCase() !== cityLower) return false;
+              if (c.stateAbbr === "NH" && data.regionCode !== "NH") return false;
+              if (c.stateAbbr === "MA" && data.regionCode === "NH") return false;
+              return true;
+            }) ?? null;
+        }
 
-          // Try lat/lon from IP first (nearest city match)
-          if (data.lat && data.lon) {
-            city = findNearestCity(data.lat, data.lon);
-          }
+        // State-level fallback
+        if (!city && data.regionCode === "NH") {
+          city = CITIES.find((c) => c.slug === "manchester-nh") ?? null;
+        }
+        if (!city && data.regionCode === "MA") {
+          city = CITIES.find((c) => c.slug === "boston") ?? null;
+        }
 
-          // Fall back to name matching
-          if (!city) {
-            city = matchCityByName(data.city ?? "", data.regionCode ?? "");
-          }
-
-          sessionStorage.setItem(SESSION_KEY, JSON.stringify({ slug: city?.slug ?? null }));
-          setState({ detectedCity: city, isLoading: false });
-        })
-        .catch(() => {
-          setState({ detectedCity: null, isLoading: false });
-        });
-    }
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify({ slug: city?.slug ?? null }));
+        setState({ detectedCity: city, isLoading: false });
+      })
+      .catch(() => {
+        setState({ detectedCity: null, isLoading: false });
+      });
   }, []);
 
   return state;
