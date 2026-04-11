@@ -5,8 +5,10 @@ import { Phone, ArrowRight, CheckCircle2, Users, Award, Shield, Hammer, Heart, H
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function About() {
+  const { t, localePath } = useLanguage();
   return (
     <div className="min-h-screen">
       <PageMeta
@@ -19,15 +21,13 @@ export default function About() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <div className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-display font-bold tracking-wider mb-6 rounded">
-              OUR STORY
+              {t.about.ourStory}
             </div>
             <h1 className="text-display text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight">
-              TWO DECADES. ONE PARTNERSHIP. OVER 1,000 HOMES BUILT.
+              {t.about.heroTitle}
             </h1>
             <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-              Innovate Building isn't a corporation — it's a partnership between two builders who've
-              worked side by side for over 20 years. When you hire us, you get Mendes and Daniel.
-              Not a sales rep. Not a call center. The guys who actually build your home.
+              {t.about.heroSub}
             </p>
           </div>
         </div>
@@ -39,10 +39,10 @@ export default function About() {
           <div className="text-center mb-10 md:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-4">
               <Handshake className="w-4 h-4" />
-              THE PARTNERSHIP
+              {t.about.partnership}
             </div>
             <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">
-              BUILT ON TRUST. BUILT TO LAST.
+              {t.about.partnershipTitle}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Mendes and Daniel have been building together for over two decades. In an industry where
@@ -63,13 +63,13 @@ export default function About() {
 
             <div className="order-2 lg:order-2">
               <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-3">
-                CO-OWNER & FIELD OPERATIONS
+                {t.about.mendesRole}
               </div>
               <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-2">
                 MEET MENDES
               </h2>
               <p className="text-sm text-accent font-display font-bold tracking-wider mb-6">
-                40+ YEARS IN CONSTRUCTION — A FAMILY TRADITION
+                {t.about.mendesYears}
               </p>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -104,13 +104,13 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center mb-16 md:mb-24">
             <div className="order-2 lg:order-1">
               <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-3">
-                CO-OWNER & PROJECT MANAGEMENT
+                {t.about.danielRole}
               </div>
               <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-2">
                 MEET DANIEL
               </h2>
               <p className="text-sm text-accent font-display font-bold tracking-wider mb-6">
-                25+ YEARS IN THE INDUSTRY — YOUR FIRST POINT OF CONTACT
+                {t.about.danielYears}
               </p>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -180,7 +180,7 @@ export default function About() {
       <section className="section-divider bg-muted py-10 md:py-20">
         <div className="container">
           <div className="text-center mb-8 md:mb-14">
-            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">WHAT MAKES US DIFFERENT</h2>
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">{t.about.whatMakesDifferent}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               There are plenty of contractors out there. Here's why homeowners choose {COMPANY.shortName}.
             </p>
@@ -272,7 +272,7 @@ export default function About() {
       <section className="section-divider bg-primary text-white py-10 md:py-20">
         <div className="container">
           <h2 className="text-display text-2xl sm:text-3xl md:text-5xl text-center mb-8 md:mb-14">
-            BY THE NUMBERS
+            {t.about.byTheNumbers}
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -281,7 +281,7 @@ export default function About() {
                 <Handshake className="w-8 h-8 text-accent" />
               </div>
               <div className="text-4xl font-display font-black text-accent mb-2">20+</div>
-              <div className="text-lg font-heading mb-2">YEAR PARTNERSHIP</div>
+              <div className="text-lg font-heading mb-2">{t.about.yearPartnership}</div>
               <p className="text-white/70 text-sm">
                 Mendes & Daniel, still building strong
               </p>
@@ -314,7 +314,7 @@ export default function About() {
                 <Award className="w-8 h-8 text-accent" />
               </div>
               <div className="text-4xl font-display font-black text-accent mb-2">65+</div>
-              <div className="text-lg font-heading mb-2">COMBINED YEARS</div>
+              <div className="text-lg font-heading mb-2">{t.about.combinedYears}</div>
               <p className="text-white/70 text-sm">
                 Mendes (40+) & Daniel (25+)
               </p>
@@ -328,20 +328,19 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-6">
-              READY TO WORK WITH A TEAM YOU CAN TRUST?
+              {t.about.readyToWork}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Talk directly to Daniel — no sales reps, no call centers. Just an honest conversation
-              about your project with someone who's been doing this for 25 years.
+              {t.about.readyToWorkSub}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={localePath("/contact")}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
-                  REQUEST FREE QUOTE
+                  {t.cta.requestFreeQuote}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
