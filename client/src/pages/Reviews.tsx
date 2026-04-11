@@ -1,6 +1,7 @@
 import PageMeta from "@/components/PageMeta";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getReviews } from "@/i18n/content";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -121,6 +122,36 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+function GoogleReviewsWidget() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Load the widget script
+    const script = document.createElement("script");
+    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
+    script.type = "text/javascript";
+    document.head.appendChild(script);
+
+    // Create the iframe
+    const iframe = document.createElement("iframe");
+    iframe.className = "lc_reviews_widget";
+    iframe.src = "https://reputationhub.site/reputation/widgets/review_widget/qlZXb9KPceYKwHjwidqA?widgetId=69da481824937eb6469b8e1f";
+    iframe.frameBorder = "0";
+    iframe.scrolling = "no";
+    iframe.style.minWidth = "100%";
+    iframe.style.width = "100%";
+    containerRef.current.appendChild(iframe);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
+  return <div ref={containerRef} />;
+}
+
 export default function Reviews() {
   const { t, lang, localePath } = useLanguage();
   const reviewItems = getReviews(lang) ?? REVIEWS;
@@ -209,6 +240,16 @@ export default function Reviews() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Live Google Reviews Widget */}
+      <section className="py-10 md:py-16 bg-card border-t border-border">
+        <div className="container">
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-8">
+            {lang === "es" ? "NUESTRAS RESEÑAS EN GOOGLE" : lang === "pt" ? "NOSSAS AVALIAÇÕES NO GOOGLE" : "OUR GOOGLE REVIEWS"}
+          </h2>
+          <GoogleReviewsWidget />
         </div>
       </section>
 
