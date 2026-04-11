@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://innovatebuildinginc.com/sitemap.xml
+
+# Disallow proposal pages (private client documents)
+Disallow: /proposal/

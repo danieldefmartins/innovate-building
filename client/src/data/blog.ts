@@ -178,6 +178,83 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     relatedServices: ["decks-outdoor", "home-remodeling"],
     relatedCities: ["boston", "quincy", "newton"],
   },
+
+  // ─── NEW ARTICLES (April 2026) ─────────────────────────────────────────────
+  {
+    slug: "home-addition-cost-boston-2026",
+    title: "How Much Does a Home Addition Cost in Boston? (2026 Pricing)",
+    excerpt:
+      "Thinking about adding space instead of moving? Here's what home additions actually cost in Greater Boston — from bump-outs to full second stories.",
+    content: () => null,
+    publishDate: "2026-04-15",
+    category: "Cost Guides",
+    readTime: "10 min read",
+    metaDescription:
+      "Home addition costs in Greater Boston range from $80K to $350K+. Get 2026 pricing for bump-outs, first-floor additions, second stories, and garage conversions.",
+    heroImage: "/images/007c6dcb-df1c-40eb-86b1-0f8aba58d123.jpg",
+    relatedServices: ["home-addition", "new-construction"],
+    relatedCities: ["boston", "newton", "brookline", "wellesley"],
+  },
+  {
+    slug: "siding-replacement-guide-massachusetts",
+    title: "Siding Replacement in Massachusetts: Materials, Costs & What to Expect",
+    excerpt:
+      "Your siding takes a beating from New England weather. Here's everything you need to know about replacing it — from vinyl to fiber cement.",
+    content: () => null,
+    publishDate: "2026-04-18",
+    category: "How-To",
+    readTime: "9 min read",
+    metaDescription:
+      "Complete guide to siding replacement in Massachusetts. Compare vinyl, fiber cement, and wood costs. Learn about installation, insulation, and what to expect.",
+    heroImage: "/images/IMG_6301.jpeg",
+    relatedServices: ["siding", "roofing", "windows-doors"],
+    relatedCities: ["boston", "quincy", "braintree", "weymouth"],
+  },
+  {
+    slug: "how-to-plan-home-renovation-budget",
+    title: "How to Plan a Home Renovation Budget (Without Going Over)",
+    excerpt:
+      "Budget overruns are the #1 fear for homeowners. Here's how to set a realistic renovation budget and actually stick to it.",
+    content: () => null,
+    publishDate: "2026-04-22",
+    category: "How-To",
+    readTime: "8 min read",
+    metaDescription:
+      "Learn how to plan a realistic home renovation budget. Tips on contingency funds, where to splurge vs. save, avoiding change orders, and getting accurate estimates.",
+    heroImage: "/images/IMG_5776.jpeg",
+    relatedServices: ["home-remodeling", "kitchen-remodeling", "bathroom-remodeling"],
+    relatedCities: ["boston", "cambridge", "somerville"],
+  },
+  {
+    slug: "new-construction-vs-renovation-boston",
+    title: "New Construction vs. Renovation: Which Is Right for Your Boston Property?",
+    excerpt:
+      "Should you tear it down and start fresh, or renovate what you have? Here's how Boston homeowners should think about it.",
+    content: () => null,
+    publishDate: "2026-04-25",
+    category: "Local Insights",
+    readTime: "9 min read",
+    metaDescription:
+      "New construction vs. renovation in Boston: compare costs, timelines, permits, and ROI. Learn which option makes more sense for your property and budget.",
+    heroImage: "/images/IMG_0895.jpeg",
+    relatedServices: ["new-construction", "home-remodeling", "home-addition"],
+    relatedCities: ["boston", "newton", "brookline", "cambridge"],
+  },
+  {
+    slug: "winter-home-maintenance-new-england",
+    title: "Winter Home Maintenance Checklist for New England Homeowners",
+    excerpt:
+      "New England winters are brutal on homes. Here's everything you should check, fix, and prepare before the first freeze.",
+    content: () => null,
+    publishDate: "2026-04-28",
+    category: "Seasonal Tips",
+    readTime: "7 min read",
+    metaDescription:
+      "Essential winter home maintenance checklist for Massachusetts and New Hampshire homeowners. Prevent ice dams, frozen pipes, drafts, and costly damage.",
+    heroImage: "/images/15331c74-e597-45d2-9306-07925037e38e.jpg",
+    relatedServices: ["roofing", "siding", "windows-doors"],
+    relatedCities: ["boston", "lowell", "manchester-nh", "nashua-nh"],
+  },
 ];
 
 // Now inject actual content functions — done via a separate assignment

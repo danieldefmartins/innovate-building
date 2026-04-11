@@ -157,7 +157,7 @@ export default function About() {
               <ul className="mt-4 space-y-2">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                  <span>MA & NH licensed general contractor</span>
+                  <span>MA License #CS-119608 & NH licensed</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />

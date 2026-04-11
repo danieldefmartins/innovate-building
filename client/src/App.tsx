@@ -6,11 +6,17 @@ import Footer from "./components/Footer";
 import StickyMobileCTA from "./components/StickyMobileCTA";
 import GeoBanner from "./components/GeoBanner";
 import { useGeoLocation } from "./hooks/useGeoLocation";
+import { LocalBusinessSchema } from "./components/StructuredData";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import ServiceLanding from "./pages/ServiceLanding";
 import Portfolio from "./pages/Portfolio";
+import BeforeAfter from "./pages/BeforeAfter";
+import OurTeam from "./pages/OurTeam";
+import CostEstimator from "./pages/CostEstimator";
+import Reviews from "./pages/Reviews";
+import FAQ from "./pages/FAQ";
 import AreasWeServe from "./pages/AreasWeServe";
 import CityLanding from "./pages/CityLanding";
 import Contact from "./pages/Contact";
@@ -76,6 +82,11 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/services/:slug">{(params) => <ServiceRoute params={params} />}</Route>
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/before-after" component={BeforeAfter} />
+      <Route path="/our-team" component={OurTeam} />
+      <Route path="/cost-estimator" component={CostEstimator} />
+      <Route path="/reviews" component={Reviews} />
+      <Route path="/faq" component={FAQ} />
       <Route path="/areas-we-serve" component={AreasWeServe} />
       <Route path="/areas/:slug">{(params) => <CityRoute params={params} />}</Route>
       <Route path="/blog" component={Blog} />
@@ -106,6 +117,7 @@ function App() {
 
   return (
     <>
+      <LocalBusinessSchema />
       <Toaster />
       <div className="flex flex-col min-h-screen">
         {detectedCity && <GeoBanner city={detectedCity} />}

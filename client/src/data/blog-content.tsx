@@ -893,6 +893,298 @@ function DeckBuildingBoston() {
   );
 }
 
+// ─── Article 11: Home Addition Cost Boston 2026 ────────────────────────────
+
+function HomeAdditionCostBoston() {
+  return (
+    <>
+      <p>
+        Need more space but love your neighborhood? A home addition is one of the smartest investments a Greater Boston homeowner can make — especially when the median home price in the area exceeds $750,000. Building out or up is often cheaper than buying bigger.
+      </p>
+      <p>
+        As a <Link href="/services/home-addition" className="text-accent hover:underline">home addition contractor</Link> with 20+ years in Greater Boston, we've built everything from small bump-outs in <Link href="/areas/somerville" className="text-accent hover:underline">Somerville</Link> to full second-story additions in <Link href="/areas/newton" className="text-accent hover:underline">Newton</Link>. Here's what you should actually expect to pay in 2026.
+      </p>
+
+      <h2>Home Addition Cost Ranges in Greater Boston (2026)</h2>
+      <ul>
+        <li><strong>Small bump-out (50–150 sq ft):</strong> $40,000–$80,000 — extending a kitchen or adding a mudroom</li>
+        <li><strong>Single-room addition (150–400 sq ft):</strong> $80,000–$175,000 — new bedroom, family room, or home office</li>
+        <li><strong>First-floor addition (400–800 sq ft):</strong> $150,000–$300,000 — major expansion with foundation work</li>
+        <li><strong>Second-story addition (800+ sq ft):</strong> $200,000–$400,000+ — adding a full floor above existing</li>
+        <li><strong>In-law suite / ADU:</strong> $120,000–$250,000 — self-contained living space with kitchen and bath</li>
+      </ul>
+
+      <h2>What Drives Home Addition Costs?</h2>
+      <p>The biggest cost factors are foundation work (if adding ground-floor space), structural modifications, and whether you need to relocate systems like HVAC, plumbing, or electrical panels. Second-story additions require engineering to verify your existing foundation can support the load — and sometimes reinforcement is needed.</p>
+
+      <ArticleCTA />
+
+      <h2>The ROI Question</h2>
+      <p>In the current Greater Boston market, a well-built addition typically returns 50–70% of its cost in home value — and that's just the financial return. The lifestyle value of not having to move, not disrupting your kids' school, and staying in a neighborhood you love? That's harder to put a number on.</p>
+
+      <h2>Timeline: How Long Does a Home Addition Take?</h2>
+      <ul>
+        <li><strong>Design & permits:</strong> 4–8 weeks</li>
+        <li><strong>Foundation:</strong> 2–4 weeks</li>
+        <li><strong>Framing & roofing:</strong> 3–6 weeks</li>
+        <li><strong>Systems (electrical, plumbing, HVAC):</strong> 2–4 weeks</li>
+        <li><strong>Interior finishing:</strong> 4–8 weeks</li>
+        <li><strong>Total:</strong> 4–7 months for most projects</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Do I need an architect for a home addition?</h3>
+      <p>For most additions in Massachusetts, yes — you'll need engineered plans stamped by a licensed architect or structural engineer. We work with trusted architects and can manage this process for you.</p>
+
+      <h3>Can my foundation support a second story?</h3>
+      <p>It depends on the existing foundation type and condition. We'll have a structural engineer evaluate it during the planning phase. Reinforcement is possible but adds cost.</p>
+
+      <h3>Will my addition look like it belongs?</h3>
+      <p>It should — and with us, it will. We take great pride in matching rooflines, siding, trim, and architectural details so the addition looks original to the house.</p>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
+// ─── Article 12: Siding Replacement Massachusetts ──────────────────────────
+
+function SidingReplacementMA() {
+  return (
+    <>
+      <p>
+        New England weather takes a serious toll on your home's exterior. Between ice storms, nor'easters, salt air, and intense summer heat, siding in Massachusetts works harder than almost anywhere in the country. If your siding is cracking, warping, fading, or letting moisture in — it's time to replace it before the damage spreads.
+      </p>
+      <p>
+        As a <Link href="/services/siding" className="text-accent hover:underline">siding contractor</Link> serving <Link href="/areas/boston" className="text-accent hover:underline">Greater Boston</Link> for over 20 years, here's what homeowners need to know about siding replacement in 2026.
+      </p>
+
+      <h2>Siding Material Options & Costs</h2>
+      <ul>
+        <li><strong>Vinyl siding:</strong> $4–$8 per sq ft installed — most affordable, low maintenance, 20–40 year lifespan. Available in many colors and styles.</li>
+        <li><strong>Fiber cement (James Hardie):</strong> $8–$14 per sq ft installed — premium durability, fire-resistant, holds paint well. The gold standard for New England homes.</li>
+        <li><strong>Engineered wood (LP SmartSide):</strong> $6–$10 per sq ft installed — natural wood look without the rot risk. Good middle ground.</li>
+        <li><strong>Cedar clapboard:</strong> $10–$18 per sq ft installed — classic New England look, requires regular maintenance (staining/painting).</li>
+        <li><strong>Composite/premium:</strong> $12–$20+ per sq ft installed — high-end options with exceptional durability and appearance.</li>
+      </ul>
+
+      <h2>Total Project Costs for a Typical Home</h2>
+      <p>For a typical 2,000 sq ft home with 1,500 sq ft of siding area:</p>
+      <ul>
+        <li><strong>Vinyl:</strong> $8,000–$15,000</li>
+        <li><strong>Fiber cement:</strong> $15,000–$25,000</li>
+        <li><strong>Cedar:</strong> $18,000–$30,000</li>
+      </ul>
+      <p>These include removal of old siding, housewrap/moisture barrier, and installation.</p>
+
+      <ArticleCTA />
+
+      <h2>Signs You Need New Siding</h2>
+      <ul>
+        <li>Warping, buckling, or loose panels</li>
+        <li>Cracking or holes (even small ones let moisture in)</li>
+        <li>Fading that painting can't fix</li>
+        <li>Mold or mildew growth on or behind siding</li>
+        <li>Rising heating/cooling bills (poor insulation behind siding)</li>
+        <li>Rotting or soft spots (press with a screwdriver — if it sinks, it's rotted)</li>
+      </ul>
+
+      <h2>Should You Add Insulation When Replacing Siding?</h2>
+      <p>Absolutely — and this is the best time to do it. Since the siding is already off, adding rigid foam insulation board underneath new siding costs relatively little extra but can dramatically improve your home's energy efficiency. Many Massachusetts homeowners qualify for <strong>Mass Save rebates</strong> that offset part of the insulation cost.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>How long does siding replacement take?</h3>
+      <p>Most homes take 5–10 working days depending on size, weather, and complexity. We can often complete smaller homes in under a week.</p>
+
+      <h3>Can you replace siding in winter?</h3>
+      <p>Vinyl siding becomes brittle in extreme cold and shouldn't be installed below 40°F. Fiber cement and wood can be installed year-round. We'll advise on the best timing for your material choice.</p>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
+// ─── Article 13: How to Plan Renovation Budget ─────────────────────────────
+
+function PlanRenovationBudget() {
+  return (
+    <>
+      <p>
+        The number-one fear homeowners have about renovation isn't the dust or the noise — it's going over budget. And it's a legitimate concern: industry studies show that 60% of home renovations exceed the original budget. But it doesn't have to happen to you.
+      </p>
+      <p>
+        After managing over 1,000 renovation projects across <Link href="/areas/boston" className="text-accent hover:underline">Greater Boston</Link>, we've seen every budget mistake in the book — and we've learned how to prevent them. Here's how to plan a renovation budget that actually holds.
+      </p>
+
+      <h2>Step 1: Define Your Scope Before Getting Estimates</h2>
+      <p>The biggest cause of budget overruns isn't contractor pricing — it's scope creep. Before you call anyone, write down exactly what you want done. "Renovate the kitchen" isn't a scope. "Replace cabinets, install quartz counters, new tile backsplash, keep existing layout" — that's a scope.</p>
+
+      <h2>Step 2: Get 2–3 Detailed Written Estimates</h2>
+      <p>Don't just get a number — get a breakdown. A professional estimate should itemize materials, labor, permits, and timeline. If a contractor gives you a number on the back of a napkin, walk away. Compare estimates line by line, not just bottom lines.</p>
+
+      <h2>Step 3: Build in a Contingency Fund</h2>
+      <p>Every renovation budget should include a contingency:</p>
+      <ul>
+        <li><strong>Cosmetic updates (paint, fixtures, hardware):</strong> 5–10% contingency</li>
+        <li><strong>Standard renovation (kitchen, bathroom):</strong> 10–15% contingency</li>
+        <li><strong>Structural work or old homes:</strong> 15–20% contingency</li>
+        <li><strong>Gut renovation of pre-1950 home:</strong> 20–25% contingency</li>
+      </ul>
+
+      <ArticleCTA />
+
+      <h2>Step 4: Know Where to Splurge vs. Save</h2>
+      <h3>Worth the splurge:</h3>
+      <ul>
+        <li>Quality countertops (you touch them every day)</li>
+        <li>Plumbing fixtures (cheap ones fail fast)</li>
+        <li>Waterproofing (basements, showers — never cut corners here)</li>
+        <li>Structural work (do it right or do it twice)</li>
+      </ul>
+      <h3>Where to save:</h3>
+      <ul>
+        <li>Cabinet hardware (easy to upgrade later)</li>
+        <li>Light fixtures (trendy ones go on sale constantly)</li>
+        <li>Paint (the labor is the cost, not the paint itself)</li>
+        <li>Backsplash (beautiful options exist at every price point)</li>
+      </ul>
+
+      <h2>Step 5: Understand Change Orders</h2>
+      <p>A change order is any modification to the original scope after work begins. Some are inevitable (discovering knob-and-tube wiring behind a wall), but many are avoidable. The key: make all design decisions <strong>before</strong> demolition starts. Every decision you delay costs more once the crew is on-site.</p>
+
+      <h2>Red Flags That Signal Budget Trouble</h2>
+      <ul>
+        <li>Estimate that's significantly lower than all others (they're either cutting corners or planning to hit you with change orders)</li>
+        <li>No written contract or vague scope descriptions</li>
+        <li>Large upfront deposit (never pay more than 10–20% before work starts)</li>
+        <li>Contractor who discourages you from getting other estimates</li>
+      </ul>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
+// ─── Article 14: New Construction vs Renovation ────────────────────────────
+
+function NewConstructionVsRenovation() {
+  return (
+    <>
+      <p>
+        It's one of the biggest decisions a homeowner can face: should you renovate your existing home, or tear it down and build new? In Greater Boston, where land is scarce and property values are high, this question comes up more than you'd think — especially with older housing stock.
+      </p>
+      <p>
+        As a <Link href="/services/new-construction" className="text-accent hover:underline">new construction</Link> and <Link href="/services/home-remodeling" className="text-accent hover:underline">renovation contractor</Link> in <Link href="/areas/boston" className="text-accent hover:underline">Boston</Link>, we've helped homeowners make this decision hundreds of times. Here's the honest breakdown.
+      </p>
+
+      <h2>When Renovation Makes More Sense</h2>
+      <ul>
+        <li><strong>The bones are good:</strong> Solid foundation, straight walls, good roof structure. These are expensive to replace.</li>
+        <li><strong>You love the character:</strong> Original moldings, hardwood floors, plaster details — things that can't be replicated affordably in new construction.</li>
+        <li><strong>Budget is under $300K:</strong> For most projects under $300K, renovation gives you more bang for your buck.</li>
+        <li><strong>Zoning limits new builds:</strong> Some Boston neighborhoods have setback, height, or lot coverage rules that would force a smaller new build than what you currently have.</li>
+        <li><strong>Historic district:</strong> If you're in a historic district, tearing down may not even be an option.</li>
+      </ul>
+
+      <h2>When New Construction Makes More Sense</h2>
+      <ul>
+        <li><strong>Foundation problems:</strong> A failing foundation can cost $50K–$100K+ to fix. At that point, starting fresh may be smarter.</li>
+        <li><strong>Renovation would cost 75%+ of new build:</strong> If you're gutting everything anyway, new construction gives you modern systems, layout, and efficiency.</li>
+        <li><strong>Major structural deficiencies:</strong> Sagging beams, extensive termite damage, or non-code-compliant framing throughout.</li>
+        <li><strong>Energy efficiency priorities:</strong> New construction can achieve net-zero energy standards that are nearly impossible with a retrofit.</li>
+        <li><strong>The layout is fundamentally wrong:</strong> Load-bearing walls everywhere, no open floor plan possible, bathroom in the middle of the house.</li>
+      </ul>
+
+      <ArticleCTA />
+
+      <h2>Cost Comparison (2026 Greater Boston)</h2>
+      <ul>
+        <li><strong>Major renovation:</strong> $150–$300 per sq ft (gut reno with systems replacement)</li>
+        <li><strong>New construction:</strong> $300–$500+ per sq ft (tear-down and rebuild on existing lot)</li>
+        <li><strong>Demolition costs:</strong> $15,000–$30,000 (separate from construction)</li>
+      </ul>
+      <p>For a 2,000 sq ft home, that's roughly $300K–$600K for renovation vs. $600K–$1M+ for new construction. The gap narrows as renovation scope increases.</p>
+
+      <h2>The Hidden Costs People Miss</h2>
+      <ul>
+        <li><strong>Renovation:</strong> Surprise discoveries behind walls (asbestos, knob-and-tube, water damage), temporary housing during gut reno</li>
+        <li><strong>New construction:</strong> Demolition, temporary utilities, potentially longer timeline, stricter energy code requirements</li>
+      </ul>
+
+      <h2>Our Recommendation</h2>
+      <p>There's no one-size-fits-all answer. We've built brand-new homes and we've renovated 100-year-old Victorians. The right choice depends on your specific property, budget, and goals. We're happy to evaluate your home and give you an honest assessment — even if the answer is "just renovate the kitchen and leave the rest alone."</p>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
+// ─── Article 15: Winter Home Maintenance Checklist ─────────────────────────
+
+function WinterMaintenanceChecklist() {
+  return (
+    <>
+      <p>
+        If you own a home in Massachusetts or New Hampshire, you know winter doesn't play nice. Freezing temperatures, ice dams, heavy snow loads, and freeze-thaw cycles can cause thousands of dollars in damage — but most of it is preventable with the right preparation.
+      </p>
+      <p>
+        After 20+ years of seeing what winter does to homes across <Link href="/areas/boston" className="text-accent hover:underline">Greater Boston</Link> and <Link href="/areas/manchester-nh" className="text-accent hover:underline">Southern NH</Link>, here's our complete winter maintenance checklist.
+      </p>
+
+      <h2>Roof & Gutters</h2>
+      <ul>
+        <li><strong>Clean gutters and downspouts</strong> — clogged gutters are the #1 cause of ice dams. Do this before the first freeze.</li>
+        <li><strong>Inspect your roof</strong> — look for missing, cracked, or curling shingles. Fix them now, not during a January ice storm.</li>
+        <li><strong>Check flashing</strong> — around chimneys, vents, and skylights. Loose flashing = water entry point.</li>
+        <li><strong>Consider heat cables</strong> — if your home is prone to ice dams, installing heat cables along the eaves is cheaper than water damage repair.</li>
+      </ul>
+
+      <h2>Exterior & Foundation</h2>
+      <ul>
+        <li><strong>Seal gaps and cracks</strong> — caulk around windows, doors, and where siding meets trim. Even small gaps let cold air (and mice) in.</li>
+        <li><strong>Inspect siding</strong> — damaged <Link href="/services/siding" className="text-accent hover:underline">siding</Link> lets moisture behind the wall, which freezes and causes structural damage.</li>
+        <li><strong>Grade away from foundation</strong> — soil should slope away from your home to prevent water pooling and freeze damage to the foundation.</li>
+        <li><strong>Disconnect outdoor hoses</strong> — water left in hoses can freeze back into the pipe and cause bursts.</li>
+      </ul>
+
+      <ArticleCTA />
+
+      <h2>Plumbing</h2>
+      <ul>
+        <li><strong>Insulate exposed pipes</strong> — especially in unheated areas like basements, crawl spaces, and garages.</li>
+        <li><strong>Know your shut-off valve</strong> — if a pipe bursts, you need to shut off water immediately. Find it now, not during an emergency.</li>
+        <li><strong>Let faucets drip in extreme cold</strong> — a slow drip prevents pressure buildup in pipes that could freeze.</li>
+        <li><strong>Service your water heater</strong> — flush sediment and check the anode rod. Your water heater works hardest in winter.</li>
+      </ul>
+
+      <h2>Heating & Insulation</h2>
+      <ul>
+        <li><strong>Service your furnace/boiler</strong> — schedule professional maintenance before heating season. Replace filters.</li>
+        <li><strong>Check attic insulation</strong> — inadequate attic insulation is the root cause of most ice dams. You should have R-49 to R-60 in Massachusetts.</li>
+        <li><strong>Seal air leaks</strong> — check around electrical outlets, recessed lights, and attic hatches. These are major heat loss points.</li>
+        <li><strong>Test smoke and CO detectors</strong> — heating season increases carbon monoxide risk. Test every detector and replace batteries.</li>
+      </ul>
+
+      <h2>Windows & Doors</h2>
+      <ul>
+        <li><strong>Check weatherstripping</strong> — worn weatherstripping on doors and windows is like leaving a window cracked all winter.</li>
+        <li><strong>Inspect window glazing</strong> — foggy double-pane windows have lost their seal and their insulating value.</li>
+        <li><strong>Consider storm windows</strong> — if you have single-pane windows, storm windows are a cost-effective alternative to full <Link href="/services/windows-doors" className="text-accent hover:underline">window replacement</Link>.</li>
+      </ul>
+
+      <h2>Emergency Preparedness</h2>
+      <ul>
+        <li>Have a generator or know where to get one (power outages happen every winter)</li>
+        <li>Keep rock salt or sand for walkways</li>
+        <li>Have your contractor's number handy (that's us: {PHONE_NUMBERS.MAIN.display})</li>
+        <li>Know the signs of ice dam damage: icicles hanging from eaves, water stains on ceilings</li>
+      </ul>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
 // ─── Assign content functions to articles ───────────────────────────────────
 
 const CONTENT_MAP: Record<string, () => React.ReactNode> = {
@@ -906,6 +1198,11 @@ const CONTENT_MAP: Record<string, () => React.ReactNode> = {
   "home-addition-vs-moving-boston": HomeAdditionVsMoving,
   "energy-efficient-upgrades-massachusetts-homes": EnergyEfficientUpgrades,
   "deck-building-guide-boston-area": DeckBuildingBoston,
+  "home-addition-cost-boston-2026": HomeAdditionCostBoston,
+  "siding-replacement-guide-massachusetts": SidingReplacementMA,
+  "how-to-plan-home-renovation-budget": PlanRenovationBudget,
+  "new-construction-vs-renovation-boston": NewConstructionVsRenovation,
+  "winter-home-maintenance-new-england": WinterMaintenanceChecklist,
 };
 
 // Inject content into each article

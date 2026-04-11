@@ -20,6 +20,8 @@ export default function Navigation({ geoPhone }: NavigationProps) {
     { path: "/", label: "HOME" },
     { path: "/services", label: "SERVICES", hasDropdown: true },
     { path: "/portfolio", label: "PORTFOLIO" },
+    { path: "/before-after", label: "BEFORE & AFTER" },
+    { path: "/reviews", label: "REVIEWS" },
     { path: "/areas-we-serve", label: "AREAS WE SERVE" },
     { path: "/blog", label: "BLOG" },
     { path: "/about", label: "ABOUT" },

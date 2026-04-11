@@ -54,6 +54,11 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/about", label: "About Us" },
+                { href: "/our-team", label: "Our Team" },
+                { href: "/before-after", label: "Before & After" },
+                { href: "/reviews", label: "Reviews" },
+                { href: "/cost-estimator", label: "Cost Estimator" },
+                { href: "/faq", label: "FAQ" },
                 { href: "/blog", label: "Blog" },
                 { href: "/portfolio", label: "Portfolio" },
                 { href: "/areas-we-serve", label: "Areas We Serve" },
