@@ -255,6 +255,36 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     relatedServices: ["roofing", "siding", "windows-doors"],
     relatedCities: ["boston", "lowell", "manchester-nh", "nashua-nh"],
   },
+  {
+    slug: "when-to-pour-concrete-new-england-boston",
+    title: "When Can You Start Concrete Work in Massachusetts & New England?",
+    excerpt:
+      "Timing your foundation or concrete project in New England is critical. Here's when it's safe to pour — and when you're risking cracks, delays, and wasted money.",
+    content: () => null,
+    publishDate: "2026-04-30",
+    category: "Seasonal Tips",
+    readTime: "8 min read",
+    metaDescription:
+      "When can you pour concrete in Boston and New England? Learn the ideal temperatures, seasonal windows, and what happens if you pour too early. Expert advice from a 20+ year contractor.",
+    heroImage: "/images/IMG_0895.jpeg",
+    relatedServices: ["new-construction", "home-addition", "basement-renovation"],
+    relatedCities: ["boston", "cambridge", "lowell", "manchester-nh", "nashua-nh", "quincy"],
+  },
+  {
+    slug: "architect-engineer-drafter-home-plans-massachusetts",
+    title: "Architect vs. Engineer vs. Drafter: The Smart Way to Plan Your Home Build in Massachusetts",
+    excerpt:
+      "You don't need to spend $20K on an architect before you even know what you want. Here's how smart homeowners in Boston plan their builds — and save thousands.",
+    content: () => null,
+    publishDate: "2026-05-02",
+    category: "How-To",
+    readTime: "10 min read",
+    metaDescription:
+      "Should you hire an architect, engineer, or drafter for your home addition or new build in Massachusetts? Learn how to save thousands by starting with a drafter and involving your contractor early.",
+    heroImage: "/images/IMG_5776.jpeg",
+    relatedServices: ["new-construction", "home-addition", "home-remodeling"],
+    relatedCities: ["boston", "newton", "wellesley", "cambridge", "lowell", "nashua-nh"],
+  },
 ];
 
 // Now inject actual content functions — done via a separate assignment

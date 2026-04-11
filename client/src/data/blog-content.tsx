@@ -1185,6 +1185,199 @@ function WinterMaintenanceChecklist() {
   );
 }
 
+// ─── Article 16: When to Pour Concrete in New England ──────────────────────
+
+function ConcreteWorkNewEngland() {
+  return (
+    <>
+      <p>
+        One of the most common questions we get from homeowners in <Link href="/areas/boston" className="text-accent hover:underline">Boston</Link>, <Link href="/areas/lowell" className="text-accent hover:underline">Lowell</Link>, and across Massachusetts is: <em>"When can we start the foundation?"</em> It's a critical question — pour concrete at the wrong time in New England and you're looking at cracks, weak curing, and expensive fixes down the road.
+      </p>
+      <p>
+        After 20+ years of building foundations, garage slabs, retaining walls, and footings across <Link href="/areas/cambridge" className="text-accent hover:underline">Cambridge</Link>, <Link href="/areas/quincy" className="text-accent hover:underline">Quincy</Link>, <Link href="/areas/manchester-nh" className="text-accent hover:underline">Manchester NH</Link>, and everywhere in between, here's what we tell every homeowner.
+      </p>
+
+      <h2>The Short Answer: Late April Through November</h2>
+      <p>In Massachusetts and New Hampshire, the safe window for concrete work is generally <strong>late April through mid-November</strong>. But it's not about the calendar — it's about temperature. Concrete needs consistent temperatures above 40°F (4°C) for at least 48 hours after pouring to cure properly.</p>
+      <p>Here's the seasonal breakdown for Greater Boston:</p>
+      <ul>
+        <li><strong>January – March:</strong> Too cold for standard concrete. Ground is frozen, temps regularly drop below 20°F overnight. Not recommended unless using winter concrete methods (expensive).</li>
+        <li><strong>April:</strong> Hit or miss. Early April is still risky — nighttime temps in Boston average 38–42°F. Late April is usually safe if you watch the forecast carefully.</li>
+        <li><strong>May – October:</strong> Prime concrete season. Ideal temperatures, predictable weather, best curing conditions. This is when you want your foundation poured.</li>
+        <li><strong>November:</strong> Still workable in early November, especially in coastal areas like <Link href="/areas/quincy" className="text-accent hover:underline">Quincy</Link> and the South Shore where temps stay milder. By late November, it's a gamble.</li>
+        <li><strong>December:</strong> Too cold. Even if you get a warm week, nighttime freezes will compromise the cure.</li>
+      </ul>
+
+      <h2>Why Temperature Matters So Much</h2>
+      <p>Concrete doesn't just "dry" — it <strong>cures</strong> through a chemical reaction called hydration. This reaction needs water and heat to work properly. When temperatures drop below 40°F:</p>
+      <ul>
+        <li>The hydration process slows dramatically or stops entirely</li>
+        <li>Water in the mix can freeze and expand, creating internal cracks</li>
+        <li>The final concrete strength can be reduced by 50% or more</li>
+        <li>Surface scaling and flaking become likely in the first winter</li>
+      </ul>
+      <p>In other words: concrete poured in cold weather might look fine for a few months, but it won't hold up. And a failing foundation is not something you want to discover after your house is built on top of it.</p>
+
+      <ArticleCTA />
+
+      <h2>What About Hot Weather?</h2>
+      <p>Boston's summer heat (85–95°F) can also be a problem, but it's more manageable. In extreme heat, concrete can cure too fast, leading to surface cracking. Professional crews handle this by:</p>
+      <ul>
+        <li>Pouring early in the morning (before 10 AM)</li>
+        <li>Using evaporation retarders on the surface</li>
+        <li>Keeping the concrete moist with curing blankets or water spray</li>
+        <li>Adjusting the mix with ice or cold water from the batch plant</li>
+      </ul>
+      <p>Hot weather concrete is manageable with experience. Cold weather concrete is a fundamentally bigger risk.</p>
+
+      <h2>Can You Pour Concrete in Winter in Massachusetts?</h2>
+      <p>Technically, yes — but it's expensive and only makes sense for commercial projects or tight deadlines. Winter concrete methods include:</p>
+      <ul>
+        <li><strong>Heated enclosures:</strong> Building temporary shelters around the pour area with propane heaters ($2,000–$5,000+ extra)</li>
+        <li><strong>Hot water mix:</strong> Using heated water in the concrete mix</li>
+        <li><strong>Accelerating admixtures:</strong> Chemical additives that speed up curing</li>
+        <li><strong>Insulated blankets:</strong> Covering the concrete with thermal blankets for 48–72 hours</li>
+      </ul>
+      <p>These methods add $3,000–$8,000+ to a typical residential foundation. For most homeowners, it makes more sense to wait for spring.</p>
+
+      <h2>Planning Your Project Timeline</h2>
+      <p>If you're planning a <Link href="/services/new-construction" className="text-accent hover:underline">new construction</Link> or <Link href="/services/home-addition" className="text-accent hover:underline">home addition</Link> in Greater Boston, here's the ideal timeline:</p>
+      <ul>
+        <li><strong>January – February:</strong> Design, drafting, and engineering plans</li>
+        <li><strong>March:</strong> Submit for building permits</li>
+        <li><strong>April:</strong> Site preparation, excavation (ground thaws mid-to-late April)</li>
+        <li><strong>May:</strong> Pour foundation — ideal temps, long curing season ahead</li>
+        <li><strong>June – November:</strong> Framing, roofing, systems, and finishing</li>
+      </ul>
+      <p>Starting your planning in winter means you're ready to break ground the moment the weather allows. Homeowners who wait until spring to start planning often don't get their foundation poured until July or August — cutting into the building season.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>What's the minimum temperature for pouring concrete?</h3>
+      <p>The American Concrete Institute recommends a minimum of 50°F (10°C) for standard pours, with the concrete temperature itself not dropping below 40°F for at least 48 hours after placement. In New England, this typically means late April at the earliest.</p>
+
+      <h3>How long does a foundation need to cure before building on it?</h3>
+      <p>Concrete reaches about 70% of its full strength in 7 days and 99% in 28 days. Most building codes require a minimum 7-day cure before loading, but we typically wait at least 10–14 days before starting framing on a new foundation.</p>
+
+      <h3>Can you pour a garage slab in November?</h3>
+      <p>In early November, usually yes — especially in the Boston metro area where coastal temps run warmer. Check the extended forecast: you need 48+ hours above 40°F after the pour. We wouldn't recommend it after mid-November.</p>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
+// ─── Article 17: Architect vs Engineer vs Drafter ──────────────────────────
+
+function ArchitectEngineerDrafter() {
+  return (
+    <>
+      <p>
+        You've decided to build a <Link href="/services/home-addition" className="text-accent hover:underline">home addition</Link> or <Link href="/services/new-construction" className="text-accent hover:underline">new home</Link> in Massachusetts. The first question everyone asks: <em>"Do I need an architect?"</em> The answer might surprise you — and save you thousands of dollars.
+      </p>
+      <p>
+        Most homeowners assume the process is: hire an architect, get plans, then find a contractor to build them. But after 20+ years of building across <Link href="/areas/boston" className="text-accent hover:underline">Boston</Link>, <Link href="/areas/newton" className="text-accent hover:underline">Newton</Link>, <Link href="/areas/wellesley" className="text-accent hover:underline">Wellesley</Link>, and <Link href="/areas/cambridge" className="text-accent hover:underline">Cambridge</Link>, we've seen this approach cost homeowners $10,000–$20,000 more than necessary — and sometimes produce plans that don't work in the real world.
+      </p>
+      <p>Here's the smarter way to do it.</p>
+
+      <h2>Architect vs. Engineer vs. Drafter — What's the Difference?</h2>
+
+      <h3>Architect ($5,000–$20,000+)</h3>
+      <p>An architect designs the look, feel, and spatial layout of your project. They're trained in aesthetics, space planning, and building codes. Great architects create beautiful, functional spaces. But they charge $150–$300/hour, and the design process involves multiple rounds of revisions — each one billed.</p>
+      <p>For a high-end custom home where design is the top priority and budget isn't a constraint, an architect is the right choice. For most residential additions and standard builds? There's a more cost-effective path.</p>
+
+      <h3>Structural Engineer ($2,000–$5,000)</h3>
+      <p>An engineer doesn't design your home's layout — they verify that the structural components (foundation, beams, load-bearing walls, roof trusses) can handle the loads. In Massachusetts, you need engineer-stamped structural plans for any addition or new construction to get a building permit. This is non-negotiable.</p>
+      <p>The key insight: the engineer <strong>reviews and stamps</strong> plans — they don't need to create them from scratch.</p>
+
+      <h3>Drafter ($1,500–$4,000)</h3>
+      <p>A drafter (also called a draftsman or CAD designer) creates detailed construction drawings — floor plans, elevations, cross-sections, and site plans. They work faster and charge less than architects because they focus on translating your ideas into buildable plans, not on high-concept design.</p>
+      <p>A good drafter, working closely with an experienced contractor, can produce plans that are just as buildable and permit-ready as an architect's — at a fraction of the cost.</p>
+
+      <ArticleCTA />
+
+      <h2>The Smart Approach: Drafter + Contractor + Engineer</h2>
+      <p>Here's the process we use at Innovate Building, and it saves our clients thousands while producing better results:</p>
+
+      <h3>Step 1: Start With Your Contractor (Free)</h3>
+      <p>Before you spend a dollar on plans, talk to your contractor. At Innovate Building, Daniel sits down with you first — in your home, at your kitchen table — to understand what you want, what your budget looks like, and what's realistic for your property. This conversation is free and it's the most important one you'll have.</p>
+      <p>Why? Because an experienced contractor knows things a drafter or architect doesn't:</p>
+      <ul>
+        <li>Where the load-bearing walls are and what it costs to move them</li>
+        <li>What your town's zoning setbacks will and won't allow</li>
+        <li>Which design choices add $5,000 and which add $50,000</li>
+        <li>Whether your existing foundation can support a second story</li>
+        <li>How to get more space without changing the roofline (saving $20K+)</li>
+      </ul>
+
+      <h3>Step 2: Drafter Creates the Plans ($1,500–$4,000)</h3>
+      <p>Once we know what you want, we bring in a drafter. But here's the difference: <strong>we're the ones working with the drafter, not you.</strong> Daniel takes your vision, combines it with our construction knowledge, and communicates directly with the drafter to produce plans that are:</p>
+      <ul>
+        <li><strong>Buildable</strong> — no design details that look great on paper but cost $30K extra to construct</li>
+        <li><strong>Budget-conscious</strong> — we know where to save and where it's worth spending</li>
+        <li><strong>Code-compliant</strong> — we know local building codes in every town we serve</li>
+        <li><strong>Permit-ready</strong> — formatted exactly how your town's building department wants them</li>
+      </ul>
+      <p>The drafter can make as many revisions as needed during this phase. Want to try a different layout? Move the bathroom? Add a closet? These changes cost almost nothing with a drafter. With an architect at $200/hour, every "what if" costs real money.</p>
+
+      <h3>Step 3: Engineer Reviews and Stamps ($2,000–$5,000)</h3>
+      <p>Once the plans are finalized — after all the brainstorming, revisions, and "what ifs" are done — we submit them to a structural engineer for review and approval. The engineer verifies the structural integrity, specifies beam sizes, foundation requirements, and load calculations, then stamps the plans.</p>
+      <p>Because the plans are already well-thought-out and buildable (the contractor made sure of that), the engineering review is straightforward. No back-and-forth, no surprises, no redesigns at $200/hour.</p>
+
+      <h2>The Cost Comparison</h2>
+      <ul>
+        <li><strong>Traditional route (architect + engineer):</strong> $8,000–$25,000 for plans, often 2–4 months, and the architect may design something beautiful but expensive to build</li>
+        <li><strong>Smart route (contractor + drafter + engineer):</strong> $3,500–$9,000 for plans, typically 3–6 weeks, and the plans are optimized for your budget from day one</li>
+      </ul>
+      <p>That's $5,000–$15,000 saved before construction even starts — money that can go toward better finishes, a bigger addition, or just staying under budget.</p>
+
+      <ArticleCTA />
+
+      <h2>When SHOULD You Hire an Architect?</h2>
+      <p>We're not anti-architect. There are times when an architect is the right call:</p>
+      <ul>
+        <li><strong>Custom luxury homes ($500K+ builds)</strong> where design is the priority</li>
+        <li><strong>Historic districts</strong> where the design review board requires architect-stamped plans</li>
+        <li><strong>Complex commercial projects</strong> with unique structural or aesthetic requirements</li>
+        <li><strong>When you want a specific architect's design vision</strong> — some homeowners want a name-brand architect, and that's a valid choice</li>
+      </ul>
+      <p>For a standard <Link href="/services/home-addition" className="text-accent hover:underline">home addition</Link>, garage build, second-story addition, or <Link href="/services/new-construction" className="text-accent hover:underline">new construction</Link> in the $100K–$500K range? The drafter + contractor + engineer approach gives you better results for less money, every time.</p>
+
+      <h2>Why Your Contractor Should Be Involved From Day One</h2>
+      <p>The biggest mistake homeowners make is designing the project in isolation — spending months with an architect or drafter, finalizing plans, then handing them to a contractor for a bid. Here's what happens:</p>
+      <ul>
+        <li>The contractor looks at the plans and says, "This will cost $80K more than you expected"</li>
+        <li>Redesigns are needed — but now you're paying the architect again</li>
+        <li>Months of work are partially wasted</li>
+        <li>You're frustrated, over budget, and haven't broken ground</li>
+      </ul>
+      <p>When your contractor is in the room from the beginning — like Daniel is on every Innovate project — the plans evolve with real-world pricing in mind. We can tell you in real time: "That bump-out will cost $15K, but if we extend the other direction, it's $8K." Those conversations save fortunes.</p>
+
+      <h2>How It Works at Innovate Building</h2>
+      <ol>
+        <li><strong>Free consultation</strong> — Daniel visits your home, discusses your goals, measures the space, and talks budget honestly</li>
+        <li><strong>Conceptual planning</strong> — We sketch options with you, explore layouts, and land on a direction</li>
+        <li><strong>Drafting</strong> — Our drafter produces detailed construction plans with Daniel guiding every revision</li>
+        <li><strong>Engineering</strong> — Plans go to a structural engineer for review, calculations, and stamp</li>
+        <li><strong>Permitting</strong> — We submit to your town's building department and handle the process</li>
+        <li><strong>Construction</strong> — Mendes and the crew build exactly what was planned, on time and on budget</li>
+      </ol>
+      <p>One team from concept to completion. No handoffs, no miscommunication, no surprises.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Do I legally need an architect in Massachusetts?</h3>
+      <p>No. Massachusetts does not require architect-stamped plans for most residential projects. You do need <strong>engineer-stamped structural plans</strong> for new construction and additions, which is a different (and less expensive) requirement. Some historic districts may have additional requirements.</p>
+
+      <h3>How long does the planning process take?</h3>
+      <p>With our drafter + contractor approach, most residential plans are complete in 3–6 weeks. Permitting adds another 2–6 weeks depending on the town. Compare that to 2–4 months with an architect.</p>
+
+      <h3>Can I bring my own plans?</h3>
+      <p>Absolutely. If you already have architect or drafter plans, we're happy to review them and provide a detailed estimate. We'll let you know if we see any issues or cost-saving opportunities.</p>
+
+      <ArticleCTA />
+    </>
+  );
+}
+
 // ─── Assign content functions to articles ───────────────────────────────────
 
 const CONTENT_MAP: Record<string, () => React.ReactNode> = {
@@ -1203,6 +1396,8 @@ const CONTENT_MAP: Record<string, () => React.ReactNode> = {
   "how-to-plan-home-renovation-budget": PlanRenovationBudget,
   "new-construction-vs-renovation-boston": NewConstructionVsRenovation,
   "winter-home-maintenance-new-england": WinterMaintenanceChecklist,
+  "when-to-pour-concrete-new-england-boston": ConcreteWorkNewEngland,
+  "architect-engineer-drafter-home-plans-massachusetts": ArchitectEngineerDrafter,
 };
 
 // Inject content into each article
