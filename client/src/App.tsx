@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import StickyMobileCTA from "./components/StickyMobileCTA";
-import GeoBanner from "./components/GeoBanner";
 import { useGeoLocation } from "./hooks/useGeoLocation";
 import { LocalBusinessSchema } from "./components/StructuredData";
 import Home from "./pages/Home";
@@ -56,7 +55,7 @@ function ProposalRoute({ params }: { params: { id: string } }) {
   return <Proposal data={data} />;
 }
 
-function Router() {
+function Router({ detectedCity }: { detectedCity: import("./data/cities").CityData | null }) {
   const [location] = useLocation();
   const isFirstLoad = useRef(true);
 
@@ -77,7 +76,7 @@ function Router() {
 
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/">{() => <Home detectedCity={detectedCity} />}</Route>
       <Route path="/custom-ironwork" component={CustomIronworkLanding} />
       <Route path="/services" component={Services} />
       <Route path="/services/:slug">{(params) => <ServiceRoute params={params} />}</Route>
@@ -104,6 +103,7 @@ function App() {
   const [location] = useLocation();
   const isProposal = location.startsWith("/proposal/");
   const { detectedCity } = useGeoLocation();
+  const geoPhone = detectedCity?.phone;
 
   if (isProposal) {
     return (
@@ -120,13 +120,12 @@ function App() {
       <LocalBusinessSchema />
       <Toaster />
       <div className="flex flex-col min-h-screen">
-        {detectedCity && <GeoBanner city={detectedCity} />}
-        <Navigation geoPhone={detectedCity?.phone} />
+        <Navigation geoPhone={geoPhone} />
         <main className="flex-1 pt-16 lg:pt-20 pb-14 lg:pb-0">
-          <Router />
-          <Footer />
+          <Router detectedCity={detectedCity} />
+          <Footer geoPhone={geoPhone} />
         </main>
-        <StickyMobileCTA geoPhone={detectedCity?.phone} />
+        <StickyMobileCTA geoPhone={geoPhone} />
       </div>
     </>
   );

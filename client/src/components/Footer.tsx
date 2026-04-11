@@ -1,10 +1,15 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
+import { PHONE_NUMBERS, COMPANY, type PhoneEntry } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 
-export default function Footer() {
+interface FooterProps {
+  geoPhone?: PhoneEntry;
+}
+
+export default function Footer({ geoPhone }: FooterProps) {
+  const phone = geoPhone ?? PHONE_NUMBERS.MAIN;
   return (
     <footer className="bg-sidebar text-sidebar-foreground border-t-2 border-sidebar-border">
       <div className="container py-8 md:py-16">
@@ -83,20 +88,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <PhoneLink
-                  tel={PHONE_NUMBERS.MAIN.tel}
+                  tel={phone.tel}
                   className="flex items-center gap-2 text-sidebar-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  {PHONE_NUMBERS.MAIN.display}
-                </PhoneLink>
-              </li>
-              <li>
-                <PhoneLink
-                  tel={PHONE_NUMBERS.SECONDARY.tel}
-                  className="flex items-center gap-2 text-sidebar-foreground/70 hover:text-accent transition-colors text-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  {PHONE_NUMBERS.SECONDARY.display}
+                  {phone.display}
                 </PhoneLink>
               </li>
               <li>
@@ -122,7 +118,7 @@ export default function Footer() {
         <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-sidebar-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sidebar-foreground/50">
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-            <p>Licensed General Contractor | MA & NH</p>
+            <p>Licensed General Contractor #CS-119608 | MA & NH</p>
           </div>
         </div>
       </div>

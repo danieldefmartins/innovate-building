@@ -17,8 +17,30 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 import { HERO_IMAGES, HOME_PORTFOLIO_PREVIEW } from "@/data/images";
 import Testimonials from "@/components/Testimonials";
+import type { CityData } from "@/data/cities";
 
-export default function Home() {
+interface HomeProps {
+  detectedCity?: CityData | null;
+}
+
+export default function Home({ detectedCity }: HomeProps) {
+  const phone = detectedCity?.phone ?? PHONE_NUMBERS.MAIN;
+  const cityName = detectedCity?.name;
+  const stateAbbr = detectedCity?.stateAbbr;
+
+  // Personalized text based on detected city
+  const heroHeading = cityName
+    ? `${cityName.toUpperCase()}'S TRUSTED CONTRACTOR — DOING IT RIGHT SINCE 2001`
+    : "YOUR HOME DESERVES A CONTRACTOR WHO DOES IT RIGHT";
+
+  const heroSubtext = cityName
+    ? `${cityName}'s trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.`
+    : "Greater Boston's trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.";
+
+  const areaLabel = cityName
+    ? `Serving ${cityName}, ${stateAbbr}`
+    : "Greater Boston & NH";
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -39,12 +61,11 @@ export default function Home() {
             </div>
 
             <h1 className="text-display text-3xl sm:text-5xl md:text-7xl text-white mb-4 sm:mb-6 leading-tight">
-              YOUR HOME DESERVES A CONTRACTOR WHO DOES IT RIGHT
+              {heroHeading}
             </h1>
 
             <p className="text-base sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-8 leading-relaxed">
-              Greater Boston's trusted general contractor. Kitchens, bathrooms, roofing, additions,
-              new construction — all done by our own crews. No subcontractors. No runarounds.
+              {heroSubtext}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -57,14 +78,14 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+              <PhoneLink tel={phone.tel}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  {PHONE_NUMBERS.MAIN.display}
+                  {phone.display}
                 </Button>
               </PhoneLink>
             </div>
@@ -85,7 +106,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
-                <span>Greater Boston & NH</span>
+                <span>{areaLabel}</span>
               </div>
             </div>
           </div>
@@ -197,7 +218,7 @@ export default function Home() {
           <div className="text-center mb-8 md:mb-14">
             <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">OUR WORK</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real projects, real results — see what we've built for Greater Boston homeowners
+              Real projects, real results — see what we've built for {cityName ? `${cityName} area` : "Greater Boston"} homeowners
             </p>
           </div>
 
@@ -255,7 +276,11 @@ export default function Home() {
             ].map((city) => (
               <div
                 key={city}
-                className="text-center py-1.5 px-2 sm:py-2 sm:px-3 bg-muted rounded text-xs sm:text-sm font-medium text-foreground/80"
+                className={`text-center py-1.5 px-2 sm:py-2 sm:px-3 rounded text-xs sm:text-sm font-medium ${
+                  cityName && city.toLowerCase().startsWith(cityName.toLowerCase())
+                    ? "bg-accent/20 text-accent border border-accent/30 font-bold"
+                    : "bg-muted text-foreground/80"
+                }`}
               >
                 {city}
               </div>
@@ -278,10 +303,12 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4 md:mb-6">
-              READY TO START YOUR PROJECT?
+              {cityName
+                ? `READY TO START YOUR ${cityName.toUpperCase()} PROJECT?`
+                : "READY TO START YOUR PROJECT?"}
             </h2>
             <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90">
-              Get a free, no-obligation estimate from Greater Boston's most trusted contractor
+              Get a free, no-obligation estimate from {cityName ? `${cityName}'s` : "Greater Boston's"} most trusted contractor
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="/contact">
@@ -294,14 +321,14 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+              <PhoneLink tel={phone.tel}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  {PHONE_NUMBERS.MAIN.display}
+                  {phone.display}
                 </Button>
               </PhoneLink>
             </div>
