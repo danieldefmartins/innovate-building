@@ -47,7 +47,7 @@ export const SERVICES: ServiceData[] = [
     ],
     benefits: [
       "Single point of contact for your entire project",
-      "In-house crews — no subcontractor delays",
+      "In-house crews — no scheduling delays",
       "25+ years of renovation expertise",
       "Licensed and fully insured",
       "Free detailed estimates",
@@ -112,7 +112,7 @@ export const SERVICES: ServiceData[] = [
       "Transform your bathroom into a spa-like retreat. From powder rooms to master bath renovations, we handle plumbing, tile, fixtures, and everything in between.",
     heroTitle: "BATHROOM RENOVATION SPECIALISTS",
     heroSubtitle:
-      "From outdated to outstanding. Our in-house team handles every aspect of your bathroom renovation — plumbing, tile, electrical, and finishing — with no subcontractors.",
+      "From outdated to outstanding. Our in-house team handles every aspect of your bathroom renovation — plumbing, tile, electrical, and finishing — with dedicated in-house teams.",
     features: [
       "Complete bathroom gut renovations",
       "Walk-in shower conversions",
@@ -162,7 +162,7 @@ export const SERVICES: ServiceData[] = [
     benefits: [
       "Licensed roofing contractor",
       "Premium material warranties",
-      "In-house crews — no subcontracted roofers",
+      "In-house crews — dedicated roofing crew",
       "Emergency leak repair available",
       "Free roof inspections",
       "Clean job site — guaranteed",
@@ -237,7 +237,7 @@ export const SERVICES: ServiceData[] = [
     ],
     benefits: [
       "Daniel & Mendes personally oversee every build",
-      "100% in-house crews — no subs",
+      "Experienced in-house crews",
       "Transparent budgeting with no surprises",
       "25+ years of new construction experience",
       "Energy-efficient building practices",

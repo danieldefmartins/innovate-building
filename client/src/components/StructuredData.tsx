@@ -6,7 +6,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   name: COMPANY.name,
   alternateName: COMPANY.shortName,
   description:
-    "Greater Boston's trusted general contractor for 25+ years. Home remodeling, kitchen & bathroom renovation, roofing, new construction, and more. Licensed, insured, 100% in-house crews.",
+    "Greater Boston's trusted general contractor for 25+ years. Home remodeling, kitchen & bathroom renovation, roofing, new construction, and more. Licensed, insured, experienced in-house crews.",
   url: `https://${COMPANY.website}`,
   telephone: PHONE_NUMBERS.MAIN.display,
   email: COMPANY.email,

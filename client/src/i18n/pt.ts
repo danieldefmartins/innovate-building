@@ -29,7 +29,7 @@ export default {
 
   common: {
     licensedInsured: "Licenciados e Segurados",
-    inHouseCrews: "100% Equipe Própria",
+    inHouseCrews: "Equipe Própria com Experiência",
     freeEstimates: "Orçamentos Grátis",
     greaterBostonNH: "Grande Boston e NH",
     yearsExperience: "Anos de Experiência",
@@ -46,13 +46,13 @@ export default {
     badge: "ANOS DE EXCELÊNCIA EM CONSTRUÇÃO",
     heroDefault: "SUA CASA MERECE UM EMPREITEIRO QUE FAÇA DO JEITO CERTO",
     heroCity: (city: string) => `O EMPREITEIRO DE CONFIANÇA DE ${city.toUpperCase()} — FAZENDO DO JEITO CERTO DESDE 2001`,
-    subtextDefault: "O empreiteiro geral de confiança da Grande Boston. Cozinhas, banheiros, telhados, ampliações, construção nova — tudo feito por nossa própria equipe. Sem subempreiteiros. Sem enrolação.",
-    subtextCity: (city: string) => `O empreiteiro geral de confiança de ${city}. Cozinhas, banheiros, telhados, ampliações, construção nova — tudo feito por nossa própria equipe. Sem subempreiteiros. Sem enrolação.`,
+    subtextDefault: "O empreiteiro geral de confiança da Grande Boston. Cozinhas, banheiros, telhados, ampliações, construção nova — tudo feito por nossa própria equipe. Nossa própria equipe qualificada. Sem enrolação.",
+    subtextCity: (city: string) => `O empreiteiro geral de confiança de ${city}. Cozinhas, banheiros, telhados, ampliações, construção nova — tudo feito por nossa própria equipe. Nossa própria equipe qualificada. Sem enrolação.`,
     whatWeBuild: "O QUE CONSTRUÍMOS",
     whatWeBuildSub: "Empreiteiro geral de serviço completo — cada ofício, cada projeto, tudo sob o mesmo teto",
     whyChooseUs: "POR QUE OS PROPRIETÁRIOS NOS ESCOLHEM",
     inHouseCrewsTitle: "EQUIPE PRÓPRIA",
-    inHouseCrewsDesc: "Sem subempreiteiros. Nossa própria equipe treinada cuida de cada aspecto do seu projeto.",
+    inHouseCrewsDesc: "Nossa própria equipe treinada cuida de cada aspecto do seu projeto.",
     onTimeTitle: "ENTREGA NO PRAZO",
     onTimeDesc: "Damos um prazo e cumprimos. Sem desculpas, sem atrasos.",
     ourWork: "NOSSO TRABALHO",
@@ -68,7 +68,7 @@ export default {
   },
 
   footer: {
-    description: (years: string) => `O empreiteiro geral de confiança da Grande Boston há ${years} anos. Licenciados, segurados e 100% equipe própria — sem subempreiteiros.`,
+    description: (years: string) => `O empreiteiro geral de confiança da Grande Boston há ${years} anos. Licenciados, segurados e 100% equipe própria — com equipes próprias experientes.`,
     services: "SERVIÇOS",
     company: "EMPRESA",
     contactTitle: "CONTATO",

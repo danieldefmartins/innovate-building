@@ -161,7 +161,7 @@ export default function Reviews() {
     <div className="min-h-screen">
       <PageMeta
         title={`${t.reviews.title} | ${COMPANY.shortName}`}
-        description="Read real reviews from Greater Boston homeowners. 5-star rated general contractor with 20+ years experience, 100% in-house crews. See what our clients say."
+        description="Read real reviews from Greater Boston homeowners. 5-star rated general contractor with 20+ years experience, experienced in-house crews. See what our clients say."
       />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
@@ -199,7 +199,7 @@ export default function Reviews() {
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm">
             {[
               "Licensed & Insured (CS-119608)",
-              "100% In-House Crews",
+              "Experienced In-House Crews",
               "1,000+ Projects Completed",
               "Greater Boston & NH",
             ].map((badge) => (

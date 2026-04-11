@@ -122,7 +122,7 @@ export default function Blog() {
           </h2>
           <p className="text-accent-foreground/80 text-lg mb-6 max-w-2xl mx-auto">
             Get a free estimate from Greater Boston's trusted general contractor.
-            {COMPANY.yearsInBusiness} years of experience, 100% in-house crews.
+            {COMPANY.yearsInBusiness} years of experience, experienced in-house crews.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>

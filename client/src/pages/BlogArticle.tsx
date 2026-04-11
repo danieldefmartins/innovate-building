@@ -127,7 +127,7 @@ export default function BlogArticlePage({ article }: BlogArticlePageProps) {
           </h2>
           <p className="text-accent-foreground/80 text-lg mb-6 max-w-2xl mx-auto">
             Call us for a free, no-obligation estimate. {COMPANY.yearsInBusiness}{" "}
-            years of experience, 100% in-house crews, licensed and insured.
+            years of experience, experienced in-house crews, licensed and insured.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>

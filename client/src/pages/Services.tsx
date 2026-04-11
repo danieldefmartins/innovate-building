@@ -31,7 +31,7 @@ export default function Services() {
             <div className="flex flex-wrap gap-4 text-sm text-white/70">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-accent" />
-                <span>100% In-House Crews</span>
+                <span>Experienced In-House Crews</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-accent" />

@@ -70,7 +70,7 @@ export default function CityLanding({ city }: CityLandingProps) {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-accent" />
-                <span>100% In-House Crews</span>
+                <span>Experienced In-House Crews</span>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function CityLanding({ city }: CityLandingProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
                   `Serving ${city.name} for ${COMPANY.yearsInBusiness}+ years`,
-                  "100% in-house crews — no subcontractors",
+                  "Experienced in-house crews",
                   "Licensed and fully insured",
                   "Free on-site estimates",
                   "Transparent pricing — no surprises",

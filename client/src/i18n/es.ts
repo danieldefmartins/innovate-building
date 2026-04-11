@@ -29,7 +29,7 @@ export default {
 
   common: {
     licensedInsured: "Licenciados y Asegurados",
-    inHouseCrews: "100% Equipos Propios",
+    inHouseCrews: "Equipos Propios con Experiencia",
     freeEstimates: "Cotizaciones Gratis",
     greaterBostonNH: "Gran Boston y NH",
     yearsExperience: "Años de Experiencia",
@@ -46,13 +46,13 @@ export default {
     badge: "AÑOS DE EXCELENCIA EN CONSTRUCCIÓN",
     heroDefault: "SU HOGAR MERECE UN CONTRATISTA QUE HAGA LAS COSAS BIEN",
     heroCity: (city: string) => `EL CONTRATISTA DE CONFIANZA DE ${city.toUpperCase()} — HACIENDO LAS COSAS BIEN DESDE 2001`,
-    subtextDefault: "El contratista general de confianza del Gran Boston. Cocinas, baños, techos, ampliaciones, construcción nueva — todo hecho por nuestros propios equipos. Sin subcontratistas. Sin rodeos.",
-    subtextCity: (city: string) => `El contratista general de confianza de ${city}. Cocinas, baños, techos, ampliaciones, construcción nueva — todo hecho por nuestros propios equipos. Sin subcontratistas. Sin rodeos.`,
+    subtextDefault: "El contratista general de confianza del Gran Boston. Cocinas, baños, techos, ampliaciones, construcción nueva — todo hecho por nuestros propios equipos. Nuestros propios equipos cualificados. Sin rodeos.",
+    subtextCity: (city: string) => `El contratista general de confianza de ${city}. Cocinas, baños, techos, ampliaciones, construcción nueva — todo hecho por nuestros propios equipos. Nuestros propios equipos cualificados. Sin rodeos.`,
     whatWeBuild: "LO QUE CONSTRUIMOS",
     whatWeBuildSub: "Contratista general de servicio completo — cada oficio, cada proyecto, todo bajo un mismo techo",
     whyChooseUs: "POR QUÉ LOS PROPIETARIOS NOS ELIGEN",
     inHouseCrewsTitle: "EQUIPOS PROPIOS",
-    inHouseCrewsDesc: "Sin subcontratistas. Nuestros propios equipos capacitados manejan cada aspecto de su proyecto.",
+    inHouseCrewsDesc: "Nuestros propios equipos capacitados manejan cada aspecto de su proyecto.",
     onTimeTitle: "ENTREGA A TIEMPO",
     onTimeDesc: "Le damos un plazo y lo cumplimos. Sin excusas, sin retrasos.",
     ourWork: "NUESTRO TRABAJO",
@@ -68,7 +68,7 @@ export default {
   },
 
   footer: {
-    description: (years: string) => `El contratista general de confianza del Gran Boston por ${years} años. Licenciados, asegurados y 100% equipos propios — sin subcontratistas.`,
+    description: (years: string) => `El contratista general de confianza del Gran Boston por ${years} años. Licenciados, asegurados y 100% equipos propios — con equipos propios experimentados.`,
     services: "SERVICIOS",
     company: "COMPAÑÍA",
     contactTitle: "CONTACTO",

@@ -32,7 +32,7 @@ export default {
   // Common labels
   common: {
     licensedInsured: "Licensed & Insured",
-    inHouseCrews: "100% In-House Crews",
+    inHouseCrews: "Experienced In-House Crews",
     freeEstimates: "Free Estimates",
     greaterBostonNH: "Greater Boston & NH",
     yearsExperience: "Years Experience",
@@ -50,13 +50,13 @@ export default {
     badge: "YEARS OF BUILDING EXCELLENCE",
     heroDefault: "YOUR HOME DESERVES A CONTRACTOR WHO DOES IT RIGHT",
     heroCity: (city: string) => `${city.toUpperCase()}'S TRUSTED CONTRACTOR — DOING IT RIGHT SINCE 2001`,
-    subtextDefault: "Greater Boston's trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.",
-    subtextCity: (city: string) => `${city}'s trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.`,
+    subtextDefault: "Greater Boston's trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. Our own skilled crews. No runarounds.",
+    subtextCity: (city: string) => `${city}'s trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. Our own skilled crews. No runarounds.`,
     whatWeBuild: "WHAT WE BUILD",
     whatWeBuildSub: "Full-service general contractor — every trade, every project, all under one roof",
     whyChooseUs: "WHY HOMEOWNERS CHOOSE US",
     inHouseCrewsTitle: "IN-HOUSE CREWS",
-    inHouseCrewsDesc: "No subcontractors. Our own trained crews handle every aspect of your project.",
+    inHouseCrewsDesc: "Our own trained crews handle every aspect of your project.",
     onTimeTitle: "ON-TIME DELIVERY",
     onTimeDesc: "We give you a timeline and stick to it. No excuses, no delays.",
     ourWork: "OUR WORK",
@@ -73,7 +73,7 @@ export default {
 
   // Footer
   footer: {
-    description: (years: string) => `Greater Boston's trusted general contractor for ${years} years. Licensed, insured, and 100% in-house crews — no subcontractors.`,
+    description: (years: string) => `Greater Boston's trusted general contractor for ${years} years. Licensed, insured, with experienced in-house crews.`,
     services: "SERVICES",
     company: "COMPANY",
     contactTitle: "CONTACT",

@@ -99,8 +99,8 @@ export default function OurTeam() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title={`Our Team — 100% In-House Crews | ${COMPANY.shortName}`}
-        description="Meet the Innovate Building crew. 100% in-house teams — no subcontractors. 20+ years building across Greater Boston and New Hampshire. Licensed #CS-119608."
+        title={`Our Team — Experienced In-House Crews | ${COMPANY.shortName}`}
+        description="Meet the Innovate Building crew. Experienced in-house teams building across Greater Boston and New Hampshire for 20+ years. Licensed #CS-119608."
       />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">

@@ -193,14 +193,15 @@ export default function About() {
               </div>
               <h3 className="text-heading text-xl mb-3">100% IN-HOUSE CREWS</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We don't farm out your project to random subcontractors. Every worker on your job site
-                is a trained member of our team. That means consistent quality, real accountability,
-                and a crew that takes pride in the finished product.
+                Your project is managed by our team from start to finish. Our experienced in-house
+                crews handle the core work, and when specialized trades are needed, we bring in
+                trusted partners we've worked with for years. That means consistent quality, real
+                accountability, and a team that takes pride in the finished product.
               </p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                  <span>No subcontractor markups</span>
+                  <span>Competitive pricing — no middlemen</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
@@ -302,10 +303,10 @@ export default function About() {
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-accent" />
               </div>
-              <div className="text-4xl font-display font-black text-accent mb-2">100%</div>
-              <div className="text-lg font-heading mb-2">IN-HOUSE CREWS</div>
+              <div className="text-4xl font-display font-black text-accent mb-2">1</div>
+              <div className="text-lg font-heading mb-2">TEAM, ONE VISION</div>
               <p className="text-white/70 text-sm">
-                No subcontractors — ever
+                Our crews, our standards
               </p>
             </div>
 

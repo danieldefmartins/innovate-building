@@ -30,7 +30,7 @@ const FAQ_DATA: FAQItem[] = [
   {
     category: "General",
     question: "Do you use subcontractors?",
-    answer: "No — and this is what sets us apart. We use 100% in-house crews for every project. Our carpenters, tile setters, roofers, and laborers all work directly for Innovate Building. This means better quality control, consistent communication, and no finger-pointing between trades.",
+    answer: "We have experienced in-house crews who handle the core of every project — carpentry, framing, finishing, tile, and more. For specialized trades like electrical, plumbing, and HVAC, we work with licensed professionals we've partnered with for years. Either way, Daniel and Mendes oversee every aspect of your project personally.",
   },
   {
     category: "General",

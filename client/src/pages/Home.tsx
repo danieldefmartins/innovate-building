@@ -99,7 +99,7 @@ export default function Home({ detectedCity }: HomeProps) {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
-                <span>100% In-House Crews</span>
+                <span>Experienced In-House Crews</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
@@ -166,10 +166,10 @@ export default function Home({ detectedCity }: HomeProps) {
               <div className="w-12 h-12 md:w-16 md:h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                 <Users className="w-6 h-6 md:w-8 md:h-8 text-accent" />
               </div>
-              <div className="text-2xl md:text-4xl font-display font-black text-accent mb-1 md:mb-2">100%</div>
-              <div className="text-sm md:text-lg font-heading mb-1 md:mb-2">IN-HOUSE CREWS</div>
+              <div className="text-2xl md:text-4xl font-display font-black text-accent mb-1 md:mb-2">OUR</div>
+              <div className="text-sm md:text-lg font-heading mb-1 md:mb-2">OWN CREWS</div>
               <p className="text-white/70 text-xs md:text-sm hidden sm:block">
-                No subcontractors. Our own trained crews handle every aspect of your project.
+                Experienced in-house teams managed by our owners.
               </p>
             </div>
 
