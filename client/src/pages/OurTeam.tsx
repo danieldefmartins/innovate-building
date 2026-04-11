@@ -8,14 +8,14 @@ import PageMeta from "@/components/PageMeta";
 
 const TEAM_MEMBERS = [
   {
-    name: "Mendes",
+    name: "Sinval Mendes",
     role: "Co-Owner & Field Operations",
-    bio: "Construction is a family tradition for Mendes — he learned the trade from his father as a teenager and has been building for over 40 years. As head of field operations, he oversees every crew and every phase on-site. First one on the job, last one to leave.",
+    bio: "Construction is a family tradition for Sinval — he learned the trade from his father as a teenager and has been building for over 40 years. As head of field operations, he oversees every crew and every phase on-site. First one on the job, last one to leave.",
     highlights: ["40+ years experience", "Family tradition", "On-site daily"],
     placeholder: true,
   },
   {
-    name: "Daniel",
+    name: "Daniel Martins",
     role: "Co-Owner & Project Manager",
     bio: "With 25+ years in the industry, Daniel is your first point of contact. He handles consultations, estimates, permits, scheduling, and client communication. When you call Innovate Building, Daniel picks up the phone — not a receptionist.",
     highlights: ["25+ years experience", "Project management", "Client relations"],
