@@ -1,4 +1,6 @@
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getReviews } from "@/i18n/content";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -120,19 +122,21 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Reviews() {
-  const avgRating = (REVIEWS.reduce((sum, r) => sum + r.rating, 0) / REVIEWS.length).toFixed(1);
+  const { t, lang, localePath } = useLanguage();
+  const reviewItems = getReviews(lang) ?? REVIEWS;
+  const avgRating = (reviewItems.reduce((sum, r) => sum + r.rating, 0) / reviewItems.length).toFixed(1);
 
   return (
     <div className="min-h-screen">
       <PageMeta
-        title={`Reviews & Testimonials | ${COMPANY.shortName}`}
+        title={`${t.reviews.title} | ${COMPANY.shortName}`}
         description="Read real reviews from Greater Boston homeowners. 5-star rated general contractor with 20+ years experience, 100% in-house crews. See what our clients say."
       />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">
-          <p className="text-sm font-display font-bold tracking-widest mb-3 text-white/70">REAL REVIEWS FROM REAL HOMEOWNERS</p>
-          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-6">WHAT OUR CLIENTS SAY</h1>
+          <p className="text-sm font-display font-bold tracking-widest mb-3 text-white/70">{t.reviews.subtitle}</p>
+          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-6">{t.reviews.title}</h1>
 
           <div className="flex items-center justify-center gap-6 flex-wrap">
             <div className="text-center">
@@ -142,17 +146,17 @@ export default function Reviews() {
                   <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-sm text-white/70 mt-1">Average Rating</p>
+              <p className="text-sm text-white/70 mt-1">{t.reviews.averageRating}</p>
             </div>
             <div className="h-12 w-px bg-white/20 hidden sm:block" />
             <div className="text-center">
-              <div className="text-5xl font-display font-black text-accent">{REVIEWS.length}+</div>
-              <p className="text-sm text-white/70 mt-1">Verified Reviews</p>
+              <div className="text-5xl font-display font-black text-accent">{reviewItems.length}+</div>
+              <p className="text-sm text-white/70 mt-1">{t.reviews.verifiedReviews}</p>
             </div>
             <div className="h-12 w-px bg-white/20 hidden sm:block" />
             <div className="text-center">
               <div className="text-5xl font-display font-black text-accent">20+</div>
-              <p className="text-sm text-white/70 mt-1">Years of Trust</p>
+              <p className="text-sm text-white/70 mt-1">{t.reviews.yearsOfTrust}</p>
             </div>
           </div>
         </div>
@@ -181,7 +185,7 @@ export default function Reviews() {
       <section className="py-10 md:py-16">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {REVIEWS.map((review, i) => (
+            {reviewItems.map((review, i) => (
               <Card key={i} className="p-6 border border-border relative">
                 <Quote className="w-8 h-8 text-accent/20 absolute top-4 right-4" />
 
@@ -211,9 +215,9 @@ export default function Reviews() {
       {/* CTA */}
       <section className="bg-accent text-accent-foreground py-10 md:py-16">
         <div className="container text-center">
-          <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">READY TO BE OUR NEXT SUCCESS STORY?</h2>
+          <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">{t.reviews.readyNextStory}</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Join hundreds of satisfied homeowners across Greater Boston. Start with a free consultation.
+            {t.reviews.readyNextStorySub}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
@@ -222,9 +226,9 @@ export default function Reviews() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
-                GET FREE ESTIMATE <ArrowRight className="ml-2 w-5 h-5" />
+                {t.cta.getFreeEstimate} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>

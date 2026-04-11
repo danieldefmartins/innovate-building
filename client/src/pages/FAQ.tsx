@@ -6,6 +6,8 @@ import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
 import { FAQSchema } from "@/components/StructuredData";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getFaqData } from "@/i18n/content";
 
 interface FAQItem {
   question: string;
@@ -153,11 +155,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const { t, lang, localePath } = useLanguage();
 
-  const categories = ["All", ...Array.from(new Set(FAQ_DATA.map((f) => f.category)))];
+  const faqItems = getFaqData(lang) ?? FAQ_DATA;
+  const categories = [t.common.all, ...Array.from(new Set(faqItems.map((f) => f.category)))];
 
-  const filtered = FAQ_DATA.filter((f) => {
-    const matchesCategory = activeCategory === "All" || f.category === activeCategory;
+  const filtered = faqItems.filter((f) => {
+    const matchesCategory = activeCategory === t.common.all || f.category === activeCategory;
     const matchesSearch = !searchQuery ||
       f.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       f.answer.toLowerCase().includes(searchQuery.toLowerCase());
@@ -170,15 +174,14 @@ export default function FAQ() {
         title={`FAQ — Frequently Asked Questions | ${COMPANY.shortName}`}
         description="Answers to common questions about hiring a general contractor in Greater Boston. Costs, timelines, licensing, process, and more from a 20+ year contractor."
       />
-      <FAQSchema faqs={FAQ_DATA.map((f) => ({ question: f.question, answer: f.answer }))} />
+      <FAQSchema faqs={faqItems.map((f) => ({ question: f.question, answer: f.answer }))} />
       {/* Hero */}
       <section className="bg-primary text-white py-10 md:py-20">
         <div className="container text-center">
-          <p className="text-sm font-display font-bold tracking-widest mb-3 text-white/70">ANSWERS TO YOUR QUESTIONS</p>
-          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-4">FREQUENTLY ASKED QUESTIONS</h1>
+          <p className="text-sm font-display font-bold tracking-widest mb-3 text-white/70">{t.faq.subtitle.split("—")[0]}</p>
+          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-4">{t.faq.title}</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-            Everything homeowners ask before hiring a contractor — answered honestly by a team
-            with 20+ years of experience.
+            {t.faq.subtitle}
           </p>
         </div>
       </section>
@@ -190,7 +193,7 @@ export default function FAQ() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search questions..."
+              placeholder={t.faq.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setOpenIndex(null); }}
               className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-background"
@@ -217,7 +220,7 @@ export default function FAQ() {
         <div className="container max-w-4xl">
           {filtered.length === 0 ? (
             <p className="text-center text-muted-foreground py-10">
-              No questions match your search. Try a different term or <Link href="/contact" className="text-accent hover:underline">contact us directly</Link>.
+              {t.faq.noResults} <Link href={localePath("/contact")} className="text-accent hover:underline">{t.cta.contactUs}</Link>.
             </p>
           ) : (
             <div>
@@ -237,9 +240,9 @@ export default function FAQ() {
       {/* CTA */}
       <section className="bg-accent text-accent-foreground py-10 md:py-16">
         <div className="container text-center">
-          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-4">STILL HAVE QUESTIONS?</h2>
+          <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-4">{t.faq.stillHaveQuestions}</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            We'd rather talk to you in person. Call us or schedule a free consultation — no obligation, no pressure.
+            {t.faq.stillHaveQuestionsSub}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
@@ -248,9 +251,9 @@ export default function FAQ() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
-                CONTACT US <ArrowRight className="ml-2 w-5 h-5" />
+                {t.cta.contactUs} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
