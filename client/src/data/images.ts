@@ -110,7 +110,7 @@ export const PORTFOLIO_IMAGES: PortfolioImage[] = [
   { src: "/images/IMG_0201.jpeg", alt: "Spa Bathroom Remodel", category: "Bathroom" },
   { src: "/images/IMG_7407.jpeg", alt: "Designer Bathroom Renovation", category: "Bathroom" },
   // New Construction
-  { src: "/images/IMG_2924.jpeg", alt: "Custom Home Build — Exterior", category: "New Build" },
+  { src: "/images/IMG_2924.jpeg", alt: "New Construction Home in Newton, MA — Built by Innovate Building Inc", category: "New Build" },
   { src: "/images/IMG_0895.jpeg", alt: "Dark Farmhouse New Construction", category: "New Build" },
   { src: "/images/IMG_6301.jpeg", alt: "Blue-Gray Craftsman Exterior", category: "New Build" },
   { src: "/images/IMG_0115.jpeg", alt: "Double Staircase Foyer", category: "New Build" },
@@ -136,7 +136,7 @@ export const PORTFOLIO_IMAGES: PortfolioImage[] = [
 /** Homepage portfolio preview — best 6 images across different categories */
 export const HOME_PORTFOLIO_PREVIEW: PortfolioImage[] = [
   { src: "/images/IMG_9086.jpeg", alt: "Modern Kitchen Renovation", category: "Kitchen" },
-  { src: "/images/IMG_2924.jpeg", alt: "Custom Home Build", category: "New Build" },
+  { src: "/images/IMG_2924.jpeg", alt: "New Construction Home in Newton, MA", category: "New Build" },
   { src: "/images/IMG_7399.jpeg", alt: "Modern Bathroom Remodel", category: "Bathroom" },
   { src: "/images/IMG_0343.jpeg", alt: "Hardwood Deck Build", category: "Deck" },
   { src: "/images/IMG_5776.jpeg", alt: "Living Room Renovation", category: "Remodel" },

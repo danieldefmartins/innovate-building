@@ -49,7 +49,7 @@ export default function Home({ detectedCity }: HomeProps) {
         <div className="absolute inset-0 z-0">
           <img
             src={HERO_IMAGES.home}
-            alt="Custom home built by Innovate Building Inc"
+            alt="New construction home built by Innovate Building Inc in Newton, MA — licensed general contractor serving Greater Boston"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
