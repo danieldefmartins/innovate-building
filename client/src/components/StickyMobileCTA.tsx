@@ -1,5 +1,6 @@
 import { Phone, MessageSquare } from "lucide-react";
 import { PHONE_NUMBERS, type PhoneEntry } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface StickyMobileCTAProps {
   geoPhone?: PhoneEntry;
@@ -7,6 +8,7 @@ interface StickyMobileCTAProps {
 
 export default function StickyMobileCTA({ geoPhone }: StickyMobileCTAProps) {
   const phone = geoPhone ?? PHONE_NUMBERS.MAIN;
+  const { t, localePath } = useLanguage();
 
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-sidebar border-t-2 border-sidebar-border">
@@ -16,14 +18,14 @@ export default function StickyMobileCTA({ geoPhone }: StickyMobileCTAProps) {
           className="flex items-center justify-center gap-2 py-3 text-accent font-display font-bold text-sm hover:bg-sidebar-accent/10 transition-colors"
         >
           <Phone className="w-4 h-4" />
-          CALL NOW
+          {t.nav.callNow}
         </a>
         <a
-          href="/contact"
+          href={localePath("/contact")}
           className="flex items-center justify-center gap-2 py-3 text-sidebar-foreground font-display font-bold text-sm hover:bg-sidebar-accent/10 transition-colors"
         >
           <MessageSquare className="w-4 h-4" />
-          FREE QUOTE
+          {t.nav.freeQuote}
         </a>
       </div>
     </div>

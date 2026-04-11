@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY, type PhoneEntry } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface FooterProps {
   geoPhone?: PhoneEntry;
@@ -10,6 +11,23 @@ interface FooterProps {
 
 export default function Footer({ geoPhone }: FooterProps) {
   const phone = geoPhone ?? PHONE_NUMBERS.MAIN;
+  const { t, localePath } = useLanguage();
+
+  const companyLinks = [
+    { href: "/about", label: t.footer.aboutUs },
+    { href: "/our-team", label: t.footer.ourTeam },
+    { href: "/before-after", label: t.footer.beforeAfter },
+    { href: "/reviews", label: t.footer.reviews },
+    { href: "/cost-estimator", label: t.footer.costEstimator },
+    { href: "/faq", label: t.footer.faq },
+    { href: "/blog", label: t.footer.blog },
+    { href: "/portfolio", label: t.footer.portfolio },
+    { href: "/areas-we-serve", label: t.footer.areasWeServe },
+    { href: "/contact", label: t.footer.contact },
+    { href: "/privacy", label: t.footer.privacyPolicy },
+    { href: "/terms", label: t.footer.termsOfService },
+  ];
+
   return (
     <footer className="bg-sidebar text-sidebar-foreground border-t-2 border-sidebar-border">
       <div className="container py-8 md:py-16">
@@ -24,26 +42,25 @@ export default function Footer({ geoPhone }: FooterProps) {
               />
             </div>
             <p className="text-sidebar-foreground/70 text-sm leading-relaxed mb-4">
-              Greater Boston's trusted general contractor for {COMPANY.yearsInBusiness} years.
-              Licensed, insured, and 100% in-house crews — no subcontractors.
+              {t.footer.description(COMPANY.yearsInBusiness)}
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="text-xs px-2 py-1 bg-accent/20 border border-accent/40 rounded font-medium">
-                Licensed & Insured
+                {t.common.licensedInsured}
               </span>
               <span className="text-xs px-2 py-1 bg-accent/20 border border-accent/40 rounded font-medium">
-                100% In-House
+                {t.common.inHouseCrews}
               </span>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-heading text-sm tracking-wider mb-4">SERVICES</h4>
+            <h4 className="text-heading text-sm tracking-wider mb-4">{t.footer.services}</h4>
             <ul className="space-y-2">
               {SERVICES.slice(0, 7).map((service) => (
                 <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`}>
+                  <Link href={localePath(`/services/${service.slug}`)}>
                     <span className="text-sidebar-foreground/70 hover:text-accent transition-colors text-sm cursor-pointer">
                       {service.title}
                     </span>
@@ -55,24 +72,11 @@ export default function Footer({ geoPhone }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-heading text-sm tracking-wider mb-4">COMPANY</h4>
+            <h4 className="text-heading text-sm tracking-wider mb-4">{t.footer.company}</h4>
             <ul className="space-y-2">
-              {[
-                { href: "/about", label: "About Us" },
-                { href: "/our-team", label: "Our Team" },
-                { href: "/before-after", label: "Before & After" },
-                { href: "/reviews", label: "Reviews" },
-                { href: "/cost-estimator", label: "Cost Estimator" },
-                { href: "/faq", label: "FAQ" },
-                { href: "/blog", label: "Blog" },
-                { href: "/portfolio", label: "Portfolio" },
-                { href: "/areas-we-serve", label: "Areas We Serve" },
-                { href: "/contact", label: "Contact" },
-                { href: "/privacy", label: "Privacy Policy" },
-                { href: "/terms", label: "Terms of Service" },
-              ].map((link) => (
+              {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>
+                  <Link href={localePath(link.href)}>
                     <span className="text-sidebar-foreground/70 hover:text-accent transition-colors text-sm cursor-pointer">
                       {link.label}
                     </span>
@@ -84,7 +88,7 @@ export default function Footer({ geoPhone }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <h4 className="text-heading text-sm tracking-wider mb-4">CONTACT</h4>
+            <h4 className="text-heading text-sm tracking-wider mb-4">{t.footer.contactTitle}</h4>
             <ul className="space-y-3">
               <li>
                 <PhoneLink
@@ -107,7 +111,7 @@ export default function Footer({ geoPhone }: FooterProps) {
               <li>
                 <div className="flex items-start gap-2 text-sidebar-foreground/70 text-sm">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span>Greater Boston & New Hampshire</span>
+                  <span>{t.common.greaterBostonNH}</span>
                 </div>
               </li>
             </ul>
@@ -117,8 +121,8 @@ export default function Footer({ geoPhone }: FooterProps) {
         {/* Bottom Bar */}
         <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-sidebar-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sidebar-foreground/50">
-            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-            <p>Licensed General Contractor #CS-119608 | MA & NH</p>
+            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. {t.footer.allRightsReserved}</p>
+            <p>{t.footer.licensedGC}</p>
           </div>
         </div>
       </div>

@@ -18,28 +18,29 @@ import { SERVICES } from "@/data/services";
 import { HERO_IMAGES, HOME_PORTFOLIO_PREVIEW } from "@/data/images";
 import Testimonials from "@/components/Testimonials";
 import type { CityData } from "@/data/cities";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface HomeProps {
   detectedCity?: CityData | null;
 }
 
 export default function Home({ detectedCity }: HomeProps) {
+  const { t, localePath } = useLanguage();
   const phone = detectedCity?.phone ?? PHONE_NUMBERS.MAIN;
   const cityName = detectedCity?.name;
   const stateAbbr = detectedCity?.stateAbbr;
 
-  // Personalized text based on detected city
   const heroHeading = cityName
-    ? `${cityName.toUpperCase()}'S TRUSTED CONTRACTOR — DOING IT RIGHT SINCE 2001`
-    : "YOUR HOME DESERVES A CONTRACTOR WHO DOES IT RIGHT";
+    ? t.home.heroCity(cityName)
+    : t.home.heroDefault;
 
   const heroSubtext = cityName
-    ? `${cityName}'s trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.`
-    : "Greater Boston's trusted general contractor. Kitchens, bathrooms, roofing, additions, new construction — all done by our own crews. No subcontractors. No runarounds.";
+    ? t.home.subtextCity(cityName)
+    : t.home.subtextDefault;
 
   const areaLabel = cityName
-    ? `Serving ${cityName}, ${stateAbbr}`
-    : "Greater Boston & NH";
+    ? `${t.common.serving} ${cityName}, ${stateAbbr}`
+    : t.common.greaterBostonNH;
 
   return (
     <div className="min-h-screen">
@@ -57,7 +58,7 @@ export default function Home({ detectedCity }: HomeProps) {
         <div className="container relative z-10 py-12 md:py-0">
           <div className="max-w-3xl">
             <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-accent text-accent-foreground text-xs sm:text-sm font-display font-bold tracking-wider mb-4 sm:mb-6 rounded">
-              {COMPANY.yearsInBusiness} YEARS OF BUILDING EXCELLENCE
+              {COMPANY.yearsInBusiness} {t.home.badge}
             </div>
 
             <h1 className="text-display text-3xl sm:text-5xl md:text-7xl text-white mb-4 sm:mb-6 leading-tight">
@@ -69,12 +70,12 @@ export default function Home({ detectedCity }: HomeProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href="/contact">
+              <Link href={localePath("/contact")}>
                 <Button
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto"
                 >
-                  GET FREE ESTIMATE
+                  {t.cta.getFreeEstimate}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -117,15 +118,15 @@ export default function Home({ detectedCity }: HomeProps) {
       <section className="section-divider bg-card py-12 md:py-20">
         <div className="container">
           <div className="text-center mb-8 md:mb-14">
-            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">WHAT WE BUILD</h2>
+            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">{t.home.whatWeBuild}</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Full-service general contractor — every trade, every project, all under one roof
+              {t.home.whatWeBuildSub}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {SERVICES.slice(0, 6).map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`}>
+              <Link key={service.slug} href={localePath(`/services/${service.slug}`)}>
                 <Card className="p-5 md:p-6 border border-border hover:border-accent hover:shadow-lg transition-all duration-300 cursor-pointer h-full group">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 group-hover:bg-accent/20 transition-colors">
                     <service.icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
@@ -143,9 +144,9 @@ export default function Home({ detectedCity }: HomeProps) {
           </div>
 
           <div className="text-center mt-8 md:mt-10">
-            <Link href="/services">
+            <Link href={localePath("/services")}>
               <Button variant="outline" size="lg" className="border-2">
-                VIEW ALL SERVICES
+                {t.cta.viewAllServices}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -157,7 +158,7 @@ export default function Home({ detectedCity }: HomeProps) {
       <section className="section-divider bg-primary text-white py-12 md:py-20">
         <div className="container">
           <h2 className="text-display text-3xl md:text-5xl text-center mb-8 md:mb-14">
-            WHY HOMEOWNERS CHOOSE US
+            {t.home.whyChooseUs}
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -179,7 +180,7 @@ export default function Home({ detectedCity }: HomeProps) {
               <div className="text-2xl md:text-4xl font-display font-black text-accent mb-1 md:mb-2">{COMPANY.yearsInBusiness}</div>
               <div className="text-sm md:text-lg font-heading mb-1 md:mb-2">YEARS EXPERIENCE</div>
               <p className="text-white/70 text-xs md:text-sm hidden sm:block">
-                Daniel & Mendes have been building homes in Boston for over two decades.
+                {t.home.ownersDesc}
               </p>
             </div>
 
@@ -216,7 +217,7 @@ export default function Home({ detectedCity }: HomeProps) {
       <section className="section-divider bg-card py-12 md:py-20">
         <div className="container">
           <div className="text-center mb-8 md:mb-14">
-            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">OUR WORK</h2>
+            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">{t.home.ourWork}</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Real projects, real results — see what we've built for {cityName ? `${cityName} area` : "Greater Boston"} homeowners
             </p>
@@ -224,7 +225,7 @@ export default function Home({ detectedCity }: HomeProps) {
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-8 md:mb-10">
             {HOME_PORTFOLIO_PREVIEW.map((project, i) => (
-              <Link key={i} href="/portfolio">
+              <Link key={i} href={localePath("/portfolio")}>
                 <div className="relative group overflow-hidden rounded-lg cursor-pointer">
                   <img
                     src={project.src}
@@ -244,9 +245,9 @@ export default function Home({ detectedCity }: HomeProps) {
           </div>
 
           <div className="text-center">
-            <Link href="/portfolio">
+            <Link href={localePath("/portfolio")}>
               <Button variant="outline" size="lg" className="border-2">
-                VIEW FULL PORTFOLIO
+                {t.cta.viewFullPortfolio}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -261,7 +262,7 @@ export default function Home({ detectedCity }: HomeProps) {
       <section className="bg-card py-12 md:py-20">
         <div className="container">
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">AREAS WE SERVE</h2>
+            <h2 className="text-display text-3xl md:text-5xl mb-3 md:mb-4">{t.home.areasWeServe}</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Proudly serving Greater Boston and Southern New Hampshire
             </p>
@@ -288,9 +289,9 @@ export default function Home({ detectedCity }: HomeProps) {
           </div>
 
           <div className="text-center">
-            <Link href="/areas-we-serve">
+            <Link href={localePath("/areas-we-serve")}>
               <Button variant="outline" className="border-2">
-                VIEW ALL SERVICE AREAS
+                {t.cta.viewAllServiceAreas}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
@@ -311,13 +312,13 @@ export default function Home({ detectedCity }: HomeProps) {
               Get a free, no-obligation estimate from {cityName ? `${cityName}'s` : "Greater Boston's"} most trusted contractor
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={localePath("/contact")}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 >
-                  REQUEST FREE QUOTE
+                  {t.cta.requestFreeQuote}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

@@ -1,10 +1,12 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import StickyMobileCTA from "./components/StickyMobileCTA";
 import { useGeoLocation } from "./hooks/useGeoLocation";
+import { LanguageContext, parseLangFromPath } from "./hooks/useLanguage";
+import { TRANSLATIONS } from "./i18n";
 import { LocalBusinessSchema } from "./components/StructuredData";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -55,11 +57,37 @@ function ProposalRoute({ params }: { params: { id: string } }) {
   return <Proposal data={data} />;
 }
 
+// All content routes — reused for each language prefix
+function ContentRoutes({ detectedCity, prefix }: { detectedCity: import("./data/cities").CityData | null; prefix: string }) {
+  return (
+    <Switch>
+      <Route path={`${prefix}/`}>{() => <Home detectedCity={detectedCity} />}</Route>
+      <Route path={`${prefix}/custom-ironwork`} component={CustomIronworkLanding} />
+      <Route path={`${prefix}/services`} component={Services} />
+      <Route path={`${prefix}/services/:slug`}>{(params) => <ServiceRoute params={params} />}</Route>
+      <Route path={`${prefix}/portfolio`} component={Portfolio} />
+      <Route path={`${prefix}/before-after`} component={BeforeAfter} />
+      <Route path={`${prefix}/our-team`} component={OurTeam} />
+      <Route path={`${prefix}/cost-estimator`} component={CostEstimator} />
+      <Route path={`${prefix}/reviews`} component={Reviews} />
+      <Route path={`${prefix}/faq`} component={FAQ} />
+      <Route path={`${prefix}/areas-we-serve`} component={AreasWeServe} />
+      <Route path={`${prefix}/areas/:slug`}>{(params) => <CityRoute params={params} />}</Route>
+      <Route path={`${prefix}/blog`} component={Blog} />
+      <Route path={`${prefix}/blog/:slug`}>{(params) => <BlogArticleRoute params={params} />}</Route>
+      <Route path={`${prefix}/about`} component={About} />
+      <Route path={`${prefix}/contact`} component={Contact} />
+      <Route path={`${prefix}/privacy`} component={PrivacyPolicy} />
+      <Route path={`${prefix}/terms`} component={TermsOfService} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
 function Router({ detectedCity }: { detectedCity: import("./data/cities").CityData | null }) {
   const [location] = useLocation();
   const isFirstLoad = useRef(true);
 
-  // Scroll to top + gtag page_view on route change
   useEffect(() => {
     window.scrollTo(0, 0);
     if (isFirstLoad.current) {
@@ -76,25 +104,14 @@ function Router({ detectedCity }: { detectedCity: import("./data/cities").CityDa
 
   return (
     <Switch>
-      <Route path="/">{() => <Home detectedCity={detectedCity} />}</Route>
-      <Route path="/custom-ironwork" component={CustomIronworkLanding} />
-      <Route path="/services" component={Services} />
-      <Route path="/services/:slug">{(params) => <ServiceRoute params={params} />}</Route>
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/before-after" component={BeforeAfter} />
-      <Route path="/our-team" component={OurTeam} />
-      <Route path="/cost-estimator" component={CostEstimator} />
-      <Route path="/reviews" component={Reviews} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/areas-we-serve" component={AreasWeServe} />
-      <Route path="/areas/:slug">{(params) => <CityRoute params={params} />}</Route>
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug">{(params) => <BlogArticleRoute params={params} />}</Route>
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/privacy" component={PrivacyPolicy} />
-      <Route path="/terms" component={TermsOfService} />
-      <Route component={NotFound} />
+      {/* Spanish routes */}
+      <Route path="/es/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="/es" />}</Route>
+      <Route path="/es">{() => <ContentRoutes detectedCity={detectedCity} prefix="/es" />}</Route>
+      {/* Portuguese routes */}
+      <Route path="/pt/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="/pt" />}</Route>
+      <Route path="/pt">{() => <ContentRoutes detectedCity={detectedCity} prefix="/pt" />}</Route>
+      {/* English (default) routes */}
+      <Route path="/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="" />}</Route>
     </Switch>
   );
 }
@@ -104,6 +121,20 @@ function App() {
   const isProposal = location.startsWith("/proposal/");
   const { detectedCity } = useGeoLocation();
   const geoPhone = detectedCity?.phone;
+
+  const { lang } = parseLangFromPath(location);
+  const t = TRANSLATIONS[lang];
+  const prefix = lang === "en" ? "" : `/${lang}`;
+
+  const langContext = useMemo(
+    () => ({
+      lang,
+      t,
+      prefix,
+      localePath: (path: string) => (prefix ? `${prefix}${path}` : path),
+    }),
+    [lang, t, prefix]
+  );
 
   if (isProposal) {
     return (
@@ -116,7 +147,7 @@ function App() {
   }
 
   return (
-    <>
+    <LanguageContext.Provider value={langContext}>
       <LocalBusinessSchema />
       <Toaster />
       <div className="flex flex-col min-h-screen">
@@ -127,7 +158,7 @@ function App() {
         </main>
         <StickyMobileCTA geoPhone={geoPhone} />
       </div>
-    </>
+    </LanguageContext.Provider>
   );
 }
 

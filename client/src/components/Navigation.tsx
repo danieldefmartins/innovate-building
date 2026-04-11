@@ -5,6 +5,8 @@ import { useState } from "react";
 import { PHONE_NUMBERS, COMPANY, type PhoneEntry } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
+import { useLanguage } from "@/hooks/useLanguage";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface NavigationProps {
   geoPhone?: PhoneEntry;
@@ -15,17 +17,18 @@ export default function Navigation({ geoPhone }: NavigationProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const { t, localePath } = useLanguage();
 
   const navItems = [
-    { path: "/", label: "HOME" },
-    { path: "/services", label: "SERVICES", hasDropdown: true },
-    { path: "/portfolio", label: "PORTFOLIO" },
-    { path: "/before-after", label: "BEFORE & AFTER" },
-    { path: "/reviews", label: "REVIEWS" },
-    { path: "/areas-we-serve", label: "AREAS WE SERVE" },
-    { path: "/blog", label: "BLOG" },
-    { path: "/about", label: "ABOUT" },
-    { path: "/contact", label: "CONTACT" },
+    { path: localePath("/"), label: t.nav.home },
+    { path: localePath("/services"), label: t.nav.services, hasDropdown: true },
+    { path: localePath("/portfolio"), label: t.nav.portfolio },
+    { path: localePath("/before-after"), label: t.nav.beforeAfter },
+    { path: localePath("/reviews"), label: t.nav.reviews },
+    { path: localePath("/areas-we-serve"), label: t.nav.areasWeServe },
+    { path: localePath("/blog"), label: t.nav.blog },
+    { path: localePath("/about"), label: t.nav.about },
+    { path: localePath("/contact"), label: t.nav.contact },
   ];
 
   const isActive = (path: string) =>
@@ -74,7 +77,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
                   <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-card border border-border rounded-lg shadow-xl py-2 min-w-[240px]">
                       {SERVICES.map((service) => (
-                        <Link key={service.slug} href={`/services/${service.slug}`}>
+                        <Link key={service.slug} href={localePath(`/services/${service.slug}`)}>
                           <div className="px-4 py-2.5 hover:bg-muted transition-colors cursor-pointer">
                             <span className="text-sm font-medium text-foreground">{service.title}</span>
                           </div>
@@ -87,13 +90,16 @@ export default function Navigation({ geoPhone }: NavigationProps) {
             ))}
           </div>
 
-          {/* Phone CTA */}
-          <PhoneLink tel={phone.tel}>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-display font-bold tracking-wider">
-              <Phone className="w-4 h-4 mr-2" />
-              {phone.display}
-            </Button>
-          </PhoneLink>
+          {/* Language + Phone CTA */}
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <PhoneLink tel={phone.tel}>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-display font-bold tracking-wider">
+                <Phone className="w-4 h-4 mr-2" />
+                {phone.display}
+              </Button>
+            </PhoneLink>
+          </div>
         </div>
       </nav>
 
@@ -166,7 +172,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
                     {item.hasDropdown && servicesOpen && (
                       <div className="ml-6 border-l-2 border-sidebar-border">
                         {SERVICES.map((service) => (
-                          <Link key={service.slug} href={`/services/${service.slug}`}>
+                          <Link key={service.slug} href={localePath(`/services/${service.slug}`)}>
                             <div
                               onClick={() => setMobileMenuOpen(false)}
                               className="py-3 px-6 text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors cursor-pointer"

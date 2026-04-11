@@ -139,11 +139,28 @@ function getMetaForRoute(pathname: string): MetaData {
   return STATIC_META["/"];
 }
 
+function parseLang(pathname: string): { lang: string; cleanPath: string } {
+  const match = pathname.match(/^\/(es|pt)(\/|$)(.*)/);
+  if (match) {
+    const rest = match[3] ? `/${match[3]}` : "/";
+    return { lang: match[1], cleanPath: rest };
+  }
+  return { lang: "en", cleanPath: pathname };
+}
+
+const LOCALE_MAP: Record<string, string> = {
+  en: "en_US",
+  es: "es_US",
+  pt: "pt_BR",
+};
+
 function injectMeta(html: string, pathname: string): string {
-  const meta = getMetaForRoute(pathname);
+  const { lang, cleanPath } = parseLang(pathname);
+  const meta = getMetaForRoute(cleanPath);
   const url = `${BASE_URL}${pathname}`;
   const image = meta.image ? `${BASE_URL}${meta.image}` : DEFAULT_IMAGE;
   const type = meta.type || "website";
+  const locale = LOCALE_MAP[lang] || "en_US";
 
   // Replace title
   html = html.replace(
@@ -157,16 +174,24 @@ function injectMeta(html: string, pathname: string): string {
     `<meta name="description" content="${escapeHtml(meta.description)}"`
   );
 
-  // Inject OG + Twitter + canonical tags before </head>
+  // Build hreflang tags for all language variants
+  const enPath = cleanPath;
+  const hreflangs = `
+    <link rel="alternate" hreflang="en" href="${BASE_URL}${enPath}" />
+    <link rel="alternate" hreflang="es" href="${BASE_URL}/es${enPath === "/" ? "" : enPath}" />
+    <link rel="alternate" hreflang="pt" href="${BASE_URL}/pt${enPath === "/" ? "" : enPath}" />
+    <link rel="alternate" hreflang="x-default" href="${BASE_URL}${enPath}" />`;
+
+  // Inject OG + Twitter + canonical + hreflang tags before </head>
   const ogTags = `
-    <link rel="canonical" href="${url}" />
+    <link rel="canonical" href="${url}" />${hreflangs}
     <meta property="og:title" content="${escapeHtml(meta.title)}" />
     <meta property="og:description" content="${escapeHtml(meta.description)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${image}" />
     <meta property="og:type" content="${type}" />
     <meta property="og:site_name" content="Innovate Building Inc" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="${locale}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(meta.title)}" />
     <meta name="twitter:description" content="${escapeHtml(meta.description)}" />
