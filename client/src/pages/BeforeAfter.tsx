@@ -78,7 +78,7 @@ const PROJECTS: BeforeAfterProject[] = [
   },
 ];
 
-function BeforeAfterSlider({ project }: { project: BeforeAfterProject }) {
+function BeforeAfterSlider({ project, labels }: { project: BeforeAfterProject; labels: { before: string; after: string } }) {
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -138,10 +138,10 @@ function BeforeAfterSlider({ project }: { project: BeforeAfterProject }) {
 
         {/* Labels */}
         <div className="absolute top-3 left-3 bg-primary/80 text-white text-xs font-display font-bold px-2 py-1 rounded z-20">
-          BEFORE
+          {labels.before}
         </div>
         <div className="absolute top-3 right-3 bg-accent/90 text-accent-foreground text-xs font-display font-bold px-2 py-1 rounded z-20">
-          AFTER
+          {labels.after}
         </div>
       </div>
 
@@ -159,9 +159,9 @@ function BeforeAfterSlider({ project }: { project: BeforeAfterProject }) {
 
 export default function BeforeAfter() {
   const { t, localePath } = useLanguage();
-  const [filter, setFilter] = useState("All");
-  const categories = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
-  const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
+  const [filter, setFilter] = useState(t.common.all);
+  const categories = [t.common.all, ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
+  const filtered = filter === t.common.all ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen">
@@ -205,7 +205,7 @@ export default function BeforeAfter() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filtered.map((project) => (
-              <BeforeAfterSlider key={project.id} project={project} />
+              <BeforeAfterSlider key={project.id} project={project} labels={{ before: t.common.before, after: t.common.after }} />
             ))}
           </div>
         </div>

@@ -9,27 +9,39 @@ import type { ServiceData } from "@/data/services";
 import { SERVICE_IMAGES } from "@/data/images";
 import PageMeta from "@/components/PageMeta";
 import { BreadcrumbSchema, FAQSchema } from "@/components/StructuredData";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getServiceTranslation } from "@/i18n/content";
 
 interface ServiceLandingProps {
   service: ServiceData;
 }
 
 export default function ServiceLanding({ service }: ServiceLandingProps) {
+  const { t, lang, localePath } = useLanguage();
+  const translated = getServiceTranslation(service.slug, lang);
   const images = SERVICE_IMAGES[service.slug] || [];
+
+  const title = translated?.title ?? service.title;
+  const heroTitle = translated?.heroTitle ?? service.heroTitle;
+  const heroSubtitle = translated?.heroSubtitle ?? service.heroSubtitle;
+  const features = translated?.features ?? service.features;
+  const benefits = translated?.benefits ?? service.benefits;
+  const process = translated?.process ?? service.process;
+  const faqs = translated?.faqs ?? service.faqs;
 
   return (
     <div className="min-h-screen">
       <PageMeta
-        title={`${service.title} in Greater Boston | ${COMPANY.shortName}`}
-        description={`${service.heroSubtitle.slice(0, 155)}...`}
+        title={`${title} in Greater Boston | ${COMPANY.shortName}`}
+        description={`${heroSubtitle.slice(0, 155)}...`}
         image={images[0]}
       />
       <BreadcrumbSchema items={[
-        { name: "Home", url: "/" },
-        { name: "Services", url: "/services" },
-        { name: service.title, url: `/services/${service.slug}` },
+        { name: "Home", url: localePath("/") },
+        { name: "Services", url: localePath("/services") },
+        { name: title, url: localePath(`/services/${service.slug}`) },
       ]} />
-      <FAQSchema faqs={service.faqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      <FAQSchema faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       {/* Hero */}
       <section className="relative bg-primary text-white py-10 md:py-20 lg:py-28">
         {images[0] && (
@@ -44,8 +56,8 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
               <div className="inline-block px-3 py-1.5 bg-accent text-accent-foreground text-xs font-display font-bold tracking-wider mb-4 rounded">
                 {COMPANY.yearsInBusiness} YEARS OF EXPERIENCE
               </div>
-              <h1 className="text-display text-4xl md:text-6xl mb-4">{service.heroTitle}</h1>
-              <p className="text-lg text-white/80 mb-6 leading-relaxed">{service.heroSubtitle}</p>
+              <h1 className="text-display text-4xl md:text-6xl mb-4">{heroTitle}</h1>
+              <p className="text-lg text-white/80 mb-6 leading-relaxed">{heroSubtitle}</p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
@@ -56,7 +68,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
                 </PhoneLink>
                 <a href="#quote">
                   <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto">
-                    GET FREE ESTIMATE
+                    {t.cta.getFreeEstimate}
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </a>
@@ -65,22 +77,22 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
               <div className="flex flex-wrap gap-4 text-sm text-white/70">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>Licensed & Insured</span>
+                  <span>{t.common.licensedInsured}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>100% In-House Crews</span>
+                  <span>{t.common.inHouseCrews}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>Free Estimates</span>
+                  <span>{t.common.freeEstimates}</span>
                 </div>
               </div>
             </div>
 
             {/* Lead Form */}
             <div className="bg-card text-card-foreground p-6 rounded-lg border-2 border-accent">
-              <h2 className="text-heading text-2xl mb-2 text-center">GET YOUR FREE ESTIMATE</h2>
+              <h2 className="text-heading text-2xl mb-2 text-center">{t.cta.getFreeEstimate}</h2>
               <p className="text-sm text-muted-foreground text-center mb-4">
                 No obligation. We'll call you back within 2 hours.
               </p>
@@ -97,7 +109,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
             WHAT'S INCLUDED
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {service.features.map((feature, i) => (
+            {features.map((feature, i) => (
               <div key={i} className="flex items-center gap-3 p-4 bg-muted rounded-lg">
                 <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="font-medium">{feature}</span>
@@ -116,11 +128,11 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {images.slice(0, 6).map((src, i) => (
-                <Link key={i} href="/portfolio">
+                <Link key={i} href={localePath("/portfolio")}>
                   <div className="group relative rounded-lg overflow-hidden cursor-pointer">
                     <img
                       src={src}
-                      alt={`${service.title} project ${i + 1}`}
+                      alt={`${title} project ${i + 1}`}
                       className="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
@@ -129,9 +141,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/portfolio">
+              <Link href={localePath("/portfolio")}>
                 <Button variant="outline" className="border-2">
-                  VIEW FULL PORTFOLIO
+                  {t.cta.viewFullPortfolio}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -149,7 +161,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
                 WHY CHOOSE {COMPANY.shortName.toUpperCase()} FOR {service.shortTitle.toUpperCase()}
               </h2>
               <div className="space-y-3">
-                {service.benefits.map((benefit, i) => (
+                {benefits.map((benefit, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                     <span>{benefit}</span>
@@ -161,7 +173,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
                 <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
                   <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Phone className="mr-2 w-5 h-5" />
-                    CALL FOR FREE CONSULTATION
+                    {t.cta.callForConsultation}
                   </Button>
                 </PhoneLink>
               </div>
@@ -171,11 +183,11 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
             <div className="grid grid-cols-2 gap-4">
               <Card className="p-6 text-center border border-border">
                 <div className="text-4xl font-display font-black text-accent mb-1">{COMPANY.yearsInBusiness}</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-sm text-muted-foreground">{t.common.yearsExperience}</div>
               </Card>
               <Card className="p-6 text-center border border-border">
                 <div className="text-4xl font-display font-black text-accent mb-1">100%</div>
-                <div className="text-sm text-muted-foreground">In-House Crews</div>
+                <div className="text-sm text-muted-foreground">{t.common.inHouseCrews}</div>
               </Card>
               <Card className="p-6 text-center border border-border">
                 <div className="flex justify-center gap-0.5 mb-1">
@@ -187,7 +199,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
               </Card>
               <Card className="p-6 text-center border border-border">
                 <div className="text-4xl font-display font-black text-accent mb-1">1K+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
+                <div className="text-sm text-muted-foreground">{t.common.projectsCompleted}</div>
               </Card>
             </div>
           </div>
@@ -199,7 +211,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
         <div className="container">
           <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">OUR PROCESS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {service.process.map((step, i) => (
+            {process.map((step, i) => (
               <div key={i} className="text-center">
                 <div className="w-12 h-12 bg-accent text-accent-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-display font-black text-lg">
                   {i + 1}
@@ -216,10 +228,10 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
       <section className="section-divider bg-muted py-10 md:py-16">
         <div className="container">
           <h2 className="text-display text-2xl sm:text-3xl md:text-4xl text-center mb-6 md:mb-10">
-            FREQUENTLY ASKED QUESTIONS
+            {t.faq.title}
           </h2>
           <div className="max-w-3xl mx-auto space-y-4">
-            {service.faqs.map((faq, i) => (
+            {faqs.map((faq, i) => (
               <Card key={i} className="p-6 border border-border">
                 <h3 className="text-heading text-lg mb-2">{faq.q}</h3>
                 <p className="text-muted-foreground leading-relaxed">{faq.a}</p>

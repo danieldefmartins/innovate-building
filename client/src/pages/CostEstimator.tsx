@@ -159,10 +159,9 @@ export default function CostEstimator() {
             <Calculator className="w-4 h-4" />
             FREE TOOL
           </div>
-          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-4">PROJECT COST ESTIMATOR</h1>
+          <h1 className="text-display text-3xl sm:text-4xl md:text-6xl mb-4">{t.estimator.title}</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-            Get a ballpark estimate for your renovation project in under 60 seconds.
-            Based on real Greater Boston pricing from our 20+ years of experience.
+            {t.estimator.subtitle}
           </p>
         </div>
       </section>
@@ -175,7 +174,7 @@ export default function CostEstimator() {
           <div className="mb-10">
             <h2 className="text-heading text-xl mb-1">
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold mr-2">1</span>
-              What type of project?
+              {t.estimator.step1}
             </h2>
             <p className="text-sm text-muted-foreground ml-10 mb-4">Select the project that best matches yours</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 ml-10">
@@ -201,7 +200,7 @@ export default function CostEstimator() {
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold mr-2">2</span>
                 {project.sqftLabel}
               </h2>
-              <p className="text-sm text-muted-foreground ml-10 mb-4">Select the closest match to your space</p>
+              <p className="text-sm text-muted-foreground ml-10 mb-4">{t.estimator.step2}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ml-10">
                 {project.sqftOptions.map((opt) => (
                   <Card
@@ -225,7 +224,7 @@ export default function CostEstimator() {
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold mr-2">3</span>
                 Finish Level
               </h2>
-              <p className="text-sm text-muted-foreground ml-10 mb-4">Choose the quality tier that matches your vision</p>
+              <p className="text-sm text-muted-foreground ml-10 mb-4">{t.estimator.step3}</p>
               <div className="grid grid-cols-1 gap-3 ml-10">
                 {project.finishLevels.map((fl, i) => (
                   <Card
@@ -254,7 +253,7 @@ export default function CostEstimator() {
           {lowEstimate && highEstimate && (
             <Card className="p-6 md:p-8 border-2 border-accent bg-accent/5 mb-10 ml-10">
               <div className="text-center">
-                <p className="text-sm font-display font-bold tracking-wider text-accent mb-2">YOUR ESTIMATED RANGE</p>
+                <p className="text-sm font-display font-bold tracking-wider text-accent mb-2">{t.estimator.yourEstimate}</p>
                 <div className="text-4xl md:text-5xl font-display font-black text-primary mb-2">
                   {formatCurrency(lowEstimate)} – {formatCurrency(highEstimate)}
                 </div>
@@ -264,9 +263,7 @@ export default function CostEstimator() {
 
                 <div className="bg-muted rounded-lg p-4 mb-6 text-left">
                   <p className="text-xs text-muted-foreground">
-                    <strong>Note:</strong> This is a rough estimate based on typical Greater Boston pricing. Actual costs
-                    vary based on your specific space, material choices, structural conditions, and permit requirements.
-                    The best way to get an accurate price is a free on-site consultation.
+                    <strong>Note:</strong> {t.estimator.note}
                   </p>
                 </div>
 
@@ -285,7 +282,7 @@ export default function CostEstimator() {
                 </div>
 
                 <button onClick={reset} className="mt-4 text-sm text-accent hover:underline cursor-pointer">
-                  Start over with a different project
+                  {t.cta.startOver}
                 </button>
               </div>
             </Card>
@@ -297,10 +294,9 @@ export default function CostEstimator() {
       {/* Trust Section */}
       <section className="bg-card border-t border-border py-10 md:py-16">
         <div className="container text-center">
-          <h2 className="text-display text-2xl md:text-3xl mb-4">WHY TRUST OUR ESTIMATES?</h2>
+          <h2 className="text-display text-2xl md:text-3xl mb-4">{t.estimator.whyTrust}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            These ranges are based on real project costs from our 20+ years building across Greater Boston.
-            We don't lowball to get your call — we give you honest numbers so there are no surprises.
+            {t.estimator.whyTrustSub}
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
