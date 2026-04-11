@@ -6,6 +6,7 @@ import { Phone, ArrowRight, ArrowLeftRight } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface BeforeAfterProject {
   id: string;
@@ -157,6 +158,7 @@ function BeforeAfterSlider({ project }: { project: BeforeAfterProject }) {
 }
 
 export default function BeforeAfter() {
+  const { t, localePath } = useLanguage();
   const [filter, setFilter] = useState("All");
   const categories = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
   const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
@@ -223,9 +225,9 @@ export default function BeforeAfter() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
-                GET FREE ESTIMATE <ArrowRight className="ml-2 w-5 h-5" />
+                {t.cta.getFreeEstimate} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>

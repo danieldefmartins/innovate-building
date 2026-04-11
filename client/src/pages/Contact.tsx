@@ -5,8 +5,10 @@ import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Contact() {
+  const { t, localePath } = useLanguage();
   return (
     <div className="min-h-screen">
       <PageMeta

@@ -6,8 +6,10 @@ import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Services() {
+  const { t, localePath } = useLanguage();
   return (
     <div className="min-h-screen">
       <PageMeta
@@ -69,9 +71,9 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <Link href={`/services/${service.slug}`}>
+                <Link href={localePath(`/services/${service.slug}`)}>
                   <Button variant="outline" className="w-full border-2 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all">
-                    LEARN MORE
+                    {t.cta.learnMore}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
@@ -96,9 +98,9 @@ export default function Services() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
-                REQUEST FREE ESTIMATE
+                {t.cta.getFreeEstimate}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>

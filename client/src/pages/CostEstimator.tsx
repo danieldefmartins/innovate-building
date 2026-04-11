@@ -6,6 +6,7 @@ import { Phone, ArrowRight, Calculator, ChefHat, Bath, Home, PlusCircle, ArrowDo
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface ProjectType {
   id: string;
@@ -127,6 +128,7 @@ function formatCurrency(n: number): string {
 }
 
 export default function CostEstimator() {
+  const { t, localePath } = useLanguage();
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
   const [selectedFinish, setSelectedFinish] = useState<number | null>(null);
@@ -275,9 +277,9 @@ export default function CostEstimator() {
                       GET EXACT QUOTE — {PHONE_NUMBERS.MAIN.display}
                     </Button>
                   </PhoneLink>
-                  <Link href="/contact">
+                  <Link href={localePath("/contact")}>
                     <Button size="lg" variant="outline">
-                      REQUEST FREE ESTIMATE <ArrowRight className="ml-2 w-5 h-5" />
+                      {t.cta.getFreeEstimate} <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                 </div>

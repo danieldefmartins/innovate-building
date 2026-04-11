@@ -5,6 +5,7 @@ import { Phone, ArrowRight, Users, Shield, Award, Clock, Hammer, CheckCircle2, H
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const TEAM_MEMBERS = [
   {
@@ -94,6 +95,7 @@ const STATS = [
 ];
 
 export default function OurTeam() {
+  const { t, localePath } = useLanguage();
   return (
     <div className="min-h-screen">
       <PageMeta
@@ -222,9 +224,9 @@ export default function OurTeam() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6">
-                SCHEDULE CONSULTATION <ArrowRight className="ml-2 w-5 h-5" />
+                {t.cta.scheduleConsultation} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>

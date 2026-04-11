@@ -6,10 +6,12 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { PORTFOLIO_IMAGES } from "@/data/images";
 import { useState } from "react";
 import PageMeta from "@/components/PageMeta";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const categories = ["All", ...Array.from(new Set(PORTFOLIO_IMAGES.map((item) => item.category)))];
 
 export default function Portfolio() {
+  const { t, localePath } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems =
@@ -109,13 +111,13 @@ export default function Portfolio() {
                 {PHONE_NUMBERS.MAIN.display}
               </Button>
             </PhoneLink>
-            <Link href="/contact">
+            <Link href={localePath("/contact")}>
               <Button
                 size="lg"
                 variant="outline"
                 className="gap-2 bg-transparent border-white text-white hover:bg-white/10"
               >
-                Get a Free Estimate
+                {t.cta.getFreeEstimate}
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </Link>
