@@ -2,11 +2,16 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
+import { PHONE_NUMBERS, COMPANY, type PhoneEntry } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 
-export default function Navigation() {
+interface NavigationProps {
+  geoPhone?: PhoneEntry;
+}
+
+export default function Navigation({ geoPhone }: NavigationProps) {
+  const phone = geoPhone ?? PHONE_NUMBERS.MAIN;
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -81,10 +86,10 @@ export default function Navigation() {
           </div>
 
           {/* Phone CTA */}
-          <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+          <PhoneLink tel={phone.tel}>
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-display font-bold tracking-wider">
               <Phone className="w-4 h-4 mr-2" />
-              {PHONE_NUMBERS.MAIN.display}
+              {phone.display}
             </Button>
           </PhoneLink>
         </div>
@@ -102,7 +107,7 @@ export default function Navigation() {
           </Link>
 
           <div className="flex items-center gap-2">
-            <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+            <PhoneLink tel={phone.tel}>
               <Button size="sm" className="bg-accent hover:bg-accent/90 px-3">
                 <Phone className="w-4 h-4 mr-1" />
                 CALL
@@ -176,10 +181,10 @@ export default function Navigation() {
 
               {/* Mobile Phone */}
               <div className="mt-8 px-6">
-                <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
+                <PhoneLink tel={phone.tel}>
                   <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6">
                     <Phone className="mr-2 w-5 h-5" />
-                    {PHONE_NUMBERS.MAIN.display}
+                    {phone.display}
                   </Button>
                 </PhoneLink>
               </div>

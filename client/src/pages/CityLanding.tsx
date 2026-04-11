@@ -6,12 +6,23 @@ import { COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 import type { CityData } from "@/data/cities";
+import { useEffect } from "react";
 
 interface CityLandingProps {
   city: CityData;
 }
 
 export default function CityLanding({ city }: CityLandingProps) {
+  useEffect(() => {
+    document.title = `General Contractor in ${city.name}, ${city.stateAbbr} | ${COMPANY.shortName}`;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", city.description);
+    }
+    return () => {
+      document.title = `${COMPANY.name} | General Contractor | Greater Boston & NH`;
+    };
+  }, [city]);
   const topServices = SERVICES.slice(0, 6);
 
   return (

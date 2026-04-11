@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import StickyMobileCTA from "./components/StickyMobileCTA";
+import GeoBanner from "./components/GeoBanner";
+import { useGeoLocation } from "./hooks/useGeoLocation";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -90,6 +92,7 @@ function Router() {
 function App() {
   const [location] = useLocation();
   const isProposal = location.startsWith("/proposal/");
+  const { detectedCity } = useGeoLocation();
 
   if (isProposal) {
     return (
@@ -105,12 +108,13 @@ function App() {
     <>
       <Toaster />
       <div className="flex flex-col min-h-screen">
-        <Navigation />
+        {detectedCity && <GeoBanner city={detectedCity} />}
+        <Navigation geoPhone={detectedCity?.phone} />
         <main className="flex-1 pt-16 lg:pt-20 pb-14 lg:pb-0">
           <Router />
           <Footer />
         </main>
-        <StickyMobileCTA />
+        <StickyMobileCTA geoPhone={detectedCity?.phone} />
       </div>
     </>
   );
