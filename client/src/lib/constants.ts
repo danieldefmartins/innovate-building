@@ -6,7 +6,7 @@ export const COMPANY = {
   name: "Innovate Building Inc",
   shortName: "Innovate Building",
   tagline: "Building Excellence Since 2001",
-  email: "info@innovatebuildinginc.com",
+  email: "support@innovatebuildinginc.com",
   yearsInBusiness: "25+",
   ownerName: "Mendes",
   website: "innovatebuildinginc.com",
