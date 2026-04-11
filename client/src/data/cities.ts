@@ -8,6 +8,8 @@ export interface CityData {
   phone: PhoneEntry;
   description: string;
   heroText: string;
+  lat?: number;
+  lon?: number;
   neighborhoods?: string[];
   zipCodes?: string[];
 }
@@ -24,6 +26,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BOSTON,
     description: "Greater Boston's trusted general contractor for home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction. Serving Boston neighborhoods for 25+ years.",
     heroText: "BOSTON'S MOST TRUSTED GENERAL CONTRACTOR",
+    lat: 42.3601,
+    lon: -71.0589,
     neighborhoods: ["Back Bay", "South End", "Beacon Hill", "Dorchester", "Jamaica Plain", "Roxbury", "Charlestown", "South Boston", "East Boston", "Brighton", "Allston", "Hyde Park", "Mattapan", "Roslindale", "West Roxbury"],
     zipCodes: ["02101", "02108", "02109", "02110", "02111", "02113", "02114", "02115", "02116", "02118", "02119", "02120", "02121", "02122", "02124", "02125", "02126", "02127", "02128", "02129", "02130", "02131", "02132", "02134", "02135", "02136"],
   },
@@ -35,6 +39,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.CAMBRIDGE,
     description: "Trusted contractor serving Cambridge homeowners with quality renovations, kitchen remodeling, bathroom upgrades, and new construction. Licensed and insured.",
     heroText: "CAMBRIDGE'S PREMIER HOME RENOVATION CONTRACTOR",
+    lat: 42.3736,
+    lon: -71.1097,
     neighborhoods: ["Harvard Square", "Central Square", "Kendall Square", "Porter Square", "Inman Square", "East Cambridge", "Mid-Cambridge", "North Cambridge"],
   },
   {
@@ -45,6 +51,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.SOMERVILLE,
     description: "Full-service general contractor in Somerville. Home remodeling, kitchen and bathroom renovations, roofing, and basement finishing. 25+ years experience.",
     heroText: "SOMERVILLE'S GO-TO CONSTRUCTION COMPANY",
+    lat: 42.3876,
+    lon: -71.0995,
     neighborhoods: ["Davis Square", "Union Square", "Ball Square", "Teele Square", "Winter Hill", "East Somerville", "Spring Hill"],
   },
   {
@@ -55,6 +63,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.EVERETT,
     description: "Serving Everett with expert home remodeling, new construction, roofing, and renovation services. Your local licensed contractor with 25+ years experience.",
     heroText: "EVERETT'S TRUSTED HOME BUILDING EXPERTS",
+    lat: 42.4084,
+    lon: -71.0537,
   },
   {
     slug: "brookline",
@@ -64,6 +74,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BROOKLINE,
     description: "High-quality home renovations in Brookline. Kitchen and bathroom remodeling, home additions, and new construction by a trusted licensed contractor.",
     heroText: "BROOKLINE'S QUALITY HOME RENOVATION CONTRACTOR",
+    lat: 42.3318,
+    lon: -71.1212,
     neighborhoods: ["Brookline Village", "Coolidge Corner", "Washington Square", "Chestnut Hill", "Cleveland Circle"],
   },
   {
@@ -74,6 +86,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.CHELSEA,
     description: "Serving Chelsea with quality home renovation and construction services. Kitchens, bathrooms, roofing, siding, and more.",
     heroText: "CHELSEA'S TRUSTED HOME RENOVATION COMPANY",
+    lat: 42.3918,
+    lon: -71.0328,
   },
 
   // ================================================================
@@ -87,6 +101,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.QUINCY,
     description: "Experienced general contractor serving Quincy. Home remodeling, kitchen renovations, roofing, basement finishing, and new construction for 25+ years.",
     heroText: "QUINCY'S PREMIER HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.2529,
+    lon: -71.0023,
     neighborhoods: ["Quincy Center", "Wollaston", "North Quincy", "South Quincy", "West Quincy", "Squantum", "Marina Bay"],
   },
   {
@@ -97,6 +113,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NEWTON,
     description: "Premium home remodeling and construction services in Newton. Kitchens, bathrooms, additions, new builds, and roofing by experienced professionals.",
     heroText: "NEWTON'S TRUSTED HOME BUILDING PROFESSIONALS",
+    lat: 42.337,
+    lon: -71.2092,
     neighborhoods: ["Newton Centre", "Newton Corner", "Newtonville", "West Newton", "Auburndale", "Chestnut Hill", "Newton Highlands", "Newton Upper Falls", "Newton Lower Falls", "Waban", "Nonantum"],
   },
   {
@@ -107,6 +125,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MEDFORD,
     description: "Professional general contractor serving Medford homeowners. Kitchen remodeling, bathroom renovations, roofing, siding, and home additions.",
     heroText: "MEDFORD'S RELIABLE GENERAL CONTRACTOR",
+    lat: 42.4184,
+    lon: -71.1062,
     neighborhoods: ["Medford Square", "West Medford", "South Medford", "Medford Hillside", "Wellington"],
   },
   {
@@ -117,6 +137,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MALDEN,
     description: "Licensed general contractor in Malden. Complete home renovation services including kitchens, bathrooms, roofing, and new construction.",
     heroText: "MALDEN'S TRUSTED RENOVATION SPECIALISTS",
+    lat: 42.4251,
+    lon: -71.0662,
   },
   {
     slug: "waltham",
@@ -126,6 +148,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WALTHAM,
     description: "Full-service general contractor in Waltham. Home remodeling, new construction, roofing, and renovation specialists with 25+ years of experience.",
     heroText: "WALTHAM'S EXPERT HOME RENOVATION TEAM",
+    lat: 42.3765,
+    lon: -71.2356,
   },
   {
     slug: "arlington",
@@ -135,6 +159,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.ARLINGTON,
     description: "Licensed general contractor in Arlington. Home renovations, kitchen remodeling, bathroom upgrades, roofing, and home additions.",
     heroText: "ARLINGTON'S EXPERIENCED HOME BUILDING TEAM",
+    lat: 42.4153,
+    lon: -71.1565,
   },
   {
     slug: "belmont",
@@ -144,6 +170,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BELMONT,
     description: "Professional renovation services in Belmont. Kitchens, bathrooms, home additions, roofing, and basement finishing by licensed contractors.",
     heroText: "BELMONT'S QUALITY HOME RENOVATION CONTRACTOR",
+    lat: 42.3959,
+    lon: -71.1789,
   },
   {
     slug: "watertown",
@@ -153,6 +181,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WATERTOWN,
     description: "Trusted general contractor serving Watertown. Complete home remodeling, new construction, roofing, and renovation services.",
     heroText: "WATERTOWN'S RELIABLE GENERAL CONTRACTOR",
+    lat: 42.3709,
+    lon: -71.1828,
   },
   {
     slug: "revere",
@@ -162,6 +192,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.REVERE,
     description: "Full-service general contractor in Revere. Home remodeling, kitchen renovations, roofing, siding, and new construction.",
     heroText: "REVERE'S EXPERT HOME BUILDING PROFESSIONALS",
+    lat: 42.4084,
+    lon: -71.012,
   },
   {
     slug: "lynn",
@@ -171,6 +203,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.LYNN,
     description: "Experienced general contractor serving Lynn and the North Shore. Home renovations, kitchens, bathrooms, roofing, and new construction.",
     heroText: "LYNN'S DEPENDABLE GENERAL CONTRACTOR",
+    lat: 42.4668,
+    lon: -70.9495,
   },
   {
     slug: "braintree",
@@ -180,6 +214,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BRAINTREE,
     description: "Professional home renovation and construction in Braintree. Kitchens, bathrooms, roofing, decks, and basement finishing.",
     heroText: "BRAINTREE'S TRUSTED HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.2038,
+    lon: -71.0015,
   },
   {
     slug: "weymouth",
@@ -189,6 +225,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WEYMOUTH,
     description: "Reliable general contractor serving Weymouth. Home remodeling, roofing, siding, kitchen and bathroom renovations.",
     heroText: "WEYMOUTH'S RELIABLE HOME RENOVATION TEAM",
+    lat: 42.2204,
+    lon: -70.9417,
   },
   {
     slug: "milton",
@@ -198,6 +236,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MILTON,
     description: "Quality home renovation services in Milton. Kitchen remodeling, bathroom upgrades, home additions, and new construction.",
     heroText: "MILTON'S QUALITY HOME BUILDING CONTRACTOR",
+    lat: 42.2495,
+    lon: -71.0662,
   },
   {
     slug: "dedham",
@@ -207,6 +247,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.DEDHAM,
     description: "Licensed general contractor in Dedham. Complete home renovation, kitchen remodeling, roofing, and construction services.",
     heroText: "DEDHAM'S TRUSTED HOME RENOVATION EXPERTS",
+    lat: 42.2418,
+    lon: -71.1662,
   },
   {
     slug: "woburn",
@@ -216,6 +258,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WOBURN,
     description: "Experienced general contractor in Woburn. Home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction.",
     heroText: "WOBURN'S EXPERIENCED HOME BUILDING COMPANY",
+    lat: 42.4793,
+    lon: -71.1523,
   },
   {
     slug: "reading",
@@ -225,6 +269,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.READING,
     description: "Professional home renovation in Reading. Kitchen and bathroom remodeling, home additions, roofing, and basement finishing.",
     heroText: "READING'S PROFESSIONAL HOME RENOVATION TEAM",
+    lat: 42.5257,
+    lon: -71.0954,
   },
   {
     slug: "stoneham",
@@ -234,6 +280,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.STONEHAM,
     description: "Trusted general contractor in Stoneham. Full home renovation, kitchen remodeling, bathroom upgrades, and roofing services.",
     heroText: "STONEHAM'S TRUSTED HOME BUILDING PROFESSIONALS",
+    lat: 42.4801,
+    lon: -71.0984,
   },
   {
     slug: "melrose",
@@ -243,6 +291,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MELROSE,
     description: "Quality home remodeling and construction in Melrose. Kitchens, bathrooms, additions, roofing, and new construction.",
     heroText: "MELROSE'S QUALITY HOME RENOVATION SPECIALISTS",
+    lat: 42.4584,
+    lon: -71.0662,
   },
   {
     slug: "wakefield",
@@ -252,6 +302,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WAKEFIELD,
     description: "Licensed general contractor serving Wakefield. Home renovations, kitchen remodeling, roofing, and new construction.",
     heroText: "WAKEFIELD'S LICENSED HOME BUILDING CONTRACTOR",
+    lat: 42.5065,
+    lon: -71.0734,
   },
   {
     slug: "saugus",
@@ -261,6 +313,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.SAUGUS,
     description: "Experienced home renovation contractor in Saugus. Kitchens, bathrooms, roofing, siding, and complete home remodeling.",
     heroText: "SAUGUS'S EXPERIENCED HOME RENOVATION COMPANY",
+    lat: 42.4646,
+    lon: -71.0101,
   },
 
   // ================================================================
@@ -274,6 +328,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.FRAMINGHAM,
     description: "Trusted general contractor serving Framingham and MetroWest. Kitchen remodeling, bathroom renovations, roofing, and new home construction.",
     heroText: "FRAMINGHAM'S RELIABLE HOME BUILDING CONTRACTOR",
+    lat: 42.2793,
+    lon: -71.4162,
   },
   {
     slug: "natick",
@@ -283,6 +339,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NATICK,
     description: "Professional home renovation and construction services in Natick. Kitchens, bathrooms, basements, roofing, and custom home building.",
     heroText: "NATICK'S PREFERRED HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.2834,
+    lon: -71.3495,
   },
   {
     slug: "wellesley",
@@ -292,6 +350,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WELLESLEY,
     description: "Premium renovation and construction services in Wellesley. Luxury kitchen remodeling, bathroom upgrades, home additions, and new construction.",
     heroText: "WELLESLEY'S PREMIUM HOME RENOVATION EXPERTS",
+    lat: 42.2968,
+    lon: -71.2926,
   },
   {
     slug: "needham",
@@ -301,6 +361,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NEEDHAM,
     description: "Experienced general contractor in Needham. Quality home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction.",
     heroText: "NEEDHAM'S TRUSTED HOME RENOVATION CONTRACTOR",
+    lat: 42.2834,
+    lon: -71.2334,
   },
   {
     slug: "brockton",
@@ -310,6 +372,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BROCKTON,
     description: "Full-service general contractor in Brockton. Home remodeling, kitchen renovations, roofing, siding, and new construction with 25+ years experience.",
     heroText: "BROCKTON'S TRUSTED HOME RENOVATION CONTRACTOR",
+    lat: 42.0834,
+    lon: -71.0184,
   },
   {
     slug: "plymouth",
@@ -319,6 +383,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.PLYMOUTH,
     description: "Licensed general contractor serving Plymouth and the South Shore. Kitchen remodeling, bathroom renovations, roofing, and custom home building.",
     heroText: "PLYMOUTH'S PREMIER HOME BUILDING PROFESSIONALS",
+    lat: 41.9584,
+    lon: -70.6673,
   },
   {
     slug: "taunton",
@@ -328,6 +394,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.TAUNTON,
     description: "Experienced general contractor in Taunton. Home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction.",
     heroText: "TAUNTON'S RELIABLE HOME RENOVATION TEAM",
+    lat: 41.9001,
+    lon: -71.0898,
   },
   {
     slug: "fall-river",
@@ -337,6 +405,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.FALL_RIVER,
     description: "Professional home renovation and construction services in Fall River. Kitchens, bathrooms, roofing, siding, and complete home remodeling.",
     heroText: "FALL RIVER'S TRUSTED HOME BUILDING CONTRACTOR",
+    lat: 41.7015,
+    lon: -71.155,
   },
   {
     slug: "milford",
@@ -346,6 +416,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MILFORD,
     description: "Trusted general contractor serving Milford. Kitchen remodeling, bathroom renovations, home additions, roofing, and new construction.",
     heroText: "MILFORD'S EXPERIENCED HOME RENOVATION EXPERTS",
+    lat: 42.1398,
+    lon: -71.5162,
   },
   {
     slug: "franklin",
@@ -355,6 +427,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.FRANKLIN,
     description: "Licensed general contractor in Franklin. Quality home remodeling, kitchen renovations, roofing, and basement finishing services.",
     heroText: "FRANKLIN'S QUALITY HOME BUILDING CONTRACTOR",
+    lat: 42.0834,
+    lon: -71.3967,
   },
   {
     slug: "marlborough",
@@ -364,6 +438,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MARLBOROUGH,
     description: "Full-service general contractor in Marlborough. Home remodeling, kitchen and bathroom renovations, roofing, and new construction.",
     heroText: "MARLBOROUGH'S TRUSTED HOME RENOVATION COMPANY",
+    lat: 42.3459,
+    lon: -71.5523,
   },
   {
     slug: "norwood",
@@ -373,6 +449,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NORWOOD,
     description: "Experienced home renovation contractor in Norwood. Kitchen remodeling, bathrooms, roofing, and complete home remodeling services.",
     heroText: "NORWOOD'S RELIABLE HOME BUILDING PROFESSIONALS",
+    lat: 42.1945,
+    lon: -71.1995,
   },
   {
     slug: "canton",
@@ -382,6 +460,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.CANTON,
     description: "Professional general contractor serving Canton. Home renovations, kitchen remodeling, bathroom upgrades, and new construction.",
     heroText: "CANTON'S PROFESSIONAL HOME RENOVATION TEAM",
+    lat: 42.1584,
+    lon: -71.1445,
   },
   {
     slug: "randolph",
@@ -391,6 +471,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.RANDOLPH,
     description: "Licensed general contractor in Randolph. Kitchen remodeling, bathroom renovations, roofing, siding, and basement finishing.",
     heroText: "RANDOLPH'S TRUSTED HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.1626,
+    lon: -71.0412,
   },
   {
     slug: "stoughton",
@@ -400,6 +482,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.STOUGHTON,
     description: "Trusted general contractor serving Stoughton. Home remodeling, kitchen renovations, roofing, and new home construction.",
     heroText: "STOUGHTON'S EXPERIENCED HOME BUILDING TEAM",
+    lat: 42.1251,
+    lon: -71.0984,
   },
   {
     slug: "bridgewater",
@@ -409,6 +493,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BRIDGEWATER,
     description: "Professional home renovation and construction in Bridgewater. Kitchens, bathrooms, additions, roofing, and custom builds.",
     heroText: "BRIDGEWATER'S TRUSTED HOME RENOVATION CONTRACTOR",
+    lat: 41.9901,
+    lon: -70.9751,
   },
   {
     slug: "shrewsbury",
@@ -418,6 +504,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.SHREWSBURY,
     description: "Experienced general contractor in Shrewsbury. Home remodeling, kitchen renovations, bathroom upgrades, and new construction.",
     heroText: "SHREWSBURY'S QUALITY HOME BUILDING CONTRACTOR",
+    lat: 42.2959,
+    lon: -71.7134,
   },
   {
     slug: "westborough",
@@ -427,6 +515,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.WESTBOROUGH,
     description: "Licensed general contractor serving Westborough. Kitchen remodeling, bathroom renovations, roofing, and home additions.",
     heroText: "WESTBOROUGH'S TRUSTED HOME RENOVATION EXPERTS",
+    lat: 42.2668,
+    lon: -71.6162,
   },
   {
     slug: "hopkinton",
@@ -436,6 +526,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.HOPKINTON,
     description: "Premium home renovation services in Hopkinton. Kitchen and bathroom remodeling, home additions, and custom construction.",
     heroText: "HOPKINTON'S PREMIER HOME BUILDING PROFESSIONALS",
+    lat: 42.2287,
+    lon: -71.5226,
   },
   {
     slug: "ashland",
@@ -445,6 +537,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.ASHLAND,
     description: "Trusted general contractor in Ashland. Home remodeling, kitchen renovations, roofing, and complete construction services.",
     heroText: "ASHLAND'S RELIABLE HOME RENOVATION CONTRACTOR",
+    lat: 42.2584,
+    lon: -71.4634,
   },
 
   // ================================================================
@@ -458,6 +552,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.LOWELL,
     description: "Full-service general contractor in Lowell. Home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction with 25+ years experience.",
     heroText: "LOWELL'S TRUSTED HOME RENOVATION CONTRACTOR",
+    lat: 42.6334,
+    lon: -71.3162,
   },
   {
     slug: "lawrence",
@@ -467,6 +563,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.LAWRENCE,
     description: "Experienced general contractor serving Lawrence. Kitchen remodeling, bathroom renovations, roofing, siding, and complete home renovation.",
     heroText: "LAWRENCE'S RELIABLE HOME BUILDING PROFESSIONALS",
+    lat: 42.707,
+    lon: -71.1631,
   },
   {
     slug: "haverhill",
@@ -476,6 +574,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.HAVERHILL,
     description: "Licensed general contractor in Haverhill. Home remodeling, kitchen renovations, roofing, and new construction services.",
     heroText: "HAVERHILL'S TRUSTED HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.7762,
+    lon: -71.0773,
   },
   {
     slug: "andover",
@@ -485,6 +585,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.ANDOVER,
     description: "Premium home renovation services in Andover. Kitchen and bathroom remodeling, home additions, roofing, and custom construction.",
     heroText: "ANDOVER'S PREMIER HOME RENOVATION EXPERTS",
+    lat: 42.6584,
+    lon: -71.137,
   },
   {
     slug: "north-andover",
@@ -494,6 +596,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NORTH_ANDOVER,
     description: "Professional general contractor in North Andover. Kitchen remodeling, bathroom renovations, home additions, and new construction.",
     heroText: "NORTH ANDOVER'S QUALITY HOME BUILDING TEAM",
+    lat: 42.6984,
+    lon: -71.132,
   },
   {
     slug: "methuen",
@@ -503,6 +607,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.METHUEN,
     description: "Trusted general contractor serving Methuen. Home remodeling, kitchen renovations, roofing, and complete construction services.",
     heroText: "METHUEN'S EXPERIENCED HOME RENOVATION CONTRACTOR",
+    lat: 42.7262,
+    lon: -71.1909,
   },
   {
     slug: "chelmsford",
@@ -512,6 +618,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.CHELMSFORD,
     description: "Licensed general contractor in Chelmsford. Kitchen remodeling, bathroom renovations, home additions, and roofing services.",
     heroText: "CHELMSFORD'S TRUSTED HOME BUILDING PROFESSIONALS",
+    lat: 42.5998,
+    lon: -71.3673,
   },
   {
     slug: "billerica",
@@ -521,6 +629,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BILLERICA,
     description: "Full-service general contractor in Billerica. Home remodeling, kitchen renovations, bathroom upgrades, and new construction.",
     heroText: "BILLERICA'S RELIABLE HOME RENOVATION TEAM",
+    lat: 42.5584,
+    lon: -71.269,
   },
   {
     slug: "tewksbury",
@@ -530,6 +640,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.TEWKSBURY,
     description: "Experienced general contractor serving Tewksbury. Kitchen remodeling, bathroom renovations, roofing, and home additions.",
     heroText: "TEWKSBURY'S TRUSTED HOME IMPROVEMENT CONTRACTOR",
+    lat: 42.6101,
+    lon: -71.234,
   },
   {
     slug: "dracut",
@@ -539,6 +651,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.DRACUT,
     description: "Professional home renovation contractor in Dracut. Kitchens, bathrooms, roofing, siding, and complete home remodeling.",
     heroText: "DRACUT'S PROFESSIONAL HOME BUILDING CONTRACTOR",
+    lat: 42.6709,
+    lon: -71.302,
   },
   {
     slug: "peabody",
@@ -548,6 +662,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.PEABODY,
     description: "Licensed general contractor serving Peabody and the North Shore. Kitchen remodeling, bathroom renovations, roofing, and new construction.",
     heroText: "PEABODY'S TRUSTED HOME RENOVATION COMPANY",
+    lat: 42.5279,
+    lon: -70.9287,
   },
   {
     slug: "salem",
@@ -557,6 +673,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.SALEM_MA,
     description: "Experienced general contractor in Salem. Home remodeling, kitchen renovations, bathroom upgrades, and historic home restoration.",
     heroText: "SALEM'S EXPERIENCED HOME BUILDING PROFESSIONALS",
+    lat: 42.5195,
+    lon: -70.8967,
   },
   {
     slug: "beverly",
@@ -566,6 +684,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BEVERLY,
     description: "Trusted general contractor in Beverly. Kitchen remodeling, bathroom renovations, home additions, roofing, and new construction.",
     heroText: "BEVERLY'S QUALITY HOME RENOVATION CONTRACTOR",
+    lat: 42.5584,
+    lon: -70.8801,
   },
   {
     slug: "danvers",
@@ -575,6 +695,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.DANVERS,
     description: "Professional general contractor serving Danvers. Home remodeling, kitchen renovations, roofing, and complete construction services.",
     heroText: "DANVERS'S RELIABLE HOME BUILDING TEAM",
+    lat: 42.5751,
+    lon: -70.9301,
   },
   {
     slug: "gloucester",
@@ -584,6 +706,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.GLOUCESTER,
     description: "Licensed general contractor in Gloucester. Home renovations, kitchen remodeling, bathroom upgrades, and coastal home construction.",
     heroText: "GLOUCESTER'S TRUSTED HOME RENOVATION EXPERTS",
+    lat: 42.6159,
+    lon: -70.6623,
   },
   {
     slug: "newburyport",
@@ -593,6 +717,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NEWBURYPORT,
     description: "Premium home renovation services in Newburyport. Kitchen and bathroom remodeling, historic restoration, and custom construction.",
     heroText: "NEWBURYPORT'S PREMIER HOME BUILDING CONTRACTOR",
+    lat: 42.8126,
+    lon: -70.8773,
   },
   {
     slug: "amesbury",
@@ -602,6 +728,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.AMESBURY,
     description: "Experienced general contractor in Amesbury. Home remodeling, kitchen renovations, roofing, and new construction services.",
     heroText: "AMESBURY'S TRUSTED HOME RENOVATION COMPANY",
+    lat: 42.8584,
+    lon: -70.9301,
   },
 
   // ================================================================
@@ -615,6 +743,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MANCHESTER_NH,
     description: "Trusted general contractor serving Manchester NH. Home remodeling, kitchen renovations, roofing, and new construction with 25+ years experience.",
     heroText: "MANCHESTER'S TRUSTED HOME BUILDING CONTRACTOR",
+    lat: 42.9956,
+    lon: -71.4548,
   },
   {
     slug: "nashua-nh",
@@ -624,6 +754,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.NASHUA_NH,
     description: "Professional general contractor in Nashua NH. Kitchen remodeling, bathroom renovations, roofing, and new home construction.",
     heroText: "NASHUA'S PREMIER HOME RENOVATION COMPANY",
+    lat: 42.7654,
+    lon: -71.4676,
   },
   {
     slug: "salem-nh",
@@ -633,6 +765,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.SALEM_NH,
     description: "Licensed contractor serving Salem NH. Home remodeling, kitchen and bathroom renovations, roofing, and basement finishing.",
     heroText: "SALEM NH'S RELIABLE HOME RENOVATION CONTRACTOR",
+    lat: 42.7884,
+    lon: -71.2009,
   },
   {
     slug: "derry-nh",
@@ -642,6 +776,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.DERRY_NH,
     description: "Experienced general contractor in Derry NH. Quality home renovations, kitchen remodeling, roofing, and new construction.",
     heroText: "DERRY'S EXPERIENCED HOME BUILDING TEAM",
+    lat: 42.8806,
+    lon: -71.3273,
   },
   {
     slug: "londonderry-nh",
@@ -651,6 +787,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.LONDONDERRY_NH,
     description: "Professional home renovation services in Londonderry NH. Kitchens, bathrooms, roofing, and custom home building.",
     heroText: "LONDONDERRY'S PROFESSIONAL HOME RENOVATION EXPERTS",
+    lat: 42.8651,
+    lon: -71.3739,
   },
   {
     slug: "hudson-nh",
@@ -660,6 +798,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.HUDSON_NH,
     description: "Trusted general contractor in Hudson NH. Home remodeling, new construction, roofing, and renovation specialists.",
     heroText: "HUDSON'S TRUSTED HOME BUILDING COMPANY",
+    lat: 42.7648,
+    lon: -71.4098,
   },
   {
     slug: "concord-nh",
@@ -669,6 +809,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.CONCORD_NH,
     description: "Licensed general contractor serving Concord NH. Home remodeling, kitchen renovations, roofing, and new construction with 25+ years experience.",
     heroText: "CONCORD'S TRUSTED HOME RENOVATION CONTRACTOR",
+    lat: 43.2081,
+    lon: -71.5376,
   },
   {
     slug: "portsmouth-nh",
@@ -678,6 +820,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.PORTSMOUTH_NH,
     description: "Premium home renovation services in Portsmouth NH. Kitchen remodeling, bathroom upgrades, historic restoration, and custom construction.",
     heroText: "PORTSMOUTH'S PREMIER HOME BUILDING PROFESSIONALS",
+    lat: 43.0718,
+    lon: -70.7626,
   },
   {
     slug: "dover-nh",
@@ -687,6 +831,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.DOVER_NH,
     description: "Experienced general contractor in Dover NH. Home remodeling, kitchen renovations, bathroom upgrades, roofing, and new construction.",
     heroText: "DOVER'S RELIABLE HOME RENOVATION TEAM",
+    lat: 43.1979,
+    lon: -70.8737,
   },
   {
     slug: "rochester-nh",
@@ -696,6 +842,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.ROCHESTER_NH,
     description: "Professional general contractor serving Rochester NH. Kitchen remodeling, bathroom renovations, roofing, and home additions.",
     heroText: "ROCHESTER'S QUALITY HOME BUILDING CONTRACTOR",
+    lat: 43.3045,
+    lon: -70.9756,
   },
   {
     slug: "merrimack-nh",
@@ -705,6 +853,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.MERRIMACK_NH,
     description: "Trusted general contractor in Merrimack NH. Home remodeling, kitchen renovations, bathroom upgrades, and new construction.",
     heroText: "MERRIMACK'S TRUSTED HOME RENOVATION EXPERTS",
+    lat: 42.8651,
+    lon: -71.4934,
   },
   {
     slug: "bedford-nh",
@@ -714,6 +864,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.BEDFORD_NH,
     description: "Premium home renovation and construction services in Bedford NH. Kitchens, bathrooms, home additions, and custom builds.",
     heroText: "BEDFORD'S PREMIER HOME BUILDING PROFESSIONALS",
+    lat: 42.9465,
+    lon: -71.5159,
   },
   {
     slug: "exeter-nh",
@@ -723,6 +875,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.EXETER_NH,
     description: "Licensed general contractor serving Exeter NH. Home remodeling, kitchen renovations, roofing, and complete renovation services.",
     heroText: "EXETER'S EXPERIENCED HOME RENOVATION CONTRACTOR",
+    lat: 42.9815,
+    lon: -70.9476,
   },
   {
     slug: "hampton-nh",
@@ -732,6 +886,8 @@ export const CITIES: CityData[] = [
     phone: PHONE_NUMBERS.HAMPTON_NH,
     description: "Experienced general contractor in Hampton NH. Home remodeling, kitchen renovations, coastal home construction, and renovation.",
     heroText: "HAMPTON'S TRUSTED HOME BUILDING COMPANY",
+    lat: 42.9376,
+    lon: -70.8387,
   },
 ];
 
