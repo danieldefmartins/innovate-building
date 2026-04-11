@@ -8,17 +8,17 @@ import PageMeta from "@/components/PageMeta";
 
 const TEAM_MEMBERS = [
   {
-    name: "Daniel Mendes",
-    role: "Owner & General Contractor",
-    bio: "With over 20 years in construction, Daniel founded Innovate Building with a simple belief: homeowners deserve a contractor who shows up, does the work right, and stands behind it. He's on-site daily, managing every project personally.",
-    highlights: ["20+ years experience", "Licensed GC (MA & NH)", "Hands-on project management"],
+    name: "Mendes",
+    role: "Co-Owner & Field Operations",
+    bio: "Construction is a family tradition for Mendes — he learned the trade from his father as a teenager and has been building for over 40 years. As head of field operations, he oversees every crew and every phase on-site. First one on the job, last one to leave.",
+    highlights: ["40+ years experience", "Family tradition", "On-site daily"],
     placeholder: true,
   },
   {
-    name: "Lead Foreman",
-    role: "Senior Project Lead",
-    bio: "Over 15 years of experience in residential construction. Manages day-to-day job site operations, ensures quality standards are met, and keeps projects on schedule.",
-    highlights: ["15+ years experience", "Quality control specialist", "Safety certified"],
+    name: "Daniel",
+    role: "Co-Owner & Project Manager",
+    bio: "With 25+ years in the industry, Daniel is your first point of contact. He handles consultations, estimates, permits, scheduling, and client communication. When you call Innovate Building, Daniel picks up the phone — not a receptionist.",
+    highlights: ["25+ years experience", "Project management", "Client relations"],
     placeholder: true,
   },
   {
@@ -52,9 +52,9 @@ const TEAM_MEMBERS = [
 ];
 
 const STATS = [
-  { icon: Clock, value: "20+", label: "Years in Business", desc: "Building trust since 2001" },
+  { icon: Clock, value: "20+", label: "Year Partnership", desc: "Mendes & Daniel, still building" },
   { icon: Hammer, value: "1,000+", label: "Projects Completed", desc: "From kitchens to custom homes" },
-  { icon: Users, value: "100%", label: "In-House Crews", desc: "No subcontractors, ever" },
+  { icon: Users, value: "65+", label: "Combined Years", desc: "Mendes (40+) & Daniel (25+)" },
   { icon: Shield, value: "CS-119608", label: "MA License", desc: "Fully licensed & insured" },
 ];
 

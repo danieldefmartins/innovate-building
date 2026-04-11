@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Phone, ArrowRight, CheckCircle2, Users, Award, Shield, Hammer } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle2, Users, Award, Shield, Hammer, Heart, Handshake, HardHat } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import PageMeta from "@/components/PageMeta";
@@ -10,8 +10,8 @@ export default function About() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title={`About Us — 20+ Years Building Boston | ${COMPANY.shortName}`}
-        description="Learn about Innovate Building Inc — Greater Boston's trusted general contractor since 2001. 100% in-house crews, 1,000+ projects, licensed #CS-119608."
+        title={`About Us — A 20+ Year Partnership Built on Trust | ${COMPANY.shortName}`}
+        description="Meet Mendes and Daniel — the partnership behind Innovate Building Inc. Over 20 years together, 1,000+ projects, and a family tradition of craftsmanship. Licensed #CS-119608."
       />
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-primary overflow-hidden">
@@ -22,65 +22,155 @@ export default function About() {
               OUR STORY
             </div>
             <h1 className="text-display text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight">
-              BUILDING GREATER BOSTON FOR OVER {COMPANY.yearsInBusiness} YEARS
+              TWO DECADES. ONE PARTNERSHIP. OVER 1,000 HOMES BUILT.
             </h1>
             <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-              From a one-man operation to a full-service construction company — {COMPANY.name} has
-              been transforming homes across Massachusetts and New Hampshire with integrity,
-              craftsmanship, and 100% in-house crews.
+              Innovate Building isn't a corporation — it's a partnership between two builders who've
+              worked side by side for over 20 years. When you hire us, you get Mendes and Daniel.
+              Not a sales rep. Not a call center. The guys who actually build your home.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* The Partnership */}
       <section className="section-divider bg-card py-10 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            {/* Photo placeholder */}
-            <div className="w-full h-[400px] bg-muted rounded-lg border border-border flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Photo of {COMPANY.ownerName} & Team Coming Soon</span>
+          <div className="text-center mb-10 md:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-4">
+              <Handshake className="w-4 h-4" />
+              THE PARTNERSHIP
+            </div>
+            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">
+              BUILT ON TRUST. BUILT TO LAST.
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Mendes and Daniel have been building together for over two decades. In an industry where
+              partnerships come and go, theirs has stood the test of time — just like the homes they build.
+              That kind of stability, trust, and shared vision is exactly what you want in the people
+              building your dream home.
+            </p>
+          </div>
+
+          {/* Mendes */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center mb-16 md:mb-24">
+            <div className="w-full h-[400px] bg-muted rounded-lg border border-border flex items-center justify-center order-1 lg:order-1">
+              <div className="text-center text-muted-foreground">
+                <HardHat className="w-12 h-12 mx-auto mb-2 opacity-40" />
+                <span className="text-sm">Photo coming soon</span>
+              </div>
             </div>
 
-            <div>
-              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-6">
-                MEET {COMPANY.ownerName.toUpperCase()}
+            <div className="order-2 lg:order-2">
+              <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-3">
+                CO-OWNER & FIELD OPERATIONS
+              </div>
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-2">
+                MEET MENDES
               </h2>
+              <p className="text-sm text-accent font-display font-bold tracking-wider mb-6">
+                40+ YEARS IN CONSTRUCTION — A FAMILY TRADITION
+              </p>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  {COMPANY.ownerName} started {COMPANY.name} over {COMPANY.yearsInBusiness} years ago with a
-                  simple philosophy: do the work right, treat people with respect, and never cut corners. What
-                  began as a small operation has grown into one of Greater Boston's most trusted general
-                  contracting companies.
+                  For Mendes, construction isn't just a career — it's a family legacy. He learned the trade
+                  from his father as a teenager, working job sites before most kids had their first part-time
+                  job. That hands-on education — framing walls, laying foundations, finishing trim — gave him
+                  something no classroom ever could: an instinct for quality that's been refined over four decades.
                 </p>
                 <p>
-                  Unlike most contractors who juggle subcontractors and middlemen, {COMPANY.ownerName} built
-                  the company around 100% in-house crews. Every carpenter, every roofer, every finish
-                  worker — they're all part of the {COMPANY.shortName} team. That means better quality
-                  control, clearer communication, and a level of accountability you won't find elsewhere.
+                  With over 40 years of experience, Mendes is the backbone of every Innovate Building project.
+                  As head of field operations, he oversees every crew, every phase, and every detail on-site.
+                  He's the first one on the job and the last one to leave. If something isn't right, he catches
+                  it before you ever see it.
                 </p>
                 <p>
-                  From kitchen renovations and bathroom remodels to full home additions and new
-                  construction, {COMPANY.ownerName} and the team have completed over 1,000 projects across
-                  Massachusetts and New Hampshire. The work speaks for itself — and so do the homeowners
-                  who keep coming back.
+                  His philosophy is simple: <em>"Build it like it's your own home."</em> That standard has
+                  never changed in 40 years — and it's why homeowners trust him with their biggest investment.
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    GET FREE ESTIMATE
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>
-                  <Button size="lg" variant="outline" className="border-2">
-                    <Phone className="mr-2 w-5 h-5" />
-                    {PHONE_NUMBERS.MAIN.display}
-                  </Button>
-                </PhoneLink>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["40+ Years Experience", "Family Tradition", "Field Operations", "Quality Control", "On-Site Daily"].map((tag) => (
+                  <span key={tag} className="text-xs px-3 py-1.5 bg-accent/10 border border-accent/20 rounded font-medium">
+                    {tag}
+                  </span>
+                ))}
               </div>
+            </div>
+          </div>
+
+          {/* Daniel */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center mb-16 md:mb-24">
+            <div className="order-2 lg:order-1">
+              <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-display font-bold tracking-wider rounded mb-3">
+                CO-OWNER & PROJECT MANAGEMENT
+              </div>
+              <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-2">
+                MEET DANIEL
+              </h2>
+              <p className="text-sm text-accent font-display font-bold tracking-wider mb-6">
+                25+ YEARS IN THE INDUSTRY — YOUR FIRST POINT OF CONTACT
+              </p>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Daniel is the first person you'll talk to when you call Innovate Building — and that's
+                  by design. With over 25 years in the construction industry, he understands that a great
+                  project starts long before the first nail is driven. It starts with listening, understanding
+                  your vision, and translating it into a plan that works for your home and your budget.
+                </p>
+                <p>
+                  As project manager and co-owner, Daniel handles everything from the initial consultation
+                  and estimate to permits, scheduling, material selection, and client communication throughout
+                  the build. He's the bridge between your vision and the crew that brings it to life — making
+                  sure nothing falls through the cracks and you're never left wondering what's happening
+                  with your project.
+                </p>
+                <p>
+                  His approach to construction management is rooted in transparency and trust. You'll get
+                  detailed written estimates, honest timelines, and direct access to the person actually
+                  running your project — not a receptionist, not a voicemail. Daniel picks up the phone.
+                </p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["25+ Years Experience", "Project Management", "Client Relations", "Estimating", "Permits & Planning"].map((tag) => (
+                  <span key={tag} className="text-xs px-3 py-1.5 bg-accent/10 border border-accent/20 rounded font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="w-full h-[400px] bg-muted rounded-lg border border-border flex items-center justify-center order-1 lg:order-2">
+              <div className="text-center text-muted-foreground">
+                <HardHat className="w-12 h-12 mx-auto mb-2 opacity-40" />
+                <span className="text-sm">Photo coming soon</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Partnership Highlight */}
+          <div className="bg-primary rounded-xl p-8 md:p-12 text-white">
+            <div className="max-w-3xl mx-auto text-center">
+              <Heart className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h3 className="text-display text-xl sm:text-2xl md:text-3xl mb-4">
+                A PARTNERSHIP THAT SPEAKS FOR ITSELF
+              </h3>
+              <p className="text-white/80 leading-relaxed mb-4">
+                In construction, partnerships are fragile. The stress of deadlines, budgets, and demanding
+                projects breaks most of them apart within a few years. Mendes and Daniel have been working
+                together for over <strong className="text-white">20 years</strong> — through recessions,
+                pandemics, and thousands of projects. They're still here, still building, and still pushing
+                each other to do better work.
+              </p>
+              <p className="text-white/80 leading-relaxed">
+                That kind of partnership isn't just rare — it's a promise. If we can build a relationship
+                that lasts two decades in one of the toughest industries in the world, imagine what we
+                can build for you. When Mendes is on your job site making sure every cut is perfect and
+                Daniel is on the phone keeping you updated, you're getting more than a contractor — you're
+                getting a team that actually works.
+              </p>
             </div>
           </div>
         </div>
@@ -127,11 +217,11 @@ export default function About() {
               <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
                 <Award className="w-7 h-7 text-accent" />
               </div>
-              <h3 className="text-heading text-xl mb-3">{COMPANY.yearsInBusiness} YEARS EXPERIENCE</h3>
+              <h3 className="text-heading text-xl mb-3">COMBINED 65+ YEARS</h3>
               <p className="text-muted-foreground leading-relaxed">
-                {COMPANY.ownerName} has been in the construction business for over 25 years. That
-                experience means fewer surprises, better problem-solving, and the kind of craftsmanship
-                that only comes from decades of hands-on work.
+                Between Mendes (40+ years) and Daniel (25+ years), you're getting over six decades of
+                combined construction experience. That means fewer surprises, faster problem-solving,
+                and craftsmanship that only comes from a lifetime of hands-on work.
               </p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -140,7 +230,7 @@ export default function About() {
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                  <span>Kitchens, baths, roofing, additions & more</span>
+                  <span>Every type of residential construction</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
@@ -188,12 +278,12 @@ export default function About() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-accent" />
+                <Handshake className="w-8 h-8 text-accent" />
               </div>
-              <div className="text-4xl font-display font-black text-accent mb-2">{COMPANY.yearsInBusiness}</div>
-              <div className="text-lg font-heading mb-2">YEARS IN BUSINESS</div>
+              <div className="text-4xl font-display font-black text-accent mb-2">20+</div>
+              <div className="text-lg font-heading mb-2">YEAR PARTNERSHIP</div>
               <p className="text-white/70 text-sm">
-                Serving Greater Boston since day one
+                Mendes & Daniel, still building strong
               </p>
             </div>
 
@@ -221,43 +311,14 @@ export default function About() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-accent" />
+                <Award className="w-8 h-8 text-accent" />
               </div>
-              <div className="text-4xl font-display font-black text-accent mb-2">MA & NH</div>
-              <div className="text-lg font-heading mb-2">FULLY LICENSED</div>
+              <div className="text-4xl font-display font-black text-accent mb-2">65+</div>
+              <div className="text-lg font-heading mb-2">COMBINED YEARS</div>
               <p className="text-white/70 text-sm">
-                Licensed & insured in both states
+                Mendes (40+) & Daniel (25+)
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet the Team Placeholder */}
-      <section className="section-divider bg-card py-10 md:py-20">
-        <div className="container">
-          <div className="text-center mb-8 md:mb-14">
-            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">MEET THE TEAM</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The people behind every project — experienced, dedicated, and proud of what they build
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: COMPANY.ownerName, role: "Owner & General Contractor" },
-              { name: "Team Member", role: "Project Manager" },
-              { name: "Team Member", role: "Lead Carpenter" },
-              { name: "Team Member", role: "Estimator" },
-            ].map((member, i) => (
-              <div key={i} className="text-center">
-                <div className="w-full h-[280px] bg-muted rounded-lg border border-border flex items-center justify-center mb-4">
-                  <span className="text-muted-foreground text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-heading text-lg">{member.name}</h3>
-                <p className="text-muted-foreground text-sm">{member.role}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -267,10 +328,11 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-6">
-              READY TO WORK WITH A CONTRACTOR YOU CAN TRUST?
+              READY TO WORK WITH A TEAM YOU CAN TRUST?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Get a free, no-obligation estimate from {COMPANY.ownerName} and the {COMPANY.shortName} team
+              Talk directly to Daniel — no sales reps, no call centers. Just an honest conversation
+              about your project with someone who's been doing this for 25 years.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
