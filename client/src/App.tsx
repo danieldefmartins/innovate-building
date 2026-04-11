@@ -102,18 +102,11 @@ function Router({ detectedCity }: { detectedCity: import("./data/cities").CityDa
     }
   }, [location]);
 
-  return (
-    <Switch>
-      {/* Spanish routes */}
-      <Route path="/es/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="/es" />}</Route>
-      <Route path="/es">{() => <ContentRoutes detectedCity={detectedCity} prefix="/es" />}</Route>
-      {/* Portuguese routes */}
-      <Route path="/pt/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="/pt" />}</Route>
-      <Route path="/pt">{() => <ContentRoutes detectedCity={detectedCity} prefix="/pt" />}</Route>
-      {/* English (default) routes */}
-      <Route path="/:rest*">{() => <ContentRoutes detectedCity={detectedCity} prefix="" />}</Route>
-    </Switch>
-  );
+  // Determine prefix from current location
+  const { lang } = parseLangFromPath(location);
+  const prefix = lang === "en" ? "" : `/${lang}`;
+
+  return <ContentRoutes detectedCity={detectedCity} prefix={prefix} />;
 }
 
 function App() {
