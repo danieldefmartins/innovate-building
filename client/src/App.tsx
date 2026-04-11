@@ -21,6 +21,8 @@ import BlogArticlePage from "./pages/BlogArticle";
 import { getServiceBySlug } from "./data/services";
 import { getCityBySlug } from "./data/cities";
 import { getArticleBySlug } from "./data/blog";
+import { getProposalById } from "./data/proposals";
+import Proposal from "./pages/Proposal";
 
 function ServiceRoute({ params }: { params: { slug: string } }) {
   const service = getServiceBySlug(params.slug);
@@ -38,6 +40,12 @@ function BlogArticleRoute({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
   if (!article) return <NotFound />;
   return <BlogArticlePage article={article} />;
+}
+
+function ProposalRoute({ params }: { params: { id: string } }) {
+  const data = getProposalById(params.id);
+  if (!data) return <NotFound />;
+  return <Proposal data={data} />;
 }
 
 function Router() {
@@ -80,6 +88,19 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  const isProposal = location.startsWith("/proposal/");
+
+  if (isProposal) {
+    return (
+      <Switch>
+        <Route path="/proposal/:id">
+          {(params) => <ProposalRoute params={params} />}
+        </Route>
+      </Switch>
+    );
+  }
+
   return (
     <>
       <Toaster />

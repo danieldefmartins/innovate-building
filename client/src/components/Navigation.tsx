@@ -34,7 +34,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/">
             <img
-              src="/images/logo/Logo_Transparent.png"
+              src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
               alt={COMPANY.shortName}
               className="h-12 w-auto cursor-pointer"
             />
@@ -95,7 +95,7 @@ export default function Navigation() {
         <div className="container h-full flex items-center justify-between">
           <Link href="/">
             <img
-              src="/images/logo/Logo_Transparent.png"
+              src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
               alt={COMPANY.shortName}
               className="h-9 w-auto cursor-pointer"
             />
