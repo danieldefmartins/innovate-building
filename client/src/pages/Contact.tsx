@@ -241,8 +241,8 @@ export default function Contact() {
               CALL US TODAY — FREE ESTIMATES
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Talk to {COMPANY.ownerName} directly. No sales reps, no runaround — just honest answers
-              from the owner.
+              Talk to Daniel directly. No sales reps, no runaround — just honest answers
+              from the owners.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <PhoneLink tel={PHONE_NUMBERS.MAIN.tel}>

@@ -236,7 +236,7 @@ export const SERVICES: ServiceData[] = [
       "Permit & planning coordination",
     ],
     benefits: [
-      "Mendes personally oversees every build",
+      "Daniel & Mendes personally oversee every build",
       "100% in-house crews — no subs",
       "Transparent budgeting with no surprises",
       "25+ years of new construction experience",

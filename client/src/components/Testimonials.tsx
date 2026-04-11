@@ -6,14 +6,14 @@ const testimonials = [
     name: "Maria Santos",
     location: "Somerville, MA",
     service: "Kitchen Remodeling",
-    text: "Mendes and his team completely transformed our kitchen. They did everything in-house — plumbing, electrical, cabinets, tile — and the quality was outstanding. No subcontractors, no delays. Best decision we made.",
+    text: "Daniel and Mendes completely transformed our kitchen. Daniel kept us informed every step of the way, and Mendes and his crew did everything in-house — plumbing, electrical, cabinets, tile. The quality was outstanding. Best decision we made.",
     rating: 5,
   },
   {
     name: "James O'Brien",
     location: "Cambridge, MA",
     service: "Home Addition",
-    text: "We added a second-story addition and it looks like it was always part of the house. The crew was professional, clean, and on schedule. Mendes was on-site almost every day overseeing the work.",
+    text: "We added a second-story addition and it looks like it was always part of the house. Daniel handled all the planning and permits, and Mendes was on-site almost every day overseeing the crew. Professional, clean, and on schedule.",
     rating: 5,
   },
   {

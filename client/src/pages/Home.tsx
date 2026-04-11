@@ -179,7 +179,7 @@ export default function Home({ detectedCity }: HomeProps) {
               <div className="text-2xl md:text-4xl font-display font-black text-accent mb-1 md:mb-2">{COMPANY.yearsInBusiness}</div>
               <div className="text-sm md:text-lg font-heading mb-1 md:mb-2">YEARS EXPERIENCE</div>
               <p className="text-white/70 text-xs md:text-sm hidden sm:block">
-                {COMPANY.ownerName} has been building homes in Boston for over two decades.
+                Daniel & Mendes have been building homes in Boston for over two decades.
               </p>
             </div>
 

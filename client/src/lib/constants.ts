@@ -8,7 +8,7 @@ export const COMPANY = {
   tagline: "Building Excellence Since 2001",
   email: "support@innovatebuildinginc.com",
   yearsInBusiness: "25+",
-  ownerName: "Mendes",
+  ownerName: "Daniel & Mendes",
   website: "innovatebuildinginc.com",
 } as const;
 
