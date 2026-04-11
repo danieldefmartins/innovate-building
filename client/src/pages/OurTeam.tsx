@@ -49,6 +49,41 @@ const TEAM_MEMBERS = [
     highlights: ["Licensed professionals", "Long-term partners", "Code compliant"],
     placeholder: true,
   },
+  {
+    name: "HVAC & Mechanical",
+    role: "Heating, Cooling & Ventilation",
+    bio: "Our mechanical team handles complete HVAC systems — furnaces, central air, ductwork, mini-splits, and ventilation. Whether it's a new construction install or upgrading an old system during a renovation, they keep your home comfortable year-round.",
+    highlights: ["Full HVAC systems", "Mini-splits & ductwork", "Energy efficient"],
+    placeholder: true,
+  },
+  {
+    name: "Pool & Hardscape",
+    role: "Pool Construction & Outdoor Features",
+    bio: "From in-ground pools and patios to retaining walls and outdoor kitchens, our pool and hardscape team builds outdoor living spaces that transform your backyard into a retreat.",
+    highlights: ["In-ground pools", "Patios & walkways", "Retaining walls"],
+    placeholder: true,
+  },
+  {
+    name: "Landscaping",
+    role: "Landscape Design & Installation",
+    bio: "The finishing touch on every project. Our landscaping crew handles grading, sod, plantings, irrigation, and drainage — making sure the outside of your home looks as good as the inside.",
+    highlights: ["Grading & drainage", "Plantings & sod", "Final site cleanup"],
+    placeholder: true,
+  },
+  {
+    name: "Painting Crew",
+    role: "Interior & Exterior Painting",
+    bio: "Professional painters who handle everything from interior finish painting on new construction to full exterior repaints. Clean lines, proper prep, and quality materials on every job.",
+    highlights: ["Interior & exterior", "Proper surface prep", "Clean detail work"],
+    placeholder: true,
+  },
+  {
+    name: "Insulation & Drywall",
+    role: "Insulation, Drywall & Finishing",
+    bio: "Spray foam, fiberglass, and rigid foam insulation followed by expert drywall hanging, taping, and finishing. The crew that makes walls straight, seams invisible, and homes energy efficient.",
+    highlights: ["Spray foam & fiberglass", "Level 5 finish", "Energy efficient"],
+    placeholder: true,
+  },
 ];
 
 const STATS = [
