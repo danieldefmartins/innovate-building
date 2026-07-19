@@ -46,7 +46,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
             <img
               src="/images/logo/New-transparent.png"
               alt={COMPANY.shortName}
-              className="h-12 w-auto max-w-none cursor-pointer"
+              className="h-16 w-auto max-w-none cursor-pointer"
             />
           </Link>
 
@@ -110,7 +110,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
             <img
               src="/images/logo/New-transparent.png"
               alt={COMPANY.shortName}
-              className="h-9 w-auto max-w-none cursor-pointer"
+              className="h-12 w-auto max-w-none cursor-pointer"
             />
           </Link>
 
