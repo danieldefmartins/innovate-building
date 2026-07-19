@@ -44,7 +44,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
           {/* Logo */}
           <Link href="/">
             <img
-              src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
+              src="/images/logo/New-transparent.png"
               alt={COMPANY.shortName}
               className="h-12 w-auto cursor-pointer"
             />
@@ -108,7 +108,7 @@ export default function Navigation({ geoPhone }: NavigationProps) {
         <div className="container h-full flex items-center justify-between">
           <Link href="/">
             <img
-              src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
+              src="/images/logo/New-transparent.png"
               alt={COMPANY.shortName}
               className="h-9 w-auto cursor-pointer"
             />

@@ -57,7 +57,7 @@ function CoverPage({ data }: { data: ProposalData }) {
     <Page>
       <div className="flex flex-col items-center justify-center h-full min-h-[80vh] text-center">
         <img
-          src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
+          src="/images/logo/New-transparent.png"
           alt={COMPANY.name}
           className="h-28 mb-16"
         />

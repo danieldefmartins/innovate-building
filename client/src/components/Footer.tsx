@@ -36,7 +36,7 @@ export default function Footer({ geoPhone }: FooterProps) {
           <div>
             <div className="mb-4">
               <img
-                src="/images/logo/Innovate-Official-logo-Horizontal-transparent.png"
+                src="/images/logo/New-transparent.png"
                 alt={COMPANY.shortName}
                 className="h-12 w-auto"
               />
