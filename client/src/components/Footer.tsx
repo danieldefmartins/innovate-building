@@ -38,7 +38,7 @@ export default function Footer({ geoPhone }: FooterProps) {
               <img
                 src="/images/logo/New-transparent.png"
                 alt={COMPANY.shortName}
-                className="h-12 w-auto"
+                className="h-12 w-auto max-w-none"
               />
             </div>
             <p className="text-sidebar-foreground/70 text-sm leading-relaxed mb-4">
