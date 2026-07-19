@@ -81,6 +81,11 @@ export const SERVICE_IMAGES: Record<string, string[]> = {
     "/images/IMG_5637.jpeg",
     "/images/IMG_0895.jpeg",
   ],
+  "adu-construction": [
+    "/images/007c6dcb-df1c-40eb-86b1-0f8aba58d123.jpg",
+    "/images/51bb4475-9338-40a4-8ba0-f6052b36d22a.jpg",
+    "/images/18ff43a8-9118-4267-b7d4-ea3274361f3f.jpg",
+  ],
   "home-addition": [
     "/images/007c6dcb-df1c-40eb-86b1-0f8aba58d123.jpg",
     "/images/51bb4475-9338-40a4-8ba0-f6052b36d22a.jpg",

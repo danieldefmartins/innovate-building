@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 
-export type BlogCategory = "Cost Guides" | "How-To" | "Local Insights" | "Seasonal Tips";
+export type BlogCategory = "ADU Guides" | "Cost Guides" | "How-To" | "Local Insights" | "Seasonal Tips";
 
 export const BLOG_CATEGORIES: BlogCategory[] = [
+  "ADU Guides",
   "Cost Guides",
   "How-To",
   "Local Insights",
@@ -28,6 +29,126 @@ export interface BlogArticle {
 // We re-export from there after defining the metadata here.
 
 export const BLOG_ARTICLES: BlogArticle[] = [
+  {
+    slug: "massachusetts-adu-law-2026-guide",
+    title: "The New Massachusetts ADU Law Explained: What You Can Build By Right (2026)",
+    excerpt:
+      "Massachusetts now allows accessory dwelling units by right on single-family lots statewide. Here's exactly what the law allows, what towns can no longer block, and how to take advantage.",
+    content: () => null,
+    publishDate: "2026-07-18",
+    category: "ADU Guides",
+    readTime: "9 min read",
+    metaDescription:
+      "Massachusetts ADU law 2026: build up to 900 sq ft by right on single-family lots — no special permit. What the Affordable Homes Act allows, town limits, parking, and rental rules.",
+    heroImage: "/images/007c6dcb-df1c-40eb-86b1-0f8aba58d123.jpg",
+    relatedServices: ["adu-construction", "home-addition"],
+    relatedCities: ["boston", "newton", "medford"],
+  },
+  {
+    slug: "adu-cost-massachusetts-2026",
+    title: "How Much Does It Cost to Build an ADU in Massachusetts? (2026 Guide)",
+    excerpt:
+      "Real 2026 ADU construction costs in Greater Boston — basement conversions, garage conversions, and detached backyard cottages — plus the hidden costs most homeowners miss.",
+    content: () => null,
+    publishDate: "2026-07-15",
+    category: "ADU Guides",
+    readTime: "10 min read",
+    metaDescription:
+      "ADU costs in Massachusetts range from $80K basement conversions to $500K+ detached units. 2026 price breakdown by ADU type, cost drivers, septic, utilities, and ROI.",
+    heroImage: "/images/51bb4475-9338-40a4-8ba0-f6052b36d22a.jpg",
+    relatedServices: ["adu-construction", "basement-renovation"],
+    relatedCities: ["boston", "quincy", "wellesley"],
+  },
+  {
+    slug: "types-of-adus-massachusetts",
+    title: "Detached, Attached, or Internal? Choosing the Right Type of ADU for Your Property",
+    excerpt:
+      "Backyard cottage, garage conversion, basement apartment, or addition? A practical comparison of every ADU type allowed in Massachusetts — with costs, timelines, and trade-offs.",
+    content: () => null,
+    publishDate: "2026-07-11",
+    category: "ADU Guides",
+    readTime: "8 min read",
+    metaDescription:
+      "Compare all ADU types allowed in Massachusetts: detached cottages, garage conversions, basement ADUs, attached additions. Size rules, costs, and which fits your lot.",
+    heroImage: "/images/18ff43a8-9118-4267-b7d4-ea3274361f3f.jpg",
+    relatedServices: ["adu-construction", "basement-renovation"],
+    relatedCities: ["somerville", "cambridge", "newton"],
+  },
+  {
+    slug: "adu-permit-process-massachusetts",
+    title: "How to Get an ADU Permit in Massachusetts: Step-by-Step (2026)",
+    excerpt:
+      "By right doesn't mean no permit. Here's the actual ADU approval process in Massachusetts — feasibility, plans, building permit, inspections — and how long each step takes.",
+    content: () => null,
+    publishDate: "2026-07-08",
+    category: "ADU Guides",
+    readTime: "8 min read",
+    metaDescription:
+      "Massachusetts ADU permit process explained: building permit steps, what towns can still require, setbacks, septic review, inspection schedule, and realistic timelines.",
+    heroImage: "/images/IMG_0334.jpeg",
+    relatedServices: ["adu-construction", "new-construction"],
+    relatedCities: ["boston", "medford", "quincy"],
+  },
+  {
+    slug: "adu-rental-income-massachusetts",
+    title: "ADU Rental Income in Greater Boston: What Homeowners Actually Earn",
+    excerpt:
+      "One-bedroom ADUs in Greater Boston rent for $2,000–$3,000/month. Here's the real ROI math, the rental rules you must follow, and how an ADU changes your property value.",
+    content: () => null,
+    publishDate: "2026-07-03",
+    category: "ADU Guides",
+    readTime: "9 min read",
+    metaDescription:
+      "ADU rental income in Massachusetts: realistic Greater Boston rents, payback timelines, long-term rental rules, the short-term rental ban, and property value impact.",
+    heroImage: "/images/IMG_8249.jpeg",
+    relatedServices: ["adu-construction"],
+    relatedCities: ["boston", "somerville", "brookline"],
+  },
+  {
+    slug: "garage-conversion-adu-massachusetts",
+    title: "Garage-to-ADU Conversions in Massachusetts: Costs, Rules, and What to Expect",
+    excerpt:
+      "Your garage may be the cheapest path to a legal rental unit. What a Massachusetts garage conversion really involves — foundation, insulation, utilities — and what it costs in 2026.",
+    content: () => null,
+    publishDate: "2026-06-26",
+    category: "ADU Guides",
+    readTime: "8 min read",
+    metaDescription:
+      "Garage conversion ADU in Massachusetts: 2026 costs ($120K–$220K), slab and insulation requirements, utility runs, permits, and how long conversion takes.",
+    heroImage: "/images/IMG_2327.jpeg",
+    relatedServices: ["adu-construction", "home-remodeling"],
+    relatedCities: ["medford", "quincy", "newton"],
+  },
+  {
+    slug: "adu-for-family-multigenerational-massachusetts",
+    title: "In-Law Suites Reinvented: Building an ADU for Aging Parents or Adult Kids",
+    excerpt:
+      "Multigenerational living is the #1 reason Massachusetts families build ADUs. How to design one that gives everyone privacy — and holds its value as a rental later.",
+    content: () => null,
+    publishDate: "2026-06-19",
+    category: "ADU Guides",
+    readTime: "7 min read",
+    metaDescription:
+      "Design an ADU in-law suite in Massachusetts: aging-in-place features, universal design, privacy layouts, and building for family now with rental flexibility later.",
+    heroImage: "/images/IMG_9086.jpeg",
+    relatedServices: ["adu-construction", "home-addition"],
+    relatedCities: ["newton", "wellesley", "brookline"],
+  },
+  {
+    slug: "adu-financing-massachusetts",
+    title: "How to Finance an ADU in Massachusetts: HELOCs, Construction Loans & State Programs",
+    excerpt:
+      "An ADU is a six-figure project — but you don't need six figures in cash. Every financing route Massachusetts homeowners use, including the state's new ADU incentive program.",
+    content: () => null,
+    publishDate: "2026-06-12",
+    category: "ADU Guides",
+    readTime: "8 min read",
+    metaDescription:
+      "ADU financing in Massachusetts: HELOC vs cash-out refi vs renovation and construction loans, plus the MHP ADU incentive program and how rental income offsets payments.",
+    heroImage: "/images/IMG_5776.jpeg",
+    relatedServices: ["adu-construction"],
+    relatedCities: ["boston", "cambridge", "medford"],
+  },
   {
     slug: "kitchen-remodel-cost-boston",
     title: "How Much Does a Kitchen Remodel Cost in Boston? (2026 Guide)",

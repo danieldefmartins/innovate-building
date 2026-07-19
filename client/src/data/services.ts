@@ -1,5 +1,6 @@
 import {
   Home,
+  Warehouse,
   Bath,
   ChefHat,
   Hammer,
@@ -405,6 +406,47 @@ export const SERVICES: ServiceData[] = [
       { q: "How much do replacement windows cost?", a: "Window costs vary by size, style, and brand — typically $400-1,200 per window installed. We provide free detailed estimates." },
       { q: "Will new windows really save on energy?", a: "Yes — Energy Star windows can reduce energy bills by 7-15% compared to single-pane windows." },
       { q: "How long does window replacement take?", a: "Most homes are completed in 1-2 days. Each window swap takes about 30-45 minutes." },
+    ],
+  },
+  {
+    slug: "adu-construction",
+    title: "ADU Construction",
+    shortTitle: "ADU Builds",
+    icon: Warehouse,
+    description:
+      "Design-build accessory dwelling units across Greater Boston. Massachusetts now allows ADUs up to 900 sq ft by right on single-family lots — we handle feasibility, design, permits, and construction start to finish.",
+    heroTitle: "ADU CONSTRUCTION IN MASSACHUSETTS",
+    heroSubtitle:
+      "Massachusetts changed the rules — you can now build an accessory dwelling unit on your property by right, no special permit needed. From backyard cottages to garage conversions and in-law suites, we design, permit, and build rental-ready ADUs.",
+    features: [
+      "Free ADU feasibility & zoning review",
+      "Detached backyard cottages",
+      "Garage-to-ADU conversions",
+      "Basement & attic ADUs",
+      "Above-garage apartments",
+      "Design, permitting & construction — one contract",
+    ],
+    benefits: [
+      "By-right approval — no variance, no zoning battles",
+      "Rental income potential of $2,000–$3,000/month",
+      "Turnkey delivery: design through certificate of occupancy",
+      "25+ years building in Greater Boston",
+      "Licensed (MA CSL) and fully insured",
+      "Transparent fixed-price proposals",
+    ],
+    process: [
+      { step: "Feasibility Review", description: "We check your lot, zoning dimensional rules, utilities, and septic capacity — and tell you exactly what you can build." },
+      { step: "Design & Permits", description: "Architectural plans sized to the 900 sq ft / 50% rule, submitted for a standard building permit. No special permit required." },
+      { step: "Construction", description: "Foundation to finishes with our own crews — site work, utilities, framing, and interior build-out." },
+      { step: "Rental-Ready Handoff", description: "Final inspections, certificate of occupancy, and a unit ready for family or tenants." },
+    ],
+    faqs: [
+      { q: "Can I really build an ADU without a special permit in Massachusetts?", a: "Yes. Since February 2025, state law allows one ADU up to 900 sq ft (or 50% of your home's floor area, whichever is smaller) by right on any single-family lot. You still need a standard building permit, but towns can no longer require a variance or special permit for a conforming ADU." },
+      { q: "How much does an ADU cost to build?", a: "In Greater Boston: basement conversions typically run $80K–$150K, garage conversions $120K–$220K, and detached new-construction ADUs $250K–$500K+ depending on size, site conditions, and finishes. We provide a fixed-price proposal after a feasibility visit." },
+      { q: "Can I rent out my ADU?", a: "Yes — long-term rentals are allowed, and towns cannot require you to live on the property. Short-term rentals under 31 days are not permitted under the state ADU law." },
+      { q: "Do I need extra parking for an ADU?", a: "Towns may require at most one additional space — and none at all if your property is within a half mile of public transit." },
+      { q: "What if my home is on a septic system?", a: "Title 5 capacity is based on bedroom count. We evaluate your system during feasibility; some projects need a septic upgrade, which we price up front — no surprises mid-project." },
+      { q: "How long does an ADU project take?", a: "Design and permitting typically take 6–10 weeks, and construction 3–6 months depending on the type — garage and basement conversions are fastest, detached cottages take longest." },
     ],
   },
 ];

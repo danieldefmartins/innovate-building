@@ -1378,6 +1378,291 @@ function ArchitectEngineerDrafter() {
   );
 }
 
+
+// ─── ADU Articles ────────────────────────────────────────────────────────────
+
+function AduLawGuide() {
+  return (
+    <>
+      <p>
+        For decades, building an in-law apartment or backyard cottage in Massachusetts meant begging your zoning board for a variance — and usually losing. That era is over. Under the Affordable Homes Act, accessory dwelling units (ADUs) became legal <strong>by right</strong> on single-family lots statewide in February 2025. It is the biggest change to residential zoning in Massachusetts in a generation, and homeowners from <Link href="/areas/boston" className="text-accent hover:underline">Boston</Link> to the suburbs are already taking advantage.
+      </p>
+      <h2>What the Law Actually Allows</h2>
+      <ul>
+        <li><strong>One ADU per single-family lot, by right.</strong> No special permit, no variance, no discretionary board approval. If your ADU conforms to the rules, the town must issue a standard building permit.</li>
+        <li><strong>Up to 900 square feet</strong> — or half the gross floor area of your main house, whichever is smaller. A 2,400 sq ft colonial can host a full 900 sq ft ADU; a 1,500 sq ft ranch is capped at 750 sq ft.</li>
+        <li><strong>Any configuration:</strong> detached backyard cottage, attached addition, garage conversion, or an internal unit like a basement or attic apartment. A separate entrance is required.</li>
+        <li><strong>You do not have to live on the property.</strong> Towns can no longer impose owner-occupancy requirements.</li>
+      </ul>
+      <h2>What Towns Can No Longer Do</h2>
+      <p>
+        The state's regulations (finalized by EOHLC in January 2025) stripped away the usual local roadblocks. Cities and towns cannot require more than one additional parking space — and <strong>zero</strong> parking if you're within a half mile of transit. They cannot demand separate utility connections, impose stricter design standards than apply to single-family homes, or cap ADUs below the state size limit.
+      </p>
+      <p>
+        Local dimensional rules still apply — setbacks, lot coverage, height — the same ones that would govern a garage or addition. That's where a feasibility review earns its keep: the question is rarely <em>whether</em> you can build, but <em>what and where</em> on your lot.
+      </p>
+      <h2>The Fine Print That Matters</h2>
+      <ul>
+        <li><strong>No short-term rentals.</strong> ADUs cannot be rented for stays under 31 days. Long-term tenants, family, or home offices are all fair game.</li>
+        <li><strong>Septic capacity counts.</strong> On Title 5 systems, bedroom count drives capacity. Adding bedrooms may trigger a septic upgrade — know this before you design.</li>
+        <li><strong>A second ADU is possible</strong> in some towns, but only by special permit where local bylaws allow it.</li>
+      </ul>
+      <p>
+        We break down what each configuration costs in our <Link href="/blog/adu-cost-massachusetts-2026" className="text-accent hover:underline">Massachusetts ADU cost guide</Link>, and if you want to know exactly what your lot supports, our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU construction team</Link> does free feasibility reviews.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduCostMA() {
+  return (
+    <>
+      <p>
+        The honest answer to "what does an ADU cost in Massachusetts?" is: it depends enormously on what you're starting with. A basement that already has ceiling height and egress is a completely different project from a backyard cottage that needs a foundation, utility trenching, and its own roof. Here's how 2026 pricing actually breaks down in Greater Boston.
+      </p>
+      <h2>Cost by ADU Type (Greater Boston, 2026)</h2>
+      <ul>
+        <li><strong>Basement ADU: $80K–$150K.</strong> The structure exists — you're paying for egress, insulation, a kitchen and bath, and fire separation. See our <Link href="/blog/basement-finishing-boston-complete-guide" className="text-accent hover:underline">basement finishing guide</Link> for what's involved structurally.</li>
+        <li><strong>Garage conversion: $120K–$220K.</strong> Slab insulation, new wall assemblies, utilities from the main house. Detached garages cost more than attached ones because of trenching.</li>
+        <li><strong>Attached addition ADU: $180K–$350K.</strong> New construction tied into your existing structure, sharing one wall and often utility runs.</li>
+        <li><strong>Detached backyard cottage: $250K–$500K+.</strong> Full new construction: foundation, framing, roof, independent systems. Figure $275–$450 per square foot depending on finishes.</li>
+      </ul>
+      <h2>The Costs Homeowners Miss</h2>
+      <ul>
+        <li><strong>Utility connections: $10K–$25K</strong> for water, sewer, and electric trenching to a detached structure — the single biggest variable on cottage builds.</li>
+        <li><strong>Septic upgrades: $25K–$40K</strong> if your Title 5 system can't support the added bedrooms.</li>
+        <li><strong>Site work:</strong> ledge, grading, tree removal, and drainage can add five figures on tight or sloped lots.</li>
+        <li><strong>Design and permitting:</strong> plans, structural engineering, and fees typically run $8K–$20K.</li>
+      </ul>
+      <h2>Is It Worth It?</h2>
+      <p>
+        A one-bedroom ADU in Greater Boston rents for $2,000–$3,000 a month — our <Link href="/blog/adu-rental-income-massachusetts" className="text-accent hover:underline">ADU rental income breakdown</Link> runs the full payback math. Between rental income and the appraisal bump, a well-built ADU is one of the few six-figure projects that pays you back monthly.
+      </p>
+      <p>
+        Want a real number instead of a range? Our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU design-build team</Link> provides fixed-price proposals after a free feasibility visit.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduTypes() {
+  return (
+    <>
+      <p>
+        Massachusetts law allows an ADU in almost any form — detached, attached, or carved out of space you already own. The right choice comes down to your lot, your budget, and who's going to live there. Here's how the options compare after the state's <Link href="/blog/massachusetts-adu-law-2026-guide" className="text-accent hover:underline">by-right ADU law</Link> leveled the playing field.
+      </p>
+      <h2>Internal ADUs: Basement &amp; Attic Conversions</h2>
+      <p>
+        <strong>Best for:</strong> budget-conscious owners, rental income. <strong>Cost:</strong> $80K–$150K. <strong>Timeline:</strong> 2–4 months.
+      </p>
+      <p>
+        Converting existing space is the cheapest path to a legal second unit. You'll need 6'8"+ finished ceiling height, proper egress, and fire separation between units. The trade-off is light and ceiling height — great for tenants, tighter for long-term family living.
+      </p>
+      <h2>Garage Conversions</h2>
+      <p>
+        <strong>Best for:</strong> speed and value. <strong>Cost:</strong> $120K–$220K. <strong>Timeline:</strong> 3–5 months.
+      </p>
+      <p>
+        The structure, roof, and slab already exist — you're buying insulation, systems, and finishes. Read our dedicated <Link href="/blog/garage-conversion-adu-massachusetts" className="text-accent hover:underline">garage conversion guide</Link> for the slab, insulation, and utility details.
+      </p>
+      <h2>Attached Additions</h2>
+      <p>
+        <strong>Best for:</strong> multigenerational living. <strong>Cost:</strong> $180K–$350K. <strong>Timeline:</strong> 4–7 months.
+      </p>
+      <p>
+        An addition ADU shares a wall (and often mechanicals) with your house while keeping a separate entrance. It's the natural evolution of the in-law suite — see how families are using them in our <Link href="/blog/adu-for-family-multigenerational-massachusetts" className="text-accent hover:underline">multigenerational ADU article</Link>.
+      </p>
+      <h2>Detached Backyard Cottages</h2>
+      <p>
+        <strong>Best for:</strong> maximum privacy and rental value. <strong>Cost:</strong> $250K–$500K+. <strong>Timeline:</strong> 5–9 months.
+      </p>
+      <p>
+        A standalone cottage commands the highest rent and adds the most appraised value, but it's full new construction. Setbacks and lot coverage determine placement; utility runs drive cost.
+      </p>
+      <h2>The Size Math</h2>
+      <p>
+        Whatever the type, the cap is 900 sq ft or half your home's gross floor area, whichever is smaller. A 900 sq ft ADU comfortably fits a one-bedroom with open living space, or a compact two-bedroom at around 750–900 sq ft.
+      </p>
+      <p>
+        Not sure which fits your lot? Our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU team</Link> will tell you in one site visit.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduPermits() {
+  return (
+    <>
+      <p>
+        "By right" is the most misunderstood phrase in the new Massachusetts ADU law. It doesn't mean no permits — it means no <em>discretionary</em> approvals. You skip the zoning board hearings and neighbor votes, but you still go through the standard building permit process, the same as any <Link href="/blog/massachusetts-building-permits-homeowner-guide" className="text-accent hover:underline">permitted construction project in Massachusetts</Link>. Here's the actual sequence.
+      </p>
+      <h2>Step 1: Feasibility (1–2 weeks)</h2>
+      <p>
+        Before designing anything, confirm what your lot supports: zoning dimensional rules (setbacks, height, lot coverage), utility locations, and — critically on septic — Title 5 capacity. This is where most ADU projects are won or lost, and it's why we do it free.
+      </p>
+      <h2>Step 2: Design &amp; Engineering (4–8 weeks)</h2>
+      <p>
+        Stamped architectural plans, structural engineering where needed, plot plan, and energy code compliance. Detached units also need a site plan showing setbacks and utility routing.
+      </p>
+      <h2>Step 3: Building Permit (2–6 weeks)</h2>
+      <p>
+        Your application goes to the building department — not the zoning board. For a conforming ADU the review is administrative. Trades permits (electrical, plumbing, gas) are pulled by the licensed contractors doing the work.
+      </p>
+      <h2>Step 4: Construction &amp; Inspections (3–9 months)</h2>
+      <p>
+        Foundation, rough frame, rough electrical/plumbing, insulation, and final — inspectors sign off at each stage. Timeline depends on ADU type: basement conversions land at the short end, detached cottages the long end. Our <Link href="/blog/types-of-adus-massachusetts" className="text-accent hover:underline">ADU type comparison</Link> has timelines for each.
+      </p>
+      <h2>Step 5: Certificate of Occupancy</h2>
+      <p>
+        The final inspection converts your project into a legal dwelling unit — the document that matters for insurance, rental, and resale.
+      </p>
+      <h2>What Towns Can Still Require</h2>
+      <p>
+        Dimensional zoning still applies, along with health regulations (septic), conservation review near wetlands, and historic district rules where applicable. What towns <em>can't</em> do is demand owner-occupancy, excessive parking, or design standards stricter than single-family homes.
+      </p>
+      <p>
+        We handle every step of this process — permits included — as part of our <Link href="/services/adu-construction" className="text-accent hover:underline">turnkey ADU service</Link>.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduRentalIncome() {
+  return (
+    <>
+      <p>
+        The spreadsheet is what convinces most Massachusetts homeowners to build an ADU. Greater Boston has some of the highest rents in the country, a chronic shortage of small units, and a new state law that lets you add one to your backyard <Link href="/blog/massachusetts-adu-law-2026-guide" className="text-accent hover:underline">by right</Link>. Here's the honest math.
+      </p>
+      <h2>What ADUs Rent For in Greater Boston (2026)</h2>
+      <ul>
+        <li><strong>Studio ADU:</strong> $1,700–$2,200/month</li>
+        <li><strong>One-bedroom:</strong> $2,000–$2,800/month in <Link href="/areas/somerville" className="text-accent hover:underline">Somerville</Link>, <Link href="/areas/medford" className="text-accent hover:underline">Medford</Link>, and comparable markets; higher near transit</li>
+        <li><strong>Two-bedroom (750–900 sq ft):</strong> $2,600–$3,400/month</li>
+      </ul>
+      <h2>The Payback Math</h2>
+      <p>
+        Take a $160K garage conversion renting at $2,400/month. That's $28,800/year gross — a decade to gross payback, faster after you count the property value increase, and dramatically better than what that $160K earns elsewhere on a risk-adjusted basis. A $350K detached cottage at $3,000/month is a longer runway on rent alone, but detached units also add the most appraised value.
+      </p>
+      <h2>The Rules You Must Follow</h2>
+      <ul>
+        <li><strong>No short-term rentals.</strong> The state ADU law prohibits stays under 31 days. Airbnb is off the table; travel nurses on 3-month contracts are not.</li>
+        <li><strong>Standard landlord obligations apply:</strong> lead paint (pre-1978 units), security deposit rules, and habitability codes.</li>
+        <li><strong>You don't have to live there.</strong> Towns cannot impose owner-occupancy — both units can be rentals.</li>
+      </ul>
+      <h2>Property Value &amp; Taxes</h2>
+      <p>
+        Appraisers increasingly value ADUs on income approach in strong rental markets — expect your assessment (and property tax) to rise, typically far less than the rental income. A legal, permitted unit with a certificate of occupancy appraises; an unpermitted one is a liability at sale.
+      </p>
+      <p>
+        Wondering what your lot could earn? Our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU team</Link> pairs feasibility reviews with realistic rent comps, and our <Link href="/blog/adu-financing-massachusetts" className="text-accent hover:underline">financing guide</Link> shows how rental income offsets the loan.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function GarageConversionAdu() {
+  return (
+    <>
+      <p>
+        If you have a structurally sound garage, you may be sitting on the cheapest legal rental unit in Massachusetts. Garage conversions skip the most expensive parts of new construction — foundation, framing, roof — which is why they land at $120K–$220K instead of the $250K+ of a ground-up cottage. Here's what the project actually involves.
+      </p>
+      <h2>Is Your Garage a Candidate?</h2>
+      <ul>
+        <li><strong>Slab condition:</strong> cracked, sloped slabs (most garage floors pitch toward the door) get a floating insulated floor over them — figure that into ceiling height.</li>
+        <li><strong>Ceiling height:</strong> you need 7 feet finished for habitable space. Many garages make it; low-slung ones may need structural work.</li>
+        <li><strong>Structure:</strong> rot, undersized framing, or a failing roof get fixed first — sometimes the honest answer is that a rebuild costs less than a rescue.</li>
+      </ul>
+      <h2>What the Conversion Involves</h2>
+      <ul>
+        <li><strong>Envelope:</strong> insulated walls and ceiling to current energy code (R-values a garage never had), new windows and doors where the overhead door was.</li>
+        <li><strong>Utilities:</strong> attached garages tap the house systems; detached ones need trenched water, sewer, and electric — $10K–$25K depending on run length.</li>
+        <li><strong>Interior:</strong> kitchen, bathroom, heating/cooling (usually heat pump mini-splits), and fire-rated separation where required.</li>
+      </ul>
+      <h2>Permits &amp; Timeline</h2>
+      <p>
+        Under the <Link href="/blog/massachusetts-adu-law-2026-guide" className="text-accent hover:underline">state ADU law</Link>, a conforming garage conversion is by-right — standard building permit, no zoning board. Design through certificate of occupancy typically runs 4–6 months. The full sequence is in our <Link href="/blog/adu-permit-process-massachusetts" className="text-accent hover:underline">ADU permit guide</Link>.
+      </p>
+      <h2>The Parking Question</h2>
+      <p>
+        Converting your garage removes parking. Towns may require at most one replacement space — zero near transit — and a driveway usually satisfies it. We confirm this in feasibility before you spend a dollar on design.
+      </p>
+      <p>
+        Our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU construction team</Link> has converted garages across <Link href="/areas/medford" className="text-accent hover:underline">Medford</Link>, <Link href="/areas/quincy" className="text-accent hover:underline">Quincy</Link>, and Greater Boston — free feasibility reviews if you're wondering about yours.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduFamily() {
+  return (
+    <>
+      <p>
+        For all the talk about rental income, the number-one reason Massachusetts families call us about ADUs is people, not money: aging parents who need to be close, adult kids priced out of the market, or a caregiver who needs real living quarters. The new <Link href="/blog/massachusetts-adu-law-2026-guide" className="text-accent hover:underline">by-right ADU law</Link> turned the in-law suite from a zoning fight into a straightforward build.
+      </p>
+      <h2>Designing for Aging Parents</h2>
+      <ul>
+        <li><strong>Single-level living</strong> — a detached cottage or first-floor addition beats a basement unit for anyone with mobility concerns.</li>
+        <li><strong>Universal design from day one:</strong> zero-step entry, 36" doorways, curbless shower, blocking in walls for future grab bars, lever hardware. Building it in costs little; retrofitting costs a lot.</li>
+        <li><strong>Proximity with dignity:</strong> a separate entrance and full kitchen mean parents keep autonomy while being thirty feet away instead of thirty minutes.</li>
+      </ul>
+      <h2>Designing for Adult Kids (or You)</h2>
+      <p>
+        The same 900 sq ft that houses a parent works as a launch pad for a 26-year-old saving for a down payment — or as your own downsized quarters while the main house rents. Families increasingly design ADUs to <strong>switch roles over time</strong>: in-law suite now, rental in five years, aging-in-place cottage in twenty.
+      </p>
+      <h2>Build for the Second Life</h2>
+      <p>
+        The resale and rental value of your ADU depends on decisions made at design time: a real kitchen (not a kitchenette), laundry in the unit, sound isolation between units, and separate utility metering where practical. These cost marginally more during construction and define the unit's flexibility forever. Our <Link href="/blog/adu-cost-massachusetts-2026" className="text-accent hover:underline">cost guide</Link> shows where these choices land in the budget.
+      </p>
+      <h2>The Family Conversation</h2>
+      <p>
+        Talk through the unglamorous details early: who pays utilities, what happens if care needs escalate, how the ADU factors into the estate. The construction is the easy part — we've watched families navigate the rest, and the ones who talk first build happiest.
+      </p>
+      <p>
+        Our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU design-build team</Link> has built in-law ADUs across <Link href="/areas/newton" className="text-accent hover:underline">Newton</Link>, <Link href="/areas/wellesley" className="text-accent hover:underline">Wellesley</Link>, and Greater Boston. We'd love to help your family figure out what fits.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
+function AduFinancing() {
+  return (
+    <>
+      <p>
+        An ADU is a six-figure project, and almost nobody writes a check for it. The good news: because ADUs generate income and add appraised value, lenders treat them better than almost any other renovation. Here's every route Massachusetts homeowners are using in 2026.
+      </p>
+      <h2>HELOC: The Default Choice</h2>
+      <p>
+        If you've owned your home more than a few years, you likely have the equity. A home equity line funds the project in draws as construction progresses, you pay interest only on what you've drawn, and — key move — the ADU's rental income covers the payment once it leases. Most of our <Link href="/blog/adu-cost-massachusetts-2026" className="text-accent hover:underline">garage conversion and basement ADU budgets</Link> get funded exactly this way.
+      </p>
+      <h2>Cash-Out Refinance</h2>
+      <p>
+        Makes sense when your current mortgage rate is at or above market. You refinance, pull the ADU budget out in cash, and carry one payment. Run the blended-rate math against a HELOC before choosing.
+      </p>
+      <h2>Renovation &amp; Construction Loans</h2>
+      <ul>
+        <li><strong>FHA 203(k) and Fannie Mae HomeStyle</strong> loans fund renovations based on the <em>after-completion</em> value — useful when current equity is thin. Some programs now count projected ADU rental income toward qualification.</li>
+        <li><strong>Construction loans</strong> suit large detached builds; they convert to permanent financing at completion.</li>
+      </ul>
+      <h2>The Massachusetts ADU Incentive</h2>
+      <p>
+        The state has tasked the Massachusetts Housing Partnership with an ADU incentive program offering education and financial assistance to eligible homeowners. Programs evolve — check MHP's current offerings when you plan, and ask us what clients are actually using.
+      </p>
+      <h2>Making the Numbers Work</h2>
+      <p>
+        The financing conversation changes when you treat the ADU as an income asset: $2,400/month in rent supports roughly a $160K project's debt service at 2026 rates. Our <Link href="/blog/adu-rental-income-massachusetts" className="text-accent hover:underline">rental income guide</Link> walks the full math, and our <Link href="/services/adu-construction" className="text-accent hover:underline">ADU team</Link> provides the fixed-price proposal your lender needs.
+      </p>
+      <ArticleCTA />
+    </>
+  );
+}
+
 // ─── Assign content functions to articles ───────────────────────────────────
 
 const CONTENT_MAP: Record<string, () => React.ReactNode> = {
@@ -1398,6 +1683,14 @@ const CONTENT_MAP: Record<string, () => React.ReactNode> = {
   "winter-home-maintenance-new-england": WinterMaintenanceChecklist,
   "when-to-pour-concrete-new-england-boston": ConcreteWorkNewEngland,
   "architect-engineer-drafter-home-plans-massachusetts": ArchitectEngineerDrafter,
+  "massachusetts-adu-law-2026-guide": AduLawGuide,
+  "adu-cost-massachusetts-2026": AduCostMA,
+  "types-of-adus-massachusetts": AduTypes,
+  "adu-permit-process-massachusetts": AduPermits,
+  "adu-rental-income-massachusetts": AduRentalIncome,
+  "garage-conversion-adu-massachusetts": GarageConversionAdu,
+  "adu-for-family-multigenerational-massachusetts": AduFamily,
+  "adu-financing-massachusetts": AduFinancing,
 };
 
 // Inject content into each article
