@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
-import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
+import EstimateForm from "@/components/EstimateForm";
 import Testimonials from "@/components/Testimonials";
 import { HERO_IMAGES } from "@/data/images";
 
@@ -312,7 +312,7 @@ export default function CustomIronworkLanding() {
             </p>
 
             <div className="max-w-2xl mx-auto bg-card text-card-foreground p-6 rounded-lg mb-8">
-              <GHLFormPlaceholder service="Custom Ironwork" />
+              <EstimateForm service="Other / not sure yet" />
             </div>
 
             <p className="text-sm opacity-80 mb-3">Prefer to call? We pick up.</p>

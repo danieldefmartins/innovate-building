@@ -51,12 +51,6 @@ const LOCAL_BUSINESS_SCHEMA = {
   ],
   slogan: COMPANY.tagline,
   numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10 },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "10",
-    bestRating: "5",
-  },
 };
 
 export function LocalBusinessSchema() {

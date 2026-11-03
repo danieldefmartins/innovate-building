@@ -1,10 +1,15 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root")!;
+const app = (
   <StrictMode>
     <App />
   </StrictMode>
 );
+
+// Pages arrive prerendered (scripts/prerender.mjs); hydrate them instead of re-drawing.
+if (rootEl.hasChildNodes()) hydrateRoot(rootEl, app);
+else createRoot(rootEl).render(app);

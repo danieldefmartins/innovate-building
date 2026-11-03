@@ -198,6 +198,7 @@ function injectMeta(html: string, pathname: string): string {
     <meta name="twitter:image" content="${image}" />`;
 
   html = html.replace("</head>", `${ogTags}\n  </head>`);
+  html = html.replace('<html lang="en">', `<html lang="${lang}">`);
 
   return html;
 }
@@ -257,13 +258,75 @@ app.get("/api/geo", async (req, res) => {
   }
 });
 
-// ─── Serve static files ──────────────────────────────────────────────────────
-app.use(express.static(path.join(__dirname, "public")));
+// ─── Host + URL normalisation ────────────────────────────────────────────────
+// One canonical host (apex) and one URL per page (no trailing slash).
+const LEGACY_REDIRECTS: Record<string, string> = {
+  "/privacy-policy": "/privacy",
+  "/privacy-notice": "/privacy",
+  "/terms-of-service": "/terms",
+  "/terms-and-conditions": "/terms",
+  "/terms-of-use": "/terms",
+  "/estimate": "/contact",
+  "/free-estimate": "/contact",
+  "/quote": "/contact",
+};
 
-// ─── SPA fallback with meta tag injection ────────────────────────────────────
+app.use((req, res, next) => {
+  const host = (req.headers.host || "").toLowerCase();
+  if (host.startsWith("www.")) {
+    return res.redirect(301, `https://${host.slice(4)}${req.originalUrl}`);
+  }
+  const qs = req.originalUrl.slice(req.path.length);
+  if (req.path.startsWith("/amy")) return next();
+  let target = req.path;
+  if (target.length > 1 && target.endsWith("/")) target = target.replace(/\/+$/, "") || "/";
+  const { lang, cleanPath } = parseLang(target);
+  const legacy = LEGACY_REDIRECTS[cleanPath.toLowerCase()];
+  if (legacy) target = lang === "en" ? legacy : `/${lang}${legacy}`;
+  if (target !== req.path) return res.redirect(301, target + qs);
+  next();
+});
+
+// ─── Serve static files ──────────────────────────────────────────────────────
+app.use("/amy", express.static(path.join(__dirname, "public", "amy")));
+app.use(
+  express.static(path.join(__dirname, "public"), { index: false, redirect: false })
+);
+
+// ─── Prerendered pages (built by scripts/prerender.mjs) ──────────────────────
+const PRERENDER_DIR = path.join(__dirname, "prerender");
+let routes: Record<string, string> = {};
+try {
+  routes = JSON.parse(fs.readFileSync(path.join(PRERENDER_DIR, "routes.json"), "utf-8"));
+} catch {
+  console.warn("No prerendered routes found; serving the app shell for every page.");
+}
+const pageCache = new Map<string, string>();
+function readPage(file: string): string {
+  let html = pageCache.get(file);
+  if (!html) {
+    html = fs.readFileSync(path.join(PRERENDER_DIR, file), "utf-8");
+    pageCache.set(file, html);
+  }
+  return html;
+}
+
 app.get("*", (req, res) => {
-  const html = injectMeta(getTemplate(), req.path);
-  res.send(html);
+  const file = routes[req.path];
+  if (file) {
+    if (req.path.startsWith("/proposal/")) res.setHeader("X-Robots-Tag", "noindex, nofollow");
+    res.setHeader("Cache-Control", "public, max-age=300");
+    return res.send(injectMeta(readPage(file), req.path));
+  }
+  if (!Object.keys(routes).length) {
+    return res.send(injectMeta(getTemplate(), req.path));
+  }
+  // Unknown URL: a real 404 (not a soft-404 home page), still with the site's navigation.
+  let html = readPage("404.html");
+  html = html
+    .replace(/<title>[^<]*<\/title>/, `<title>Page not found | ${COMPANY}</title>`)
+    .replace("</head>", `<meta name="robots" content="noindex" />\n  </head>`);
+  res.status(404).send(html);
 });
 
 app.listen(PORT, () => {

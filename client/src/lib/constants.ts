@@ -12,6 +12,9 @@ export const COMPANY = {
   website: "innovatebuildinginc.com",
 } as const;
 
+/** Legal operator line (owner-confirmed 2026-11-03). Keep as one string. */
+export const LEGAL_LINE = "Innovate Building is operated by Innovate Building Inc.";
+
 export const PHONE_NUMBERS = {
   // === 4 actual business lines ===
   MAIN: {

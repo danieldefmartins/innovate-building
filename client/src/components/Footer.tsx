@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { PHONE_NUMBERS, COMPANY, type PhoneEntry } from "@/lib/constants";
+import { PHONE_NUMBERS, COMPANY, LEGAL_LINE, type PhoneEntry } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICES } from "@/data/services";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -124,6 +124,7 @@ export default function Footer({ geoPhone }: FooterProps) {
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. {t.footer.allRightsReserved}</p>
             <p>{t.footer.licensedGC}</p>
           </div>
+          <p className="mt-4 text-center md:text-left text-xs text-sidebar-foreground/50">{LEGAL_LINE}</p>
         </div>
       </div>
     </footer>

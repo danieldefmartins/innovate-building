@@ -93,6 +93,12 @@ export default function Navigation({ geoPhone }: NavigationProps) {
           {/* Language + Phone CTA */}
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
+            <Link
+              href={localePath("/contact")}
+              className="inline-flex items-center h-9 px-4 rounded-md border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-display font-bold text-sm tracking-wider transition-colors"
+            >
+              {t.nav.freeQuote}
+            </Link>
             <PhoneLink tel={phone.tel}>
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-display font-bold tracking-wider">
                 <Phone className="w-4 h-4 mr-2" />

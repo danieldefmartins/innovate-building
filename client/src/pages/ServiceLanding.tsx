@@ -4,7 +4,17 @@ import { Link } from "wouter";
 import { Phone, ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
-import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
+import EstimateForm from "@/components/EstimateForm";
+
+const FORM_SERVICE: Record<string, string> = {
+  "home-remodeling": "Whole-home renovation",
+  "kitchen-remodeling": "Kitchen remodel",
+  "bathroom-remodeling": "Bathroom remodel",
+  "basement-renovation": "Basement finishing",
+  "home-addition": "Home addition",
+  "decks-outdoor": "Deck",
+  "adu-construction": "ADU construction",
+};
 import type { ServiceData } from "@/data/services";
 import { SERVICE_IMAGES } from "@/data/images";
 import PageMeta from "@/components/PageMeta";
@@ -94,9 +104,9 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
             <div className="bg-card text-card-foreground p-6 rounded-lg border-2 border-accent">
               <h2 className="text-heading text-2xl mb-2 text-center">{t.cta.getFreeEstimate}</h2>
               <p className="text-sm text-muted-foreground text-center mb-4">
-                No obligation. We'll call you back within 2 hours.
+                Free and no obligation. Tell us about your project.
               </p>
-              <GHLFormPlaceholder service={service.shortTitle} variant="compact" />
+              <EstimateForm service={FORM_SERVICE[service.slug]} variant="compact" />
             </div>
           </div>
         </div>
@@ -253,7 +263,7 @@ export default function ServiceLanding({ service }: ServiceLandingProps) {
             </p>
 
             <div className="max-w-2xl mx-auto bg-card text-card-foreground p-6 rounded-lg mb-8">
-              <GHLFormPlaceholder service={service.shortTitle} />
+              <EstimateForm service={FORM_SERVICE[service.slug]} />
             </div>
 
             <p className="text-sm opacity-80 mb-3">Prefer to call? We pick up.</p>

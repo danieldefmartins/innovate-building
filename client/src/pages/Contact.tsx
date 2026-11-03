@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import { PhoneLink } from "@/components/PhoneLink";
-import GHLFormPlaceholder from "@/components/GHLFormPlaceholder";
+import EstimateForm from "@/components/EstimateForm";
 import PageMeta from "@/components/PageMeta";
 import { useLanguage } from "@/hooks/useLanguage";
 
@@ -147,7 +147,9 @@ export default function Contact() {
             {/* Right — Contact Form */}
             <div>
               <h2 className="text-display text-2xl sm:text-3xl md:text-4xl mb-8">REQUEST A FREE ESTIMATE</h2>
-              <GHLFormPlaceholder />
+              <div className="rounded-lg border border-border bg-card p-6">
+                <EstimateForm />
+              </div>
             </div>
           </div>
         </div>
@@ -211,25 +213,6 @@ export default function Contact() {
               <p className="text-muted-foreground text-sm mt-4">
                 Don't see your town? Give us a call — we likely serve your area too.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Placeholder */}
-      <section className="section-divider bg-card py-10 md:py-20">
-        <div className="container">
-          <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-display text-2xl sm:text-3xl md:text-5xl mb-4">FIND US</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Based in Greater Boston, serving all of Eastern Massachusetts and Southern New Hampshire
-            </p>
-          </div>
-
-          <div className="w-full h-[400px] bg-muted rounded-lg border border-border flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-10 h-10 text-muted-foreground/50 mx-auto mb-3" />
-              <span className="text-muted-foreground text-sm">Google Map Embed Coming Soon</span>
             </div>
           </div>
         </div>
