@@ -45,6 +45,18 @@ fs.writeFileSync(
   path.join(outDir, "routes.json"),
   JSON.stringify(Object.fromEntries(routes.map((r) => [r, fileFor(r)]))),
 );
+// Page titles/descriptions from the content data, used by the server's meta injection.
+const pageMeta = {};
+for (const a of ssr.BLOG_ARTICLES) {
+  const full = `${a.title} | Innovate Building`;
+  pageMeta[`/blog/${a.slug}`] = {
+    title: full.length <= 60 ? full : a.title,
+    description: a.metaDescription || a.excerpt,
+    type: "article",
+  };
+}
+fs.writeFileSync(path.join(outDir, "meta.json"), JSON.stringify(pageMeta));
+
 // Sitemap from the same route list (English pages; /es and /pt are linked via hreflang).
 const today = new Date().toISOString().slice(0, 10);
 const urls = pages

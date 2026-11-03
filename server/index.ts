@@ -85,7 +85,27 @@ const STATIC_META: Record<string, MetaData> = {
     title: `Areas We Serve | ${COMPANY}`,
     description: "Innovate Building serves 70+ cities across Greater Boston and Southern New Hampshire. Find your local general contractor.",
   },
+  "/privacy": {
+    title: `Privacy Policy | ${COMPANY}`,
+    description: "How Innovate Building collects, uses and protects information from website visitors, estimate requests and optional text messages.",
+  },
+  "/terms": {
+    title: `Terms & SMS Text Messaging Terms | ${COMPANY}`,
+    description: "Website terms, estimate information and optional SMS text messaging terms for Innovate Building in Massachusetts and New Hampshire.",
+  },
+  "/custom-ironwork": {
+    title: `Custom Ironwork & Railings | ${COMPANY}`,
+    description: "Custom iron railings, gates and metalwork designed and installed as part of your Greater Boston remodel or new construction project.",
+  },
 };
+
+// Built from the content data at build time (scripts/prerender.mjs).
+let BUILD_META: Record<string, MetaData> = {};
+try {
+  BUILD_META = JSON.parse(fs.readFileSync(path.join(__dirname, "prerender", "meta.json"), "utf-8"));
+} catch {
+  /* optional */
+}
 
 // Dynamic route patterns
 const SERVICE_META: Record<string, MetaData> = {
@@ -98,10 +118,12 @@ const SERVICE_META: Record<string, MetaData> = {
   "home-addition": { title: `Home Additions in Greater Boston | ${COMPANY}`, description: "Need more space? From bump-outs to second stories, we build additions that look like they were always part of your home." },
   "siding": { title: `Siding & Exterior in Greater Boston | ${COMPANY}`, description: "Vinyl, fiber cement, and cedar siding installation. Full exterior renovations including insulation, trim, and weatherproofing." },
   "decks-outdoor": { title: `Decks & Outdoor Living | ${COMPANY}`, description: "Custom deck design and construction. Composite and wood decking, railings, lighting, and outdoor living spaces across Greater Boston." },
+  "adu-construction": { title: `ADU Construction in Massachusetts | ${COMPANY}`, description: "Design, permits and construction of accessory dwelling units (ADUs) in Greater Boston: detached cottages, garage conversions and in-law suites." },
   "windows-doors": { title: `Windows & Doors Installation | ${COMPANY}`, description: "Energy-efficient window and door replacement. Expert installation by in-house crews. All major brands, licensed and insured." },
 };
 
 function getMetaForRoute(pathname: string): MetaData {
+  if (BUILD_META[pathname]) return BUILD_META[pathname];
   // Static routes
   if (STATIC_META[pathname]) return STATIC_META[pathname];
 
@@ -283,7 +305,10 @@ app.use((req, res, next) => {
   const { lang, cleanPath } = parseLang(target);
   const legacy = LEGACY_REDIRECTS[cleanPath.toLowerCase()];
   if (legacy) target = lang === "en" ? legacy : `/${lang}${legacy}`;
-  if (target !== req.path) return res.redirect(301, target + qs);
+  // Redirect only to a real page, so a mistyped URL gets a straight 404 (no redirect hop).
+  if (target !== req.path && (legacy || routes[target] || !Object.keys(routes).length)) {
+    return res.redirect(301, target + qs);
+  }
   next();
 });
 

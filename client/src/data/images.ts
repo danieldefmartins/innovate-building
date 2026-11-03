@@ -65,7 +65,7 @@ export const SERVICE_IMAGES: Record<string, string[]> = {
   ],
   roofing: [
     "/images/15331c74-e597-45d2-9306-07925037e38e.jpg",
-    "/images/3eb308c8-29ef-4abd-80c1-cb4daaead3a0.jpg",
+    "/images/roofing-project-greater-boston.webp",
   ],
   "home-remodeling": [
     "/images/IMG_5776.jpeg",

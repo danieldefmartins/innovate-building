@@ -36,7 +36,7 @@ export default function Footer({ geoPhone }: FooterProps) {
           <div>
             <div className="mb-4">
               <img
-                src="/images/logo/New-transparent.png"
+                src="/images/logo/innovate-building-logo-532.png"
                 alt={COMPANY.shortName}
                 className="h-12 w-auto max-w-none"
               />
