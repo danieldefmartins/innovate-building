@@ -1,5 +1,6 @@
 import { COMPANY, LEGAL_LINE, PHONE_NUMBERS } from "@/lib/constants";
 import PageMeta from "@/components/PageMeta";
+import { SMS_NOTICE } from "@/lib/crm";
 
 const BRAND = "Innovate Building";
 
@@ -8,7 +9,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen bg-card py-16 md:py-20">
       <PageMeta
         title={`Privacy Policy | ${BRAND}`}
-        description="How Innovate Building collects, uses and protects information from website visitors, estimate requests and optional text messages."
+        description="How Innovate Building collects, uses and protects information from website visitors, estimate requests and text messages."
       />
       <div className="container max-w-3xl">
         <h1 className="text-display text-4xl mb-4">Privacy Policy</h1>
@@ -16,7 +17,7 @@ export default function PrivacyPolicy() {
           <p className="text-muted-foreground">Effective November 3, 2026</p>
           <p>
             This policy explains how {BRAND} handles information collected through innovatebuildinginc.com, our
-            estimate forms, phone calls, emails and optional text messages. {LEGAL_LINE} Questions can be sent to{" "}
+            estimate forms, phone calls, emails and text messages. {LEGAL_LINE} Questions can be sent to{" "}
             <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> or{" "}
             <a href={`tel:+${PHONE_NUMBERS.MAIN.tel}`}>{PHONE_NUMBERS.MAIN.display}</a>.
           </p>
@@ -41,8 +42,9 @@ export default function PrivacyPolicy() {
 
           <h2 id="sms">Text messages (SMS)</h2>
           <p>
-            If you check the optional text message box on our forms, or otherwise ask us to text you, we will send
-            messages about your quote, appointments and project updates. Message frequency varies. Msg &amp; data rates
+            When you submit a form on this website with your phone number, you agree to receive text messages from{" "}
+            {BRAND} about your request (quotes, scheduling, project updates). The form shows this notice above the
+            Submit button: &ldquo;{SMS_NOTICE}&rdquo; We also text you if you otherwise ask us to. Message frequency varies. Msg &amp; data rates
             may apply. Reply STOP to cancel, HELP for help. Consent to receive texts is not a condition of any purchase.
           </p>
           <p>

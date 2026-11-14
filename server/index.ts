@@ -87,11 +87,11 @@ const STATIC_META: Record<string, MetaData> = {
   },
   "/privacy": {
     title: `Privacy Policy | ${COMPANY}`,
-    description: "How Innovate Building collects, uses and protects information from website visitors, estimate requests and optional text messages.",
+    description: "How Innovate Building collects, uses and protects information from website visitors, estimate requests and text messages.",
   },
   "/terms": {
     title: `Terms & SMS Text Messaging Terms | ${COMPANY}`,
-    description: "Website terms, estimate information and optional SMS text messaging terms for Innovate Building in Massachusetts and New Hampshire.",
+    description: "Website terms, estimate information and SMS text messaging terms for Innovate Building in Massachusetts and New Hampshire.",
   },
   "/custom-ironwork": {
     title: `Custom Ironwork & Railings | ${COMPANY}`,

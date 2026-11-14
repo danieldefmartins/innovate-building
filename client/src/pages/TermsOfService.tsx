@@ -1,5 +1,6 @@
 import { COMPANY, LEGAL_LINE, PHONE_NUMBERS } from "@/lib/constants";
 import PageMeta from "@/components/PageMeta";
+import { SMS_NOTICE } from "@/lib/crm";
 
 const BRAND = "Innovate Building";
 
@@ -8,14 +9,14 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-card py-16 md:py-20">
       <PageMeta
         title={`Terms & SMS Text Messaging Terms | ${BRAND}`}
-        description="Website terms, estimate information and optional SMS text messaging terms for Innovate Building in Massachusetts and New Hampshire."
+        description="Website terms, estimate information and SMS text messaging terms for Innovate Building in Massachusetts and New Hampshire."
       />
       <div className="container max-w-3xl">
         <h1 className="text-display text-4xl mb-4">Terms &amp; Conditions</h1>
         <div className="prose prose-lg max-w-none">
           <p className="text-muted-foreground">Effective November 3, 2026</p>
           <p>
-            These terms cover use of the {BRAND} website (innovatebuildinginc.com) and our optional text messaging
+            These terms cover use of the {BRAND} website (innovatebuildinginc.com) and our text messaging
             program. {LEGAL_LINE} Questions can be sent to <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> or{" "}
             <a href={`tel:+${PHONE_NUMBERS.MAIN.tel}`}>{PHONE_NUMBERS.MAIN.display}</a>.
           </p>
@@ -45,10 +46,12 @@ export default function TermsOfService() {
           <section id="sms">
             <h2>SMS / Text Messaging Terms</h2>
             <p>
-              Program name: {BRAND} text messages. If you check the optional SMS consent box on our forms, you agree to
-              receive text messages from {BRAND} at the number you provide. Message types include quote follow-ups,
+              Program name: {BRAND} text messages. When you submit a form on this website with your phone
+              number, you agree to receive text messages from {BRAND} at the number you provide about your request
+              (quotes, scheduling, project updates). The form shows this notice above the Submit button: &ldquo;
+              {SMS_NOTICE}&rdquo; Message types include quote follow-ups,
               appointment scheduling and reminders, project updates and customer care. Message frequency varies. Msg
-              &amp; data rates may apply. Consent is not a condition of purchase or of requesting an estimate.
+              &amp; data rates may apply. Consent is not a condition of purchase.
             </p>
             <p>
               Reply STOP to cancel, HELP for help. After you reply STOP you may receive one message confirming the
