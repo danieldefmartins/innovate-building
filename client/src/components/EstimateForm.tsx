@@ -3,6 +3,7 @@ import { Phone, MessageSquare, CheckCircle2, Loader2 } from "lucide-react";
 import { PHONE_NUMBERS, COMPANY } from "@/lib/constants";
 import {
   SERVICE_OPTIONS,
+  SMS_NOTICE,
   captureAttribution,
   loadForm,
   newAttempt,
@@ -31,7 +32,6 @@ export default function EstimateForm({ service, variant = "default" }: EstimateF
     ...EMPTY,
     service: service && (SERVICE_OPTIONS as readonly string[]).includes(service) ? service : "",
   });
-  const [smsConsent, setSmsConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
   const uid = useId().replace(/:/g, "");
@@ -66,7 +66,7 @@ export default function EstimateForm({ service, variant = "default" }: EstimateF
       const form = await readyForm(formRef.current);
       formRef.current = form;
       attemptRef.current ??= newAttempt();
-      await sendLead(form, attemptRef.current, values, smsConsent);
+      await sendLead(form, attemptRef.current, values);
       setStatus("sent");
       if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { form: "innovate-building-estimate" });
     } catch (err) {
@@ -132,22 +132,6 @@ export default function EstimateForm({ service, variant = "default" }: EstimateF
         <input id={id("website")} name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={set("website")} />
       </div>
 
-      <div className="flex items-start gap-3">
-        <input
-          id={id("sms")}
-          name="smsConsent"
-          type="checkbox"
-          className="mt-1 h-5 w-5 shrink-0 accent-[var(--accent)]"
-          checked={smsConsent}
-          onChange={(e) => setSmsConsent(e.target.checked)}
-        />
-        <label htmlFor={id("sms")} className="text-xs leading-relaxed text-muted-foreground">
-          I agree to receive text messages from Innovate Building about my quote, appointments and project updates. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. See our{" "}
-          <a href="/privacy" className="underline hover:text-accent">Privacy Policy</a> and{" "}
-          <a href="/terms#sms" className="underline hover:text-accent">Terms</a>.
-        </label>
-      </div>
-
       {status === "error" && (
         <div role="alert" className="rounded-md border border-destructive/40 bg-destructive/5 p-3 text-sm text-foreground">
           <p className="mb-2">{error}</p>
@@ -163,8 +147,17 @@ export default function EstimateForm({ service, variant = "default" }: EstimateF
         </div>
       )}
 
+      <div className="space-y-1.5 text-xs leading-relaxed text-muted-foreground">
+        <p>
+          See our <a href="/privacy" className="underline hover:text-accent">Privacy Policy</a> and{" "}
+          <a href="/terms#sms" className="underline hover:text-accent">Terms</a>.
+        </p>
+        <p id={id("sms-notice")}>{SMS_NOTICE}</p>
+      </div>
+
       <button
         type="submit"
+        aria-describedby={id("sms-notice")}
         disabled={status === "sending"}
         className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-display text-base font-bold text-accent-foreground transition-opacity hover:opacity-90 disabled:opacity-70"
       >

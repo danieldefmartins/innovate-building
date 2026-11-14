@@ -9,9 +9,20 @@ export const CRM_API = "https://api.get360crm.com";
 export const FORM_SLUG = "innovate-building-estimate";
 export const WORKSPACE_ID = "575c4cb3-f83c-4ad3-8a40-9f401b6cb353";
 
-/** Must match the 360 form's consentText exactly. */
-export const SMS_CONSENT_TEXT =
+/**
+ * Notice shown directly above the Submit button (no checkbox: sending the form is the agreement).
+ * ONE plain string, no links: 360 stores this exact text as consent evidence and this site compares it
+ * with the published form's consentText.
+ */
+export const SMS_NOTICE =
+  "By submitting this form, you agree to receive text messages from Innovate Building about your request (quotes, scheduling, project updates). Message frequency varies. Msg & data rates may apply. Reply STOP to opt out. We will never sell or share your information.";
+
+/** Old optional-checkbox wording. Still accepted so the form works before and after the 360 form is switched. */
+export const LEGACY_SMS_CONSENT_TEXT =
   "I agree to receive text messages from Innovate Building about my quote, appointments and project updates. Message frequency varies. Msg & data rates may apply. Reply STOP to cancel, HELP for help. See our Privacy Policy and Terms.";
+
+/** Every consentText the published 360 form may carry; anything else fails closed. */
+export const ACCEPTED_SMS_CONSENTS: readonly string[] = [SMS_NOTICE, LEGACY_SMS_CONSENT_TEXT];
 
 /** Select options accepted by the 360 form (anything else goes into the message). */
 export const SERVICE_OPTIONS = [
@@ -33,6 +44,8 @@ export type PublicForm = {
   config: {
     consentRequired: boolean;
     consentText: string;
+    /** "notice" = consentText is shown as a notice above Submit instead of a checkbox. */
+    consentMode?: string;
     requireCaptcha?: boolean;
     fields: { id: string; type: string; options?: string[] }[];
   };
@@ -74,7 +87,7 @@ export async function loadForm(): Promise<PublicForm> {
     c.kind !== "form" ||
     form.config.requireCaptcha ||
     form.config.consentRequired ||
-    form.config.consentText !== SMS_CONSENT_TEXT
+    !ACCEPTED_SMS_CONSENTS.includes((form.config.consentText || "").trim())
   ) {
     throw new Error(`Online requests are temporarily unavailable. Please call or text ${PHONE} for your free estimate.`);
   }
@@ -144,7 +157,14 @@ export type LeadValues = {
 export type Attempt = { key: string; uploadSessionId: string };
 export const newAttempt = (): Attempt => ({ key: crypto.randomUUID(), uploadSessionId: crypto.randomUUID() });
 
-export async function sendLead(form: PublicForm, attempt: Attempt, values: LeadValues, smsConsent: boolean) {
+/**
+ * `consent: true` means "the notice was on screen": only when the published form is in notice mode, its text is
+ * exactly SMS_NOTICE, and the submission includes a phone number. Otherwise false.
+ */
+export const noticeConsent = (form: PublicForm, phone: string | undefined) =>
+  form.config.consentMode === "notice" && (form.config.consentText || "").trim() === SMS_NOTICE && Boolean(phone);
+
+export async function sendLead(form: PublicForm, attempt: Attempt, values: LeadValues) {
   const answers: Record<string, string> = {
     name: values.name.trim(),
     phone: normalizePhone(values.phone),
@@ -159,10 +179,11 @@ export async function sendLead(form: PublicForm, attempt: Attempt, values: LeadV
     key: attempt.key,
     uploadSessionId: attempt.uploadSessionId,
     answers,
-    attribution: captureAttribution(),
-    smsConsent,
+    // Stored first-touch data, plus the address of the page showing the form (no query string).
+    attribution: { ...captureAttribution(), landing_page: window.location.origin + window.location.pathname },
+    smsConsent: false,
     emailConsent: false,
-    consent: false,
+    consent: noticeConsent(form, answers.phone),
     website: values.website,
   });
 }
